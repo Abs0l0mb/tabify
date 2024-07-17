@@ -27,7 +27,7 @@ def track_to_midi(track: guitarpro.Track, filename: str, tempo: int):
         midi.writeFile(output_file)
 
 # Load the Guitar Pro file
-gp_file = guitarpro.parse('./data/10_track_2_Chuck Berry (Riffs and Solos).gp3')
+gp_file = guitarpro.parse('./10_track_2_Chuck Berry (Riffs and Solos).gp3')
 
 # Print track names and note details
 # Convert each track to a MIDI file

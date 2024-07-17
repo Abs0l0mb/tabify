@@ -4,8 +4,16 @@ This project aims to create a machine learning model that converts MIDI files in
 
 ## Model inputs and outputs
 
-Inputs from midi file & tab
+As input, you can pass any midi file, with a range corresponding to the range of a guitar in standard tuning (E2-E6).
 
-Note n (int) of length l (int) played at time t (int) is played on string s (int or letter ?) at BPM b (int) considering the previous notes n-x of length l-x
+## Dataset
 
-inference will be (n-3, l-3, n-2, l-2, n-1, l-1, n, l, b) => s
+The model has been trained on hundred of thousands of separate tracks in gp3 format.
+
+To create the dataset, you can scrape tabs on specialized websties ; once you have all your gp3 files, the dataset_creation.py file takes as input the folder containing those files, and extract each track into a separate gp3 file, to a folder of your choice. 
+
+For label creation, syou can use the gp3_to_midi.py to convert a gp3 tab to midi file.
+
+Once you have your datas and labels, you are free to train your own model !
+
+The model proposed in this repo will probably be an LSTM to capture long term dependencies between notes.

@@ -10,9 +10,9 @@ As input, you can pass any midi file, with a range corresponding to the range of
 
 The model has been trained on hundred of thousands of separate tracks in gp3 format.
 
-To create the dataset, you can scrape tabs on specialized websties ; once you have all your gp3 files, the dataset_creation.py file takes as input the folder containing those files, and extract each track into a separate gp3 file, to a folder of your choice. 
+To create the dataset, you can scrape tabs on specialized websites ; once you have all your gp3 files, the dataset_creation.py file takes as input the folder containing those files, and extract each track into a separate gp3 file, to a folder of your choice. 
 
-For label creation, syou can use the gp3_to_midi.py to convert a gp3 tab to midi file.
+For label creation, you can use the gp3_to_midi.py to convert a gp3 tab to midi file.
 
 Once you have your datas and labels, you are free to train your own model !
 

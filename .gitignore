@@ -3,4 +3,6 @@ labels/
 node_modules/
 scraping_scripts/
 tabs_converted/
-tabs_gp/
+tabs_scraped/
+data_E_standard/
+data_all_tunings/

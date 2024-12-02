@@ -1,7 +1,7 @@
 import guitarpro
 
 # Parse the original file
-song = guitarpro.parse('./data/10_track_2_Chuck Berry (Riffs and Solos).gp3')
+song = guitarpro.parse('./10_track_2_Chuck Berry (Riffs and Solos).gp3')
 
 # Add notes to the MIDI file
 for track in song.tracks:

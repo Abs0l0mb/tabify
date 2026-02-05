@@ -49,3 +49,4 @@ for file in gp3_file_list:
             track_to_midi(track, track_filename, gp_file.tempo)
             print(f"Track {file} written to {track_filename}")
 
+    break

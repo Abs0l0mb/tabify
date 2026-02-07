@@ -150,6 +150,11 @@ def build_gp5_from_pred_rows(
         beat.notes = []
         beat.duration = models.Duration.fromTime(dur_ticks)  # will raise if unrepresentable :contentReference[oaicite:9]{index=9}
 
+        if len(pred_strings) == 0:   # ou pitches == [] si tu préfères
+            beat.status = models.BeatStatus.rest
+        else:
+            beat.status = models.BeatStatus.normal
+
         # add notes (1 per string)
         used = set()
         for s, f in zip(pred_strings, pred_frets):
@@ -188,8 +193,8 @@ def roundtrip_sanity_check(gp5_path: str, max_print_measures: int = 3) -> None:
 
 
 if __name__ == "__main__":
-    PRED_JSONL = "test_output_folder/test.jsonl"
-    OUT_GP5 = "./viterbi_preds_gp5/test.gp5"
+    PRED_JSONL = "test_output_folder/hearts_clockwork.jsonl"
+    OUT_GP5 = "./viterbi_preds_gp5/hearts_clockwork.gp5"
 
     rows = load_pred_events(PRED_JSONL)
     out = build_gp5_from_pred_rows(

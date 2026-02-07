@@ -1,0 +1,64 @@
+{"piece_id": "hearts_clockwork", "event_idx": 0, "start": 0.0, "dur": 240.0, "pitches": [40], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 1, "start": 240.0, "dur": 240.0, "pitches": [], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 2, "start": 480.0, "dur": 720.0, "pitches": [52], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 3, "start": 1200.0, "dur": 240.0, "pitches": [], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 4, "start": 1440.0, "dur": 960.0, "pitches": [64], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 5, "start": 2400.0, "dur": 240.0, "pitches": [60], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 6, "start": 2640.0, "dur": 240.0, "pitches": [57], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 7, "start": 2880.0, "dur": 240.0, "pitches": [55], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 8, "start": 3120.0, "dur": 240.0, "pitches": [59], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 9, "start": 3360.0, "dur": 240.0, "pitches": [63], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 10, "start": 3600.0, "dur": 240.0, "pitches": [64], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 11, "start": 3840.0, "dur": 960.0, "pitches": [48], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 12, "start": 4800.0, "dur": 960.0, "pitches": [47], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 13, "start": 5760.0, "dur": 1440.0, "pitches": [45], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 14, "start": 7200.0, "dur": 480.0, "pitches": [48], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 15, "start": 7680.0, "dur": 960.0, "pitches": [40], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 16, "start": 8640.0, "dur": 480.0, "pitches": [54], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 17, "start": 9120.0, "dur": 480.0, "pitches": [47], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 18, "start": 9600.0, "dur": 480.0, "pitches": [51], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 19, "start": 10080.0, "dur": 240.0, "pitches": [57], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 20, "start": 10320.0, "dur": 240.0, "pitches": [59], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 21, "start": 10560.0, "dur": 960.0, "pitches": [40], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 22, "start": 11520.0, "dur": 480.0, "pitches": [47], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 23, "start": 12000.0, "dur": 480.0, "pitches": [47, 71], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 24, "start": 12480.0, "dur": 480.0, "pitches": [45], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 25, "start": 12960.0, "dur": 960.0, "pitches": [45, 69], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 26, "start": 13920.0, "dur": 480.0, "pitches": [51], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 27, "start": 14400.0, "dur": 960.0, "pitches": [51, 75], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 28, "start": 15360.0, "dur": 480.0, "pitches": [40], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 29, "start": 15840.0, "dur": 720.0, "pitches": [52], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 30, "start": 16560.0, "dur": 240.0, "pitches": [], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 31, "start": 16800.0, "dur": 480.0, "pitches": [64], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 32, "start": 17280.0, "dur": 960.0, "pitches": [], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 33, "start": 18240.0, "dur": 240.0, "pitches": [60], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 34, "start": 18480.0, "dur": 240.0, "pitches": [57], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 35, "start": 18720.0, "dur": 240.0, "pitches": [55], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 36, "start": 18960.0, "dur": 240.0, "pitches": [59], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 37, "start": 19200.0, "dur": 240.0, "pitches": [63], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 38, "start": 19440.0, "dur": 240.0, "pitches": [64], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 39, "start": 19680.0, "dur": 240.0, "pitches": [69], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 40, "start": 19920.0, "dur": 240.0, "pitches": [72], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 41, "start": 20160.0, "dur": 960.0, "pitches": [47], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 42, "start": 21120.0, "dur": 1440.0, "pitches": [45], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 43, "start": 22560.0, "dur": 480.0, "pitches": [48], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 44, "start": 23040.0, "dur": 240.0, "pitches": [40], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 45, "start": 23280.0, "dur": 240.0, "pitches": [51], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 46, "start": 23520.0, "dur": 240.0, "pitches": [52], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 47, "start": 23760.0, "dur": 240.0, "pitches": [40], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 48, "start": 24000.0, "dur": 240.0, "pitches": [63], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 49, "start": 24240.0, "dur": 240.0, "pitches": [64], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 50, "start": 24480.0, "dur": 240.0, "pitches": [40], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 51, "start": 24720.0, "dur": 240.0, "pitches": [66], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 52, "start": 24960.0, "dur": 240.0, "pitches": [67], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 53, "start": 25200.0, "dur": 240.0, "pitches": [40], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 54, "start": 25440.0, "dur": 240.0, "pitches": [71], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 55, "start": 25680.0, "dur": 240.0, "pitches": [72], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 56, "start": 25920.0, "dur": 960.0, "pitches": [40], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 57, "start": 26880.0, "dur": 480.0, "pitches": [47], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 58, "start": 27360.0, "dur": 480.0, "pitches": [47, 71], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 59, "start": 27840.0, "dur": 480.0, "pitches": [45], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 60, "start": 28320.0, "dur": 480.0, "pitches": [45, 69], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 61, "start": 28800.0, "dur": 1440.0, "pitches": [63], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 62, "start": 30240.0, "dur": 480.0, "pitches": [64], "notes": []}
+{"piece_id": "hearts_clockwork", "event_idx": 63, "start": 30720.0, "dur": 240.0, "pitches": [], "notes": []}

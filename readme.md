@@ -17,3 +17,15 @@ For label creation, you can use the gp3_to_midi.py to convert a gp3 tab to midi 
 Once you have your datas and labels, you are free to train your own model !
 
 The model proposed in this repo will probably be an LSTM to capture long term dependencies between notes.
+
+## Roadmap
+
+(done) Fix voice (0 only) + dédoublonnage
+
+Export JSONL par morceau (events triés, accords triés)
+
+Baseline DP/Viterbi + métriques
+
+Définir score jouabilité (même simple)
+
+Ensuite seulement : modèle ML/NN + reranking jouabilité

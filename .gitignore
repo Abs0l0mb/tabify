@@ -1,9 +1,11 @@
+0-scraping/
+1-gp3_conversion/
+2-separate_tracks/
+3-only_E_standard/
+jsonl_dataset/
+viterbi_preds/
 data/
 labels/
 node_modules/
 scraping_scripts/
-tabs_converted/
-tabs_scraped/
-data_E_standard/
-data_all_tunings/
 dataset.json

@@ -63,6 +63,23 @@ def add_note_to_beat(beat: models.Beat, string: int, fret: int, velocity: int = 
     n.velocity = int(velocity)
     beat.notes.append(n)
 
+def set_note_type_tie(note):
+    # Prefer enum if available
+    if hasattr(models, "NoteType") and hasattr(models.NoteType, "tie"):
+        note.type = models.NoteType.tie
+    else:
+        # GP5 spec: 2 = tied
+        note.type = 2
+
+def add_note(beat, string: int, fret: int, is_tie: bool):
+    n = models.Note(beat=beat)
+    n.string = int(string)
+    n.value = int(fret)
+    n.velocity = 90
+    if is_tie:
+        set_note_type_tie(n)
+    beat.notes.append(n)
+
 def build_gp5_from_pred_rows(
     pred_rows: List[Dict[str, Any]],
     out_gp5_path: str,
@@ -115,6 +132,26 @@ def build_gp5_from_pred_rows(
             v.beats = []
 
         remaining = measure_len_ticks(numerator, denominator, quarter_ticks=quarter_ticks)
+    
+    def set_note_type_tie(note: models.Note) -> None:
+        # Prefer enum if available
+        if hasattr(models, "NoteType") and hasattr(models.NoteType, "tie"):
+            note.type = models.NoteType.tie
+        else:
+            # GP5 spec: 2 = tied
+            note.type = 2
+
+    def add_note_to_beat_tieaware(beat: models.Beat, string: int, fret: int, is_tie: bool) -> None:
+        n = models.Note(beat=beat)
+        n.string = int(string)
+        n.value = int(fret)
+        n.velocity = 90
+        if is_tie:
+            set_note_type_tie(n)
+        beat.notes.append(n)
+
+    # state across segments (active pitches)
+    prev_active: set[int] = set()
 
     for row in pred_rows:
         dur = row.get("dur")
@@ -125,14 +162,22 @@ def build_gp5_from_pred_rows(
         if dur_ticks <= 0:
             continue
 
-        pred_strings = row.get("pred_strings", [])
-        pred_frets = row.get("pred_frets", [])
+        cur_active = set(int(p) for p in row.get("pitches", []) or [])
+        pred_strings = row.get("pred_strings", []) or []
+        pred_frets = row.get("pred_frets", []) or []
+
         if len(pred_strings) != len(pred_frets):
             raise ValueError(f"pred_strings/pred_frets mismatch at event_idx={row.get('event_idx')}")
 
+        # For rests, pred arrays may be empty, that's ok.
+        # For non-rest, we expect one mapping per pitch:
+        if cur_active and (len(pred_strings) != len(cur_active)):
+            # Not fatal, but usually indicates mismatch between pitches and preds
+            # You can raise if you want strictness.
+            pass
+
         # Handle beats longer than a measure: allocate a dedicated bigger measure
         if dur_ticks > default_measure_len:
-            # if current measure already has content, go next
             if remaining != default_measure_len:
                 open_new_measure(num, den)
 
@@ -144,32 +189,57 @@ def build_gp5_from_pred_rows(
         if dur_ticks > remaining:
             open_new_measure(num, den)
 
+        # ✅ define voice0 for the CURRENT measure
         voice0 = current_measure.voices[0]
+
         beat = models.Beat(voice=voice0)
         beat.notes = []
-        beat.duration = models.Duration.fromTime(dur_ticks)  # will raise if unrepresentable :contentReference[oaicite:9]{index=9}
+        beat.duration = models.Duration.fromTime(dur_ticks)
 
-        if len(pred_strings) == 0:   # ou pitches == [] si tu préfères
+        if not cur_active:
             beat.status = models.BeatStatus.rest
         else:
             beat.status = models.BeatStatus.normal
 
-        # add notes (1 per string)
-        used = set()
-        for s, f in zip(pred_strings, pred_frets):
-            s = int(s)
-            f = int(f)
-            if s in used:
-                continue
-            used.add(s)
-            add_note_to_beat(beat, s, f)
+            # Build mapping pitch -> (string,fret) from predictions
+            pitch_list = list(row.get("pitches", []) or [])
+            pitch_map = {int(p): (int(s), int(f)) for p, s, f in zip(pitch_list, pred_strings, pred_frets)}
+
+            starting = cur_active - prev_active
+            continuing = cur_active & prev_active
+
+            # Add continuing as ties (same pitch continuing)
+            used_strings = set()
+            for p in sorted(continuing):
+                if p not in pitch_map:
+                    continue
+                s, f = pitch_map[p]
+                if s in used_strings:
+                    continue
+                used_strings.add(s)
+                add_note_to_beat_tieaware(beat, s, f, is_tie=True)
+
+            # Add starting as normal notes
+            for p in sorted(starting):
+                if p not in pitch_map:
+                    continue
+                s, f = pitch_map[p]
+                if s in used_strings:
+                    continue
+                used_strings.add(s)
+                add_note_to_beat_tieaware(beat, s, f, is_tie=False)
 
         voice0.beats.append(beat)
         remaining -= dur_ticks
 
-        # If measure perfectly filled, move on (helps layout)
+        # update active set AFTER writing beat
+        prev_active = cur_active
+
+        # If measure perfectly filled, move on
         if remaining == 0:
             open_new_measure(num, den)
+
+    prev_active = cur_active    
 
     # Remove trailing empty measure if created
     if track.measures and len(track.measures[-1].voices[0].beats) == 0:

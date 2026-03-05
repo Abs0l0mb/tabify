@@ -1,0 +1,3 @@
+#!/bin/bash
+
+eval "node $PWD/runtime/index $@"

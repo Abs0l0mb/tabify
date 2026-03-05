@@ -1,0 +1,44 @@
+@use 'sass:color';
+
+.choosers,
+.chooser {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.chooser > div {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+    transition: all 300ms;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid $main-color;
+    border-left: none;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.chooser > div:first-child {
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    padding-left: 14px;
+    border-left: 1px solid $main-color;
+}
+
+.chooser > div:last-child {
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    padding-right: 14px;
+}
+
+.chooser > div[data-state="0"] {
+    background: color.adjust($main-color, $saturation: 25%, $lightness: 35%);
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.chooser > div[data-state="1"] {
+    background: $main-color;
+    color: white;
+    text-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
+}

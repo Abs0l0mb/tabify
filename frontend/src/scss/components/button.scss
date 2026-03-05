@@ -1,0 +1,111 @@
+@use "sass:color";
+
+.button-container {
+
+    position: relative;
+    display: inline-block;
+    
+    > button {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        text-shadow: 1px 1px 2px rgb(0 0 0 / 50%);
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: all 250ms;
+    }
+
+    &.small > button {
+        padding: 7px 14px;
+    }
+
+    > .spinner {
+
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+        pointer-events: none;
+        border-radius: 100px;
+        overflow: hidden;
+        white-space: nowrap;
+        opacity: 0;
+        transition: all 250ms;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            animation: spinner-animation 650ms infinite;
+            opacity: 0.75;
+            background: rgba(255,255,255, 0.7);
+        }
+    }
+
+    &[data-loading="1"] {
+
+        pointer-events: none;
+    
+        > .spinner {
+            opacity: 1;
+        }
+    }
+
+    &[data-enabled="0"] {
+        opacity: 0.5;
+        pointer-events: none;
+        cursor: default;
+    }
+}
+
+@keyframes spinner-animation {
+    0% { transform: translateX(-50%) translateY(-50%) scale(0.5);}
+    25% { transform: translateX(-50%) translateY(-50%) scale(1); }
+    100% { transform: translateX(-50%) translateY(-50%) scale(0.5); }
+}
+
+$green-color: rgba(0, 226, 107, 1);
+$red-color: rgba(253, 62, 95, 1);
+
+.button-container > button,
+.button-container > .spinner { background: $main-color; }
+#app[data-mobile="0"] .button-container > button:hover { background: color.adjust($main-color, $lightness: -5%); }
+#app[data-mobile="0"] .button-container > button:active { background: color.adjust($main-color, $lightness: -10%); }
+#app[data-mobile="1"] .button-container > button:active { background: color.adjust($main-color, $lightness: -10%); }
+
+.button-container.green > button,
+.button-container.green > .spinner { background: $green-color; }
+#app[data-mobile="0"] .button-container.green > button:hover { background: rgba($green-color, 0.8); }
+#app[data-mobile="0"] .button-container.green > button:active { background: rgba($green-color, 0.6); }
+#app[data-mobile="1"] .button-container.green > button:active { background: rgba($green-color, 0.8); }
+
+.button-container.red > button,
+.button-container.red > .spinner { background: $red-color; }
+#app[data-mobile="0"] .button-container.red > button:hover { background: rgba($red-color, 0.8); }
+#app[data-mobile="0"] .button-container.red > button:active { background: rgba($red-color, 0.6); }
+#app[data-mobile="1"] .button-container.red > button:active { background: rgba($red-color, 0.8); }
+
+.button-container.cancel {
+    
+    > button {
+
+        text-shadow: none;
+        color: rgba(0,0,0,.7);
+        background: transparent !important;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.08) !important;
+        }
+    }
+
+    > .spinner {
+        background: transparent !important;
+    }
+}

@@ -1,0 +1,43 @@
+.date-selection {
+
+    .close-zone {
+        position: absolute;
+        z-index: 99991;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.35);
+        opacity: 0;
+        transition: all 250ms;
+    }
+
+    .box {
+        
+        position: absolute;
+        z-index: 99992;
+        border-radius: 10px;
+        background: #fff;
+        width: max-content;
+        height: max-content;
+        box-shadow: 4px 8px 20px 0 rgb(0 0 0 / 15%);
+        opacity: 0;
+        transform: translateY(15px);
+        transition: opacity 250ms, transform 250ms;
+        padding: 12px 0;
+        width: 250px;
+        padding: 22px 18px;
+    }
+
+    &[data-displayed="1"] {
+
+        .close-zone {
+            opacity: 1;
+        }
+
+        .box {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

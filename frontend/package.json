@@ -1,0 +1,30 @@
+{
+    "name": "tms-frontend",
+    "description": "TMS Frontend",
+    "license": "Proprietary",
+    "author": "dnme",
+    "private": true,
+    "type": "module",
+    "dependencies": {
+        "@types/node": "^18.15.10",
+        "@types/sortablejs": "^1.15.8",
+        "@types/ua-parser-js": "^0.7.36",
+        "@types/webfontloader": "^1.6.35",
+        "@ungap/structured-clone": "^1.2.0",
+        "crypto-js": "^4.1.1",
+        "esbuild": "^0.17.16",
+        "html-docx-js": "^0.3.1",
+        "js-sha256": "^0.9.0",
+        "nanoid": "^4.0.2",
+        "recast": "^0.22.0",
+        "sortablejs": "^1.15.6",
+        "three": "^0.157.0",
+        "typescript": "^5.0.4",
+        "ua-parser-js": "^1.0.38",
+        "vanilla-calendar-pro": "^2.9.10",
+        "webfontloader": "^1.6.28"
+    },
+    "devDependencies": {
+        "typedoc": "^0.28.14"
+    }
+}

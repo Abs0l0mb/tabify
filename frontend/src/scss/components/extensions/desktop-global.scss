@@ -1,0 +1,17 @@
+@media screen and (min-width: 1024px) {
+
+    #app {
+
+        display: flex;
+
+        > .navigation {
+            width: max-content;
+        }
+        
+        > .content-root {
+            min-height: 100vh;
+            padding-top: 0;
+            flex-grow: 1;
+        }
+    }
+}

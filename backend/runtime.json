@@ -1,0 +1,15 @@
+{
+    "runtimeName": "tms-backend",
+    "mainProcess": {
+        "distName": "main",
+        "entryPoint": "main.ts",
+        "devPort": 10101
+    },
+    "subProcesses": [
+        {
+            "distName": "sub-process",
+            "entryPoint": "sub-processes/sub-process/index.ts",
+            "instanciationKey": "SUB_PROCESS_ENTRY_POINT_JS"
+        }
+    ]
+}

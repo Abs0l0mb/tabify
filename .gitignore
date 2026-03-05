@@ -8,4 +8,12 @@ data/
 labels/
 node_modules/
 scraping_scripts/
+dev_folder/
 dataset.json
+node_modules
+dist
+yarn.lock
+yarn-error.log
+store
+tmp
+.vscode

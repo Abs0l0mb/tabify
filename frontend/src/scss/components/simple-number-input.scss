@@ -1,0 +1,39 @@
+.simple-number-input {
+
+    position: relative;
+    height: 35px;
+    display: flex;
+    align-items: center;
+
+    > input {
+        width: 100px;
+        padding-right: 40px;
+        height: 100%;
+        opacity: 1;
+        border: none;
+        background: none;
+        font-size: 14px;
+    }
+
+    > .icon {
+        position: absolute;
+        z-index: 140;
+        top: 0;
+        right: 0;
+        height: 35px;
+        width: 35px;
+        background-position: 50%;
+        background-size: 38%;
+        background-repeat: no-repeat;
+        background-image: svg('/assets/images/svg/number.svg');
+    }
+
+    > .label {
+        pointer-events: none;
+        font-size: 14px;
+        font-weight: bold;
+        opacity: .75 !important;
+        display: inline-block;
+        margin: 0 12px;
+    }
+}

@@ -1,0 +1,30 @@
+.simple-text-input {
+
+    position: relative;
+    height: 35px;
+    display: flex;
+    align-items: center;
+
+    > input {
+        width: 100px;
+        padding-right: 40px;
+        height: 100%;
+        opacity: 1;
+        border: none;
+        background: none;
+        font-size: 14px;
+    }
+
+    > .icon {
+        display: none;
+    }
+
+    > .label {
+        pointer-events: none;
+        font-size: 14px;
+        font-weight: bold;
+        opacity: .75 !important;
+        display: inline-block;
+        margin: 0 12px;
+    }
+}

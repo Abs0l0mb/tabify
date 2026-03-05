@@ -1,7 +1,7 @@
 import os
 import json
 import math
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 
 import guitarpro
 from guitarpro import models
@@ -33,10 +33,12 @@ def measure_len_ticks(numerator: int, denominator: int, quarter_ticks: int = 960
     return int(round(numerator * quarter_ticks * (4.0 / denominator)))
 
 
-def ensure_single_guitar_track_e_standard(song: models.Song) -> models.Track:
+E_STD_TUNING = [64, 59, 55, 50, 45, 40]  # string 1 (high E) to string 6 (low E)
+
+def configure_guitar_track(song: models.Song, tuning: List[int]) -> models.Track:
     """
-    Song() comes with 1 track by default. We reuse it and configure it.
-    Track measures are tied to song.measureHeaders. :contentReference[oaicite:4]{index=4}
+    Configure the first track of a Song using the provided tuning list.
+    tuning: open MIDI pitches from string 1 (highest) to string N (lowest).
     """
     track = song.tracks[0]
     track.name = "Guitar"
@@ -44,14 +46,9 @@ def ensure_single_guitar_track_e_standard(song: models.Song) -> models.Track:
     track.fretCount = 24
     track.channel.instrument = 29  # Overdriven Guitar (optional)
 
-    # E standard: high E to low E
     track.strings = [
-        models.GuitarString(number=1, value=64),  # E4
-        models.GuitarString(number=2, value=59),  # B3
-        models.GuitarString(number=3, value=55),  # G3
-        models.GuitarString(number=4, value=50),  # D3
-        models.GuitarString(number=5, value=45),  # A2
-        models.GuitarString(number=6, value=40),  # E2
+        models.GuitarString(number=i + 1, value=int(pitch))
+        for i, pitch in enumerate(tuning)
     ]
     return track
 
@@ -63,6 +60,23 @@ def add_note_to_beat(beat: models.Beat, string: int, fret: int, velocity: int = 
     n.velocity = int(velocity)
     beat.notes.append(n)
 
+def set_note_type_tie(note):
+    # Prefer enum if available
+    if hasattr(models, "NoteType") and hasattr(models.NoteType, "tie"):
+        note.type = models.NoteType.tie
+    else:
+        # GP5 spec: 2 = tied
+        note.type = 2
+
+def add_note(beat, string: int, fret: int, is_tie: bool):
+    n = models.Note(beat=beat)
+    n.string = int(string)
+    n.value = int(fret)
+    n.velocity = 90
+    if is_tie:
+        set_note_type_tie(n)
+    beat.notes.append(n)
+
 def build_gp5_from_pred_rows(
     pred_rows: List[Dict[str, Any]],
     out_gp5_path: str,
@@ -70,7 +84,11 @@ def build_gp5_from_pred_rows(
     tempo: int = 120,
     time_sig: Tuple[int, int] = (4, 4),
     quarter_ticks: int = 960,
+    tuning: Optional[List[int]] = None,
 ) -> str:
+    if tuning is None:
+        tuning = E_STD_TUNING
+
     num, den = time_sig
     default_measure_len = measure_len_ticks(num, den, quarter_ticks=quarter_ticks)
 
@@ -79,7 +97,7 @@ def build_gp5_from_pred_rows(
     song.title = title
     song.tempo = int(tempo)
 
-    track = ensure_single_guitar_track_e_standard(song)
+    track = configure_guitar_track(song, tuning)
 
     # Configure first measure header (already exists by default in Song.measureHeaders) :contentReference[oaicite:5]{index=5}
     first_header = song.measureHeaders[0]
@@ -115,6 +133,26 @@ def build_gp5_from_pred_rows(
             v.beats = []
 
         remaining = measure_len_ticks(numerator, denominator, quarter_ticks=quarter_ticks)
+    
+    def set_note_type_tie(note: models.Note) -> None:
+        # Prefer enum if available
+        if hasattr(models, "NoteType") and hasattr(models.NoteType, "tie"):
+            note.type = models.NoteType.tie
+        else:
+            # GP5 spec: 2 = tied
+            note.type = 2
+
+    def add_note_to_beat_tieaware(beat: models.Beat, string: int, fret: int, is_tie: bool) -> None:
+        n = models.Note(beat=beat)
+        n.string = int(string)
+        n.value = int(fret)
+        n.velocity = 90
+        if is_tie:
+            set_note_type_tie(n)
+        beat.notes.append(n)
+
+    # state across segments (active pitches)
+    prev_active: set[int] = set()
 
     for row in pred_rows:
         dur = row.get("dur")
@@ -125,14 +163,22 @@ def build_gp5_from_pred_rows(
         if dur_ticks <= 0:
             continue
 
-        pred_strings = row.get("pred_strings", [])
-        pred_frets = row.get("pred_frets", [])
+        cur_active = set(int(p) for p in row.get("pitches", []) or [])
+        pred_strings = row.get("pred_strings", []) or []
+        pred_frets = row.get("pred_frets", []) or []
+
         if len(pred_strings) != len(pred_frets):
             raise ValueError(f"pred_strings/pred_frets mismatch at event_idx={row.get('event_idx')}")
 
+        # For rests, pred arrays may be empty, that's ok.
+        # For non-rest, we expect one mapping per pitch:
+        if cur_active and (len(pred_strings) != len(cur_active)):
+            # Not fatal, but usually indicates mismatch between pitches and preds
+            # You can raise if you want strictness.
+            pass
+
         # Handle beats longer than a measure: allocate a dedicated bigger measure
         if dur_ticks > default_measure_len:
-            # if current measure already has content, go next
             if remaining != default_measure_len:
                 open_new_measure(num, den)
 
@@ -144,32 +190,57 @@ def build_gp5_from_pred_rows(
         if dur_ticks > remaining:
             open_new_measure(num, den)
 
+        # ✅ define voice0 for the CURRENT measure
         voice0 = current_measure.voices[0]
+
         beat = models.Beat(voice=voice0)
         beat.notes = []
-        beat.duration = models.Duration.fromTime(dur_ticks)  # will raise if unrepresentable :contentReference[oaicite:9]{index=9}
+        beat.duration = models.Duration.fromTime(dur_ticks)
 
-        if len(pred_strings) == 0:   # ou pitches == [] si tu préfères
+        if not cur_active:
             beat.status = models.BeatStatus.rest
         else:
             beat.status = models.BeatStatus.normal
 
-        # add notes (1 per string)
-        used = set()
-        for s, f in zip(pred_strings, pred_frets):
-            s = int(s)
-            f = int(f)
-            if s in used:
-                continue
-            used.add(s)
-            add_note_to_beat(beat, s, f)
+            # Build mapping pitch -> (string,fret) from predictions
+            pitch_list = list(row.get("pitches", []) or [])
+            pitch_map = {int(p): (int(s), int(f)) for p, s, f in zip(pitch_list, pred_strings, pred_frets)}
+
+            starting = cur_active - prev_active
+            continuing = cur_active & prev_active
+
+            # Add continuing as ties (same pitch continuing)
+            used_strings = set()
+            for p in sorted(continuing):
+                if p not in pitch_map:
+                    continue
+                s, f = pitch_map[p]
+                if s in used_strings:
+                    continue
+                used_strings.add(s)
+                add_note_to_beat_tieaware(beat, s, f, is_tie=True)
+
+            # Add starting as normal notes
+            for p in sorted(starting):
+                if p not in pitch_map:
+                    continue
+                s, f = pitch_map[p]
+                if s in used_strings:
+                    continue
+                used_strings.add(s)
+                add_note_to_beat_tieaware(beat, s, f, is_tie=False)
 
         voice0.beats.append(beat)
         remaining -= dur_ticks
 
-        # If measure perfectly filled, move on (helps layout)
+        # update active set AFTER writing beat
+        prev_active = cur_active
+
+        # If measure perfectly filled, move on
         if remaining == 0:
             open_new_measure(num, den)
+
+    prev_active = cur_active    
 
     # Remove trailing empty measure if created
     if track.measures and len(track.measures[-1].voices[0].beats) == 0:
@@ -192,17 +263,31 @@ def roundtrip_sanity_check(gp5_path: str, max_print_measures: int = 3) -> None:
 
 
 if __name__ == "__main__":
-    PRED_JSONL = "./test_output_folder/playing_god.jsonl"
-    OUT_GP5 = "./viterbi_preds_gp5/playing_god.gp5"
+    import argparse
+    import commentjson
 
-    rows = load_pred_events(PRED_JSONL)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--pred", default="./test_output_folder/playing_god.jsonl")
+    ap.add_argument("--out", default="./viterbi_preds_gp5/playing_god.gp5")
+    ap.add_argument("--config", default="viterbi_config.jsonc")
+    ap.add_argument("--tempo", type=int, default=120)
+    args = ap.parse_args()
+
+    tuning = E_STD_TUNING
+    if os.path.exists(args.config):
+        with open(args.config, "r", encoding="utf-8") as f:
+            cfg = commentjson.load(f)
+        tuning = cfg.get("guitar", {}).get("tuning", E_STD_TUNING)
+
+    rows = load_pred_events(args.pred)
     out = build_gp5_from_pred_rows(
         pred_rows=rows,
-        out_gp5_path=OUT_GP5,
+        out_gp5_path=args.out,
         title="Viterbi prediction",
-        tempo=120,
+        tempo=args.tempo,
         time_sig=(4, 4),
         quarter_ticks=960,
+        tuning=tuning,
     )
     print(f"[OK] wrote {out}")
     roundtrip_sanity_check(out)

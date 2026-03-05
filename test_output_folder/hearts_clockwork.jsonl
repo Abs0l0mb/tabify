@@ -23,11 +23,11 @@
 {"piece_id": "hearts_clockwork", "event_idx": 22, "start": 12960.0, "dur": 480.0, "pitches": [48], "pred_strings": [5], "pred_frets": [3], "pred_span": 0, "pred_anchor": 3.0, "pred_avgpos": 3.0}
 {"piece_id": "hearts_clockwork", "event_idx": 23, "start": 13440.0, "dur": 960.0, "pitches": [40], "pred_strings": [6], "pred_frets": [0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "hearts_clockwork", "event_idx": 24, "start": 14400.0, "dur": 480.0, "pitches": [47], "pred_strings": [5], "pred_frets": [2], "pred_span": 0, "pred_anchor": 2.0, "pred_avgpos": 2.0}
-{"piece_id": "hearts_clockwork", "event_idx": 25, "start": 14880.0, "dur": 480.0, "pitches": [47, 71], "pred_strings": [5, 3], "pred_frets": [2, 16], "pred_span": 14, "pred_anchor": 2.0, "pred_avgpos": 9.0}
+{"piece_id": "hearts_clockwork", "event_idx": 25, "start": 14880.0, "dur": 480.0, "pitches": [47, 71], "pred_strings": [5, 1], "pred_frets": [2, 7], "pred_span": 5, "pred_anchor": 2.0, "pred_avgpos": 4.5}
 {"piece_id": "hearts_clockwork", "event_idx": 26, "start": 15360.0, "dur": 480.0, "pitches": [45], "pred_strings": [6], "pred_frets": [5], "pred_span": 0, "pred_anchor": 5.0, "pred_avgpos": 5.0}
-{"piece_id": "hearts_clockwork", "event_idx": 27, "start": 15840.0, "dur": 960.0, "pitches": [45, 69], "pred_strings": [6, 4], "pred_frets": [5, 19], "pred_span": 14, "pred_anchor": 5.0, "pred_avgpos": 12.0}
+{"piece_id": "hearts_clockwork", "event_idx": 27, "start": 15840.0, "dur": 960.0, "pitches": [45, 69], "pred_strings": [5, 1], "pred_frets": [0, 5], "pred_span": 0, "pred_anchor": 5.0, "pred_avgpos": 5.0}
 {"piece_id": "hearts_clockwork", "event_idx": 28, "start": 16800.0, "dur": 480.0, "pitches": [51], "pred_strings": [5], "pred_frets": [6], "pred_span": 0, "pred_anchor": 6.0, "pred_avgpos": 6.0}
-{"piece_id": "hearts_clockwork", "event_idx": 29, "start": 17280.0, "dur": 960.0, "pitches": [51, 75], "pred_strings": [4, 3], "pred_frets": [1, 20], "pred_span": 19, "pred_anchor": 1.0, "pred_avgpos": 10.5}
+{"piece_id": "hearts_clockwork", "event_idx": 29, "start": 17280.0, "dur": 960.0, "pitches": [51, 75], "pred_strings": [4, 1], "pred_frets": [1, 11], "pred_span": 10, "pred_anchor": 1.0, "pred_avgpos": 6.0}
 {"piece_id": "hearts_clockwork", "event_idx": 30, "start": 18240.0, "dur": 240.0, "pitches": [40], "pred_strings": [6], "pred_frets": [0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "hearts_clockwork", "event_idx": 31, "start": 18480.0, "dur": 240.0, "pitches": [51], "pred_strings": [4], "pred_frets": [1], "pred_span": 0, "pred_anchor": 1.0, "pred_avgpos": 1.0}
 {"piece_id": "hearts_clockwork", "event_idx": 32, "start": 18720.0, "dur": 720.0, "pitches": [52], "pred_strings": [4], "pred_frets": [2], "pred_span": 0, "pred_anchor": 2.0, "pred_avgpos": 2.0}
@@ -61,9 +61,9 @@
 {"piece_id": "hearts_clockwork", "event_idx": 60, "start": 28560.0, "dur": 240.0, "pitches": [72], "pred_strings": [1], "pred_frets": [8], "pred_span": 0, "pred_anchor": 8.0, "pred_avgpos": 8.0}
 {"piece_id": "hearts_clockwork", "event_idx": 61, "start": 28800.0, "dur": 960.0, "pitches": [40], "pred_strings": [6], "pred_frets": [0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "hearts_clockwork", "event_idx": 62, "start": 29760.0, "dur": 480.0, "pitches": [47], "pred_strings": [5], "pred_frets": [2], "pred_span": 0, "pred_anchor": 2.0, "pred_avgpos": 2.0}
-{"piece_id": "hearts_clockwork", "event_idx": 63, "start": 30240.0, "dur": 480.0, "pitches": [47, 71], "pred_strings": [5, 3], "pred_frets": [2, 16], "pred_span": 14, "pred_anchor": 2.0, "pred_avgpos": 9.0}
+{"piece_id": "hearts_clockwork", "event_idx": 63, "start": 30240.0, "dur": 480.0, "pitches": [47, 71], "pred_strings": [5, 1], "pred_frets": [2, 7], "pred_span": 5, "pred_anchor": 2.0, "pred_avgpos": 4.5}
 {"piece_id": "hearts_clockwork", "event_idx": 64, "start": 30720.0, "dur": 480.0, "pitches": [45], "pred_strings": [6], "pred_frets": [5], "pred_span": 0, "pred_anchor": 5.0, "pred_avgpos": 5.0}
-{"piece_id": "hearts_clockwork", "event_idx": 65, "start": 31200.0, "dur": 960.0, "pitches": [45, 69], "pred_strings": [6, 4], "pred_frets": [5, 19], "pred_span": 14, "pred_anchor": 5.0, "pred_avgpos": 12.0}
+{"piece_id": "hearts_clockwork", "event_idx": 65, "start": 31200.0, "dur": 960.0, "pitches": [45, 69], "pred_strings": [5, 1], "pred_frets": [0, 5], "pred_span": 0, "pred_anchor": 5.0, "pred_avgpos": 5.0}
 {"piece_id": "hearts_clockwork", "event_idx": 66, "start": 32160.0, "dur": 480.0, "pitches": [51], "pred_strings": [5], "pred_frets": [6], "pred_span": 0, "pred_anchor": 6.0, "pred_avgpos": 6.0}
-{"piece_id": "hearts_clockwork", "event_idx": 67, "start": 32640.0, "dur": 960.0, "pitches": [51, 75], "pred_strings": [4, 3], "pred_frets": [1, 20], "pred_span": 19, "pred_anchor": 1.0, "pred_avgpos": 10.5}
+{"piece_id": "hearts_clockwork", "event_idx": 67, "start": 32640.0, "dur": 960.0, "pitches": [51, 75], "pred_strings": [4, 1], "pred_frets": [1, 11], "pred_span": 10, "pred_anchor": 1.0, "pred_avgpos": 6.0}
 {"piece_id": "hearts_clockwork", "event_idx": 68, "start": 33600.0, "dur": 120.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}

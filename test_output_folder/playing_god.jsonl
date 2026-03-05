@@ -10,16 +10,16 @@
 {"piece_id": "playing_god", "event_idx": 9, "start": 4560.0, "dur": 240.0, "pitches": [69], "pred_strings": [1], "pred_frets": [5], "pred_span": 0, "pred_anchor": 5.0, "pred_avgpos": 5.0}
 {"piece_id": "playing_god", "event_idx": 10, "start": 4800.0, "dur": 240.0, "pitches": [69, 71], "pred_strings": [2, 1], "pred_frets": [10, 7], "pred_span": 3, "pred_anchor": 7.0, "pred_avgpos": 8.5}
 {"piece_id": "playing_god", "event_idx": 11, "start": 5040.0, "dur": 120.0, "pitches": [71], "pred_strings": [1], "pred_frets": [7], "pred_span": 0, "pred_anchor": 7.0, "pred_avgpos": 7.0}
-{"piece_id": "playing_god", "event_idx": 12, "start": 5160.0, "dur": 120.0, "pitches": [48, 60, 71], "pred_strings": [5, 4, 3], "pred_frets": [3, 10, 16], "pred_span": 13, "pred_anchor": 3.0, "pred_avgpos": 9.666666666666666}
-{"piece_id": "playing_god", "event_idx": 13, "start": 5280.0, "dur": 120.0, "pitches": [48, 60], "pred_strings": [5, 4], "pred_frets": [3, 10], "pred_span": 7, "pred_anchor": 3.0, "pred_avgpos": 6.5}
-{"piece_id": "playing_god", "event_idx": 14, "start": 5400.0, "dur": 240.0, "pitches": [48, 59, 60], "pred_strings": [5, 4, 3], "pred_frets": [3, 9, 5], "pred_span": 6, "pred_anchor": 3.0, "pred_avgpos": 5.666666666666667}
-{"piece_id": "playing_god", "event_idx": 15, "start": 5640.0, "dur": 240.0, "pitches": [59], "pred_strings": [3], "pred_frets": [4], "pred_span": 0, "pred_anchor": 4.0, "pred_avgpos": 4.0}
-{"piece_id": "playing_god", "event_idx": 16, "start": 5880.0, "dur": 240.0, "pitches": [48, 60], "pred_strings": [5, 4], "pred_frets": [3, 10], "pred_span": 7, "pred_anchor": 3.0, "pred_avgpos": 6.5}
-{"piece_id": "playing_god", "event_idx": 17, "start": 6120.0, "dur": 240.0, "pitches": [48, 55, 59, 60], "pred_strings": [5, 4, 2, 3], "pred_frets": [3, 5, 0, 5], "pred_span": 2, "pred_anchor": 3.0, "pred_avgpos": 4.333333333333333}
-{"piece_id": "playing_god", "event_idx": 18, "start": 6360.0, "dur": 120.0, "pitches": [55, 59], "pred_strings": [4, 3], "pred_frets": [5, 4], "pred_span": 1, "pred_anchor": 4.0, "pred_avgpos": 4.5}
-{"piece_id": "playing_god", "event_idx": 19, "start": 6480.0, "dur": 120.0, "pitches": [48, 55, 59, 60], "pred_strings": [5, 4, 2, 3], "pred_frets": [3, 5, 0, 5], "pred_span": 2, "pred_anchor": 3.0, "pred_avgpos": 4.333333333333333}
-{"piece_id": "playing_god", "event_idx": 20, "start": 6600.0, "dur": 120.0, "pitches": [48, 60], "pred_strings": [5, 4], "pred_frets": [3, 10], "pred_span": 7, "pred_anchor": 3.0, "pred_avgpos": 6.5}
-{"piece_id": "playing_god", "event_idx": 21, "start": 6720.0, "dur": 240.0, "pitches": [48, 60, 71, 76], "pred_strings": [5, 4, 3, 2], "pred_frets": [3, 10, 16, 17], "pred_span": 14, "pred_anchor": 3.0, "pred_avgpos": 11.5}
+{"piece_id": "playing_god", "event_idx": 12, "start": 5160.0, "dur": 120.0, "pitches": [48, 60, 71], "pred_strings": [6, 4, 3], "pred_frets": [8, 10, 16], "pred_span": 8, "pred_anchor": 8.0, "pred_avgpos": 11.333333333333334}
+{"piece_id": "playing_god", "event_idx": 13, "start": 5280.0, "dur": 120.0, "pitches": [48, 60], "pred_strings": [6, 5], "pred_frets": [8, 15], "pred_span": 7, "pred_anchor": 8.0, "pred_avgpos": 11.5}
+{"piece_id": "playing_god", "event_idx": 14, "start": 5400.0, "dur": 240.0, "pitches": [48, 59, 60], "pred_strings": [6, 5, 4], "pred_frets": [8, 14, 10], "pred_span": 6, "pred_anchor": 8.0, "pred_avgpos": 10.666666666666666}
+{"piece_id": "playing_god", "event_idx": 15, "start": 5640.0, "dur": 240.0, "pitches": [59], "pred_strings": [4], "pred_frets": [9], "pred_span": 0, "pred_anchor": 9.0, "pred_avgpos": 9.0}
+{"piece_id": "playing_god", "event_idx": 16, "start": 5880.0, "dur": 240.0, "pitches": [48, 60], "pred_strings": [6, 4], "pred_frets": [8, 10], "pred_span": 2, "pred_anchor": 8.0, "pred_avgpos": 9.0}
+{"piece_id": "playing_god", "event_idx": 17, "start": 6120.0, "dur": 240.0, "pitches": [48, 55, 59, 60], "pred_strings": [6, 3, 5, 4], "pred_frets": [8, 0, 14, 10], "pred_span": 6, "pred_anchor": 8.0, "pred_avgpos": 10.666666666666666}
+{"piece_id": "playing_god", "event_idx": 18, "start": 6360.0, "dur": 120.0, "pitches": [55, 59], "pred_strings": [5, 4], "pred_frets": [10, 9], "pred_span": 1, "pred_anchor": 9.0, "pred_avgpos": 9.5}
+{"piece_id": "playing_god", "event_idx": 19, "start": 6480.0, "dur": 120.0, "pitches": [48, 55, 59, 60], "pred_strings": [6, 3, 5, 4], "pred_frets": [8, 0, 14, 10], "pred_span": 6, "pred_anchor": 8.0, "pred_avgpos": 10.666666666666666}
+{"piece_id": "playing_god", "event_idx": 20, "start": 6600.0, "dur": 120.0, "pitches": [48, 60], "pred_strings": [6, 5], "pred_frets": [8, 15], "pred_span": 7, "pred_anchor": 8.0, "pred_avgpos": 11.5}
+{"piece_id": "playing_god", "event_idx": 21, "start": 6720.0, "dur": 240.0, "pitches": [48, 60, 71, 76], "pred_strings": [6, 4, 3, 2], "pred_frets": [8, 10, 16, 17], "pred_span": 9, "pred_anchor": 8.0, "pred_avgpos": 12.75}
 {"piece_id": "playing_god", "event_idx": 22, "start": 6960.0, "dur": 240.0, "pitches": [71, 76], "pred_strings": [1, 2], "pred_frets": [7, 17], "pred_span": 10, "pred_anchor": 7.0, "pred_avgpos": 12.0}
 {"piece_id": "playing_god", "event_idx": 23, "start": 7200.0, "dur": 240.0, "pitches": [52, 64], "pred_strings": [4, 3], "pred_frets": [2, 9], "pred_span": 7, "pred_anchor": 2.0, "pred_avgpos": 5.5}
 {"piece_id": "playing_god", "event_idx": 24, "start": 7440.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
@@ -27,14 +27,14 @@
 {"piece_id": "playing_god", "event_idx": 26, "start": 8400.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 27, "start": 8640.0, "dur": 240.0, "pitches": [59], "pred_strings": [2], "pred_frets": [0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 28, "start": 8880.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 29, "start": 9120.0, "dur": 240.0, "pitches": [57, 69], "pred_strings": [3, 2], "pred_frets": [2, 10], "pred_span": 8, "pred_anchor": 2.0, "pred_avgpos": 6.0}
+{"piece_id": "playing_god", "event_idx": 29, "start": 9120.0, "dur": 240.0, "pitches": [57, 69], "pred_strings": [3, 1], "pred_frets": [2, 5], "pred_span": 3, "pred_anchor": 2.0, "pred_avgpos": 3.5}
 {"piece_id": "playing_god", "event_idx": 30, "start": 9360.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 31, "start": 9600.0, "dur": 240.0, "pitches": [69], "pred_strings": [1], "pred_frets": [5], "pred_span": 0, "pred_anchor": 5.0, "pred_avgpos": 5.0}
 {"piece_id": "playing_god", "event_idx": 32, "start": 9840.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 33, "start": 10080.0, "dur": 240.0, "pitches": [71], "pred_strings": [1], "pred_frets": [7], "pred_span": 0, "pred_anchor": 7.0, "pred_avgpos": 7.0}
 {"piece_id": "playing_god", "event_idx": 34, "start": 10320.0, "dur": 240.0, "pitches": [69], "pred_strings": [1], "pred_frets": [5], "pred_span": 0, "pred_anchor": 5.0, "pred_avgpos": 5.0}
 {"piece_id": "playing_god", "event_idx": 35, "start": 10560.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 36, "start": 10800.0, "dur": 240.0, "pitches": [62], "pred_strings": [3], "pred_frets": [7], "pred_span": 0, "pred_anchor": 7.0, "pred_avgpos": 7.0}
+{"piece_id": "playing_god", "event_idx": 36, "start": 10800.0, "dur": 240.0, "pitches": [62], "pred_strings": [2], "pred_frets": [3], "pred_span": 0, "pred_anchor": 3.0, "pred_avgpos": 3.0}
 {"piece_id": "playing_god", "event_idx": 37, "start": 11040.0, "dur": 240.0, "pitches": [78], "pred_strings": [1], "pred_frets": [14], "pred_span": 0, "pred_anchor": 14.0, "pred_avgpos": 14.0}
 {"piece_id": "playing_god", "event_idx": 38, "start": 11280.0, "dur": 240.0, "pitches": [83], "pred_strings": [1], "pred_frets": [19], "pred_span": 0, "pred_anchor": 19.0, "pred_avgpos": 19.0}
 {"piece_id": "playing_god", "event_idx": 39, "start": 11520.0, "dur": 240.0, "pitches": [59, 63], "pred_strings": [3, 2], "pred_frets": [4, 4], "pred_span": 0, "pred_anchor": 4.0, "pred_avgpos": 4.0}
@@ -51,10 +51,10 @@
 {"piece_id": "playing_god", "event_idx": 50, "start": 14160.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 51, "start": 14400.0, "dur": 240.0, "pitches": [67, 78], "pred_strings": [1, 2], "pred_frets": [3, 19], "pred_span": 16, "pred_anchor": 3.0, "pred_avgpos": 11.0}
 {"piece_id": "playing_god", "event_idx": 52, "start": 14640.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 53, "start": 14880.0, "dur": 240.0, "pitches": [71, 75, 76], "pred_strings": [1, 3, 2], "pred_frets": [7, 20, 17], "pred_span": 13, "pred_anchor": 7.0, "pred_avgpos": 14.666666666666666}
+{"piece_id": "playing_god", "event_idx": 53, "start": 14880.0, "dur": 240.0, "pitches": [71, 75, 76], "pred_strings": [3, 1, 2], "pred_frets": [16, 11, 17], "pred_span": 6, "pred_anchor": 11.0, "pred_avgpos": 14.666666666666666}
 {"piece_id": "playing_god", "event_idx": 54, "start": 15120.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 55, "start": 15360.0, "dur": 240.0, "pitches": [48, 60, 64, 76], "pred_strings": [5, 3, 4, 2], "pred_frets": [3, 5, 14, 17], "pred_span": 14, "pred_anchor": 3.0, "pred_avgpos": 9.75}
-{"piece_id": "playing_god", "event_idx": 56, "start": 15600.0, "dur": 240.0, "pitches": [60, 64, 76], "pred_strings": [2, 3, 1], "pred_frets": [1, 9, 12], "pred_span": 11, "pred_anchor": 1.0, "pred_avgpos": 7.333333333333333}
+{"piece_id": "playing_god", "event_idx": 55, "start": 15360.0, "dur": 240.0, "pitches": [48, 60, 64, 76], "pred_strings": [5, 3, 2, 1], "pred_frets": [3, 5, 5, 12], "pred_span": 9, "pred_anchor": 3.0, "pred_avgpos": 6.25}
+{"piece_id": "playing_god", "event_idx": 56, "start": 15600.0, "dur": 240.0, "pitches": [60, 64, 76], "pred_strings": [3, 2, 1], "pred_frets": [5, 5, 12], "pred_span": 7, "pred_anchor": 5.0, "pred_avgpos": 7.333333333333333}
 {"piece_id": "playing_god", "event_idx": 57, "start": 15840.0, "dur": 480.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 58, "start": 16320.0, "dur": 240.0, "pitches": [71], "pred_strings": [1], "pred_frets": [7], "pred_span": 0, "pred_anchor": 7.0, "pred_avgpos": 7.0}
 {"piece_id": "playing_god", "event_idx": 59, "start": 16560.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
@@ -65,7 +65,7 @@
 {"piece_id": "playing_god", "event_idx": 64, "start": 18240.0, "dur": 480.0, "pitches": [69], "pred_strings": [3], "pred_frets": [14], "pred_span": 0, "pred_anchor": 14.0, "pred_avgpos": 14.0}
 {"piece_id": "playing_god", "event_idx": 65, "start": 18720.0, "dur": 240.0, "pitches": [83], "pred_strings": [1], "pred_frets": [19], "pred_span": 0, "pred_anchor": 19.0, "pred_avgpos": 19.0}
 {"piece_id": "playing_god", "event_idx": 66, "start": 18960.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 67, "start": 19200.0, "dur": 480.0, "pitches": [54, 64, 72], "pred_strings": [4, 3, 2], "pred_frets": [4, 9, 13], "pred_span": 9, "pred_anchor": 4.0, "pred_avgpos": 8.666666666666666}
+{"piece_id": "playing_god", "event_idx": 67, "start": 19200.0, "dur": 480.0, "pitches": [54, 64, 72], "pred_strings": [4, 2, 1], "pred_frets": [4, 5, 8], "pred_span": 4, "pred_anchor": 4.0, "pred_avgpos": 5.666666666666667}
 {"piece_id": "playing_god", "event_idx": 68, "start": 19680.0, "dur": 480.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 69, "start": 20160.0, "dur": 480.0, "pitches": [55, 64, 71], "pred_strings": [3, 2, 1], "pred_frets": [0, 5, 7], "pred_span": 2, "pred_anchor": 5.0, "pred_avgpos": 6.0}
 {"piece_id": "playing_god", "event_idx": 70, "start": 20640.0, "dur": 480.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
@@ -77,7 +77,7 @@
 {"piece_id": "playing_god", "event_idx": 76, "start": 22320.0, "dur": 240.0, "pitches": [59], "pred_strings": [3], "pred_frets": [4], "pred_span": 0, "pred_anchor": 4.0, "pred_avgpos": 4.0}
 {"piece_id": "playing_god", "event_idx": 77, "start": 22560.0, "dur": 240.0, "pitches": [67], "pred_strings": [2], "pred_frets": [8], "pred_span": 0, "pred_anchor": 8.0, "pred_avgpos": 8.0}
 {"piece_id": "playing_god", "event_idx": 78, "start": 22800.0, "dur": 240.0, "pitches": [76], "pred_strings": [1], "pred_frets": [12], "pred_span": 0, "pred_anchor": 12.0, "pred_avgpos": 12.0}
-{"piece_id": "playing_god", "event_idx": 79, "start": 23040.0, "dur": 480.0, "pitches": [51, 57, 63], "pred_strings": [5, 4, 3], "pred_frets": [6, 7, 8], "pred_span": 2, "pred_anchor": 6.0, "pred_avgpos": 7.0}
+{"piece_id": "playing_god", "event_idx": 79, "start": 23040.0, "dur": 480.0, "pitches": [51, 57, 63], "pred_strings": [4, 3, 2], "pred_frets": [1, 2, 4], "pred_span": 3, "pred_anchor": 1.0, "pred_avgpos": 2.3333333333333335}
 {"piece_id": "playing_god", "event_idx": 80, "start": 23520.0, "dur": 480.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 81, "start": 24000.0, "dur": 480.0, "pitches": [59], "pred_strings": [2], "pred_frets": [0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 82, "start": 24480.0, "dur": 480.0, "pitches": [57], "pred_strings": [3], "pred_frets": [2], "pred_span": 0, "pred_anchor": 2.0, "pred_avgpos": 2.0}
@@ -97,7 +97,7 @@
 {"piece_id": "playing_god", "event_idx": 96, "start": 28560.0, "dur": 240.0, "pitches": [59], "pred_strings": [3], "pred_frets": [4], "pred_span": 0, "pred_anchor": 4.0, "pred_avgpos": 4.0}
 {"piece_id": "playing_god", "event_idx": 97, "start": 28800.0, "dur": 240.0, "pitches": [55, 67], "pred_strings": [3, 1], "pred_frets": [0, 3], "pred_span": 0, "pred_anchor": 3.0, "pred_avgpos": 3.0}
 {"piece_id": "playing_god", "event_idx": 98, "start": 29040.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 99, "start": 29280.0, "dur": 240.0, "pitches": [54, 66], "pred_strings": [4, 3], "pred_frets": [4, 11], "pred_span": 7, "pred_anchor": 4.0, "pred_avgpos": 7.5}
+{"piece_id": "playing_god", "event_idx": 99, "start": 29280.0, "dur": 240.0, "pitches": [54, 66], "pred_strings": [4, 1], "pred_frets": [4, 2], "pred_span": 2, "pred_anchor": 2.0, "pred_avgpos": 3.0}
 {"piece_id": "playing_god", "event_idx": 100, "start": 29520.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 101, "start": 29760.0, "dur": 240.0, "pitches": [51], "pred_strings": [4], "pred_frets": [1], "pred_span": 0, "pred_anchor": 1.0, "pred_avgpos": 1.0}
 {"piece_id": "playing_god", "event_idx": 102, "start": 30000.0, "dur": 240.0, "pitches": [57], "pred_strings": [4], "pred_frets": [7], "pred_span": 0, "pred_anchor": 7.0, "pred_avgpos": 7.0}
@@ -117,17 +117,17 @@
 {"piece_id": "playing_god", "event_idx": 116, "start": 35280.0, "dur": 240.0, "pitches": [69], "pred_strings": [2], "pred_frets": [10], "pred_span": 0, "pred_anchor": 10.0, "pred_avgpos": 10.0}
 {"piece_id": "playing_god", "event_idx": 117, "start": 35520.0, "dur": 240.0, "pitches": [71], "pred_strings": [1], "pred_frets": [7], "pred_span": 0, "pred_anchor": 7.0, "pred_avgpos": 7.0}
 {"piece_id": "playing_god", "event_idx": 118, "start": 35760.0, "dur": 120.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 119, "start": 35880.0, "dur": 240.0, "pitches": [48, 60], "pred_strings": [5, 4], "pred_frets": [3, 10], "pred_span": 7, "pred_anchor": 3.0, "pred_avgpos": 6.5}
+{"piece_id": "playing_god", "event_idx": 119, "start": 35880.0, "dur": 240.0, "pitches": [48, 60], "pred_strings": [5, 2], "pred_frets": [3, 1], "pred_span": 2, "pred_anchor": 1.0, "pred_avgpos": 2.0}
 {"piece_id": "playing_god", "event_idx": 120, "start": 36120.0, "dur": 240.0, "pitches": [59], "pred_strings": [2], "pred_frets": [0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 121, "start": 36360.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 122, "start": 36600.0, "dur": 240.0, "pitches": [48, 60], "pred_strings": [5, 4], "pred_frets": [3, 10], "pred_span": 7, "pred_anchor": 3.0, "pred_avgpos": 6.5}
+{"piece_id": "playing_god", "event_idx": 122, "start": 36600.0, "dur": 240.0, "pitches": [48, 60], "pred_strings": [5, 2], "pred_frets": [3, 1], "pred_span": 2, "pred_anchor": 1.0, "pred_avgpos": 2.0}
 {"piece_id": "playing_god", "event_idx": 123, "start": 36840.0, "dur": 240.0, "pitches": [55, 59], "pred_strings": [3, 2], "pred_frets": [0, 0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 124, "start": 37080.0, "dur": 120.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 125, "start": 37200.0, "dur": 240.0, "pitches": [48, 60], "pred_strings": [5, 4], "pred_frets": [3, 10], "pred_span": 7, "pred_anchor": 3.0, "pred_avgpos": 6.5}
+{"piece_id": "playing_god", "event_idx": 125, "start": 37200.0, "dur": 240.0, "pitches": [48, 60], "pred_strings": [5, 3], "pred_frets": [3, 5], "pred_span": 2, "pred_anchor": 3.0, "pred_avgpos": 4.0}
 {"piece_id": "playing_god", "event_idx": 126, "start": 37440.0, "dur": 120.0, "pitches": [67], "pred_strings": [2], "pred_frets": [8], "pred_span": 0, "pred_anchor": 8.0, "pred_avgpos": 8.0}
 {"piece_id": "playing_god", "event_idx": 127, "start": 37560.0, "dur": 120.0, "pitches": [67, 76], "pred_strings": [2, 1], "pred_frets": [8, 12], "pred_span": 4, "pred_anchor": 8.0, "pred_avgpos": 10.0}
 {"piece_id": "playing_god", "event_idx": 128, "start": 37680.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 129, "start": 37920.0, "dur": 240.0, "pitches": [52, 64], "pred_strings": [4, 3], "pred_frets": [2, 9], "pred_span": 7, "pred_anchor": 2.0, "pred_avgpos": 5.5}
+{"piece_id": "playing_god", "event_idx": 129, "start": 37920.0, "dur": 240.0, "pitches": [52, 64], "pred_strings": [4, 1], "pred_frets": [2, 0], "pred_span": 0, "pred_anchor": 2.0, "pred_avgpos": 2.0}
 {"piece_id": "playing_god", "event_idx": 130, "start": 38160.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 131, "start": 38400.0, "dur": 480.0, "pitches": [51, 57, 63], "pred_strings": [4, 3, 2], "pred_frets": [1, 2, 4], "pred_span": 3, "pred_anchor": 1.0, "pred_avgpos": 2.3333333333333335}
 {"piece_id": "playing_god", "event_idx": 132, "start": 38880.0, "dur": 480.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
@@ -140,18 +140,18 @@
 {"piece_id": "playing_god", "event_idx": 139, "start": 41040.0, "dur": 240.0, "pitches": [69], "pred_strings": [2], "pred_frets": [10], "pred_span": 0, "pred_anchor": 10.0, "pred_avgpos": 10.0}
 {"piece_id": "playing_god", "event_idx": 140, "start": 41280.0, "dur": 240.0, "pitches": [57], "pred_strings": [5], "pred_frets": [12], "pred_span": 0, "pred_anchor": 12.0, "pred_avgpos": 12.0}
 {"piece_id": "playing_god", "event_idx": 141, "start": 41520.0, "dur": 240.0, "pitches": [63], "pred_strings": [4], "pred_frets": [13], "pred_span": 0, "pred_anchor": 13.0, "pred_avgpos": 13.0}
-{"piece_id": "playing_god", "event_idx": 142, "start": 41760.0, "dur": 240.0, "pitches": [78], "pred_strings": [1], "pred_frets": [14], "pred_span": 0, "pred_anchor": 14.0, "pred_avgpos": 14.0}
+{"piece_id": "playing_god", "event_idx": 142, "start": 41760.0, "dur": 240.0, "pitches": [78], "pred_strings": [2], "pred_frets": [19], "pred_span": 0, "pred_anchor": 19.0, "pred_avgpos": 19.0}
 {"piece_id": "playing_god", "event_idx": 143, "start": 42000.0, "dur": 240.0, "pitches": [83], "pred_strings": [1], "pred_frets": [19], "pred_span": 0, "pred_anchor": 19.0, "pred_avgpos": 19.0}
 {"piece_id": "playing_god", "event_idx": 144, "start": 42240.0, "dur": 480.0, "pitches": [51, 63], "pred_strings": [6, 5], "pred_frets": [11, 18], "pred_span": 7, "pred_anchor": 11.0, "pred_avgpos": 14.5}
 {"piece_id": "playing_god", "event_idx": 145, "start": 42720.0, "dur": 240.0, "pitches": [69], "pred_strings": [3], "pred_frets": [14], "pred_span": 0, "pred_anchor": 14.0, "pred_avgpos": 14.0}
 {"piece_id": "playing_god", "event_idx": 146, "start": 42960.0, "dur": 240.0, "pitches": [63], "pred_strings": [4], "pred_frets": [13], "pred_span": 0, "pred_anchor": 13.0, "pred_avgpos": 13.0}
 {"piece_id": "playing_god", "event_idx": 147, "start": 43200.0, "dur": 240.0, "pitches": [57], "pred_strings": [6], "pred_frets": [17], "pred_span": 0, "pred_anchor": 17.0, "pred_avgpos": 17.0}
 {"piece_id": "playing_god", "event_idx": 148, "start": 43440.0, "dur": 240.0, "pitches": [83], "pred_strings": [1], "pred_frets": [19], "pred_span": 0, "pred_anchor": 19.0, "pred_avgpos": 19.0}
-{"piece_id": "playing_god", "event_idx": 149, "start": 43680.0, "dur": 240.0, "pitches": [51, 78], "pred_strings": [4, 2], "pred_frets": [1, 19], "pred_span": 18, "pred_anchor": 1.0, "pred_avgpos": 10.0}
+{"piece_id": "playing_god", "event_idx": 149, "start": 43680.0, "dur": 240.0, "pitches": [51, 78], "pred_strings": [4, 1], "pred_frets": [1, 14], "pred_span": 13, "pred_anchor": 1.0, "pred_avgpos": 7.5}
 {"piece_id": "playing_god", "event_idx": 150, "start": 43920.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 151, "start": 44160.0, "dur": 480.0, "pitches": [57, 63], "pred_strings": [3, 2], "pred_frets": [2, 4], "pred_span": 2, "pred_anchor": 2.0, "pred_avgpos": 3.0}
-{"piece_id": "playing_god", "event_idx": 152, "start": 44640.0, "dur": 480.0, "pitches": [59, 64], "pred_strings": [3, 2], "pred_frets": [4, 5], "pred_span": 1, "pred_anchor": 4.0, "pred_avgpos": 4.5}
-{"piece_id": "playing_god", "event_idx": 153, "start": 45120.0, "dur": 240.0, "pitches": [55], "pred_strings": [4], "pred_frets": [5], "pred_span": 0, "pred_anchor": 5.0, "pred_avgpos": 5.0}
+{"piece_id": "playing_god", "event_idx": 151, "start": 44160.0, "dur": 480.0, "pitches": [57, 63], "pred_strings": [4, 3], "pred_frets": [7, 8], "pred_span": 1, "pred_anchor": 7.0, "pred_avgpos": 7.5}
+{"piece_id": "playing_god", "event_idx": 152, "start": 44640.0, "dur": 480.0, "pitches": [59, 64], "pred_strings": [4, 3], "pred_frets": [9, 9], "pred_span": 0, "pred_anchor": 9.0, "pred_avgpos": 9.0}
+{"piece_id": "playing_god", "event_idx": 153, "start": 45120.0, "dur": 240.0, "pitches": [55], "pred_strings": [5], "pred_frets": [10], "pred_span": 0, "pred_anchor": 10.0, "pred_avgpos": 10.0}
 {"piece_id": "playing_god", "event_idx": 154, "start": 45360.0, "dur": 240.0, "pitches": [54], "pred_strings": [5], "pred_frets": [9], "pred_span": 0, "pred_anchor": 9.0, "pred_avgpos": 9.0}
 {"piece_id": "playing_god", "event_idx": 155, "start": 45600.0, "dur": 240.0, "pitches": [76], "pred_strings": [1], "pred_frets": [12], "pred_span": 0, "pred_anchor": 12.0, "pred_avgpos": 12.0}
 {"piece_id": "playing_god", "event_idx": 156, "start": 45840.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
@@ -161,7 +161,7 @@
 {"piece_id": "playing_god", "event_idx": 160, "start": 47520.0, "dur": 480.0, "pitches": [64], "pred_strings": [3], "pred_frets": [9], "pred_span": 0, "pred_anchor": 9.0, "pred_avgpos": 9.0}
 {"piece_id": "playing_god", "event_idx": 161, "start": 48000.0, "dur": 480.0, "pitches": [59, 78], "pred_strings": [2, 1], "pred_frets": [0, 14], "pred_span": 0, "pred_anchor": 14.0, "pred_avgpos": 14.0}
 {"piece_id": "playing_god", "event_idx": 162, "start": 48480.0, "dur": 480.0, "pitches": [79], "pred_strings": [1], "pred_frets": [15], "pred_span": 0, "pred_anchor": 15.0, "pred_avgpos": 15.0}
-{"piece_id": "playing_god", "event_idx": 163, "start": 48960.0, "dur": 240.0, "pitches": [52, 69], "pred_strings": [4, 3], "pred_frets": [2, 14], "pred_span": 12, "pred_anchor": 2.0, "pred_avgpos": 8.0}
+{"piece_id": "playing_god", "event_idx": 163, "start": 48960.0, "dur": 240.0, "pitches": [52, 69], "pred_strings": [4, 1], "pred_frets": [2, 5], "pred_span": 3, "pred_anchor": 2.0, "pred_avgpos": 3.5}
 {"piece_id": "playing_god", "event_idx": 164, "start": 49200.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 165, "start": 49440.0, "dur": 240.0, "pitches": [83], "pred_strings": [1], "pred_frets": [19], "pred_span": 0, "pred_anchor": 19.0, "pred_avgpos": 19.0}
 {"piece_id": "playing_god", "event_idx": 166, "start": 49680.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
@@ -182,9 +182,9 @@
 {"piece_id": "playing_god", "event_idx": 181, "start": 54720.0, "dur": 480.0, "pitches": [55, 59], "pred_strings": [3, 2], "pred_frets": [0, 0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 182, "start": 55200.0, "dur": 240.0, "pitches": [54, 57], "pred_strings": [4, 3], "pred_frets": [4, 2], "pred_span": 2, "pred_anchor": 2.0, "pred_avgpos": 3.0}
 {"piece_id": "playing_god", "event_idx": 183, "start": 55440.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 184, "start": 55680.0, "dur": 480.0, "pitches": [57, 69], "pred_strings": [3, 2], "pred_frets": [2, 10], "pred_span": 8, "pred_anchor": 2.0, "pred_avgpos": 6.0}
-{"piece_id": "playing_god", "event_idx": 185, "start": 56160.0, "dur": 240.0, "pitches": [59, 71], "pred_strings": [3, 2], "pred_frets": [4, 12], "pred_span": 8, "pred_anchor": 4.0, "pred_avgpos": 8.0}
-{"piece_id": "playing_god", "event_idx": 186, "start": 56400.0, "dur": 240.0, "pitches": [51, 69], "pred_strings": [4, 3], "pred_frets": [1, 14], "pred_span": 13, "pred_anchor": 1.0, "pred_avgpos": 7.5}
+{"piece_id": "playing_god", "event_idx": 184, "start": 55680.0, "dur": 480.0, "pitches": [57, 69], "pred_strings": [3, 1], "pred_frets": [2, 5], "pred_span": 3, "pred_anchor": 2.0, "pred_avgpos": 3.5}
+{"piece_id": "playing_god", "event_idx": 185, "start": 56160.0, "dur": 240.0, "pitches": [59, 71], "pred_strings": [3, 1], "pred_frets": [4, 7], "pred_span": 3, "pred_anchor": 4.0, "pred_avgpos": 5.5}
+{"piece_id": "playing_god", "event_idx": 186, "start": 56400.0, "dur": 240.0, "pitches": [51, 69], "pred_strings": [4, 1], "pred_frets": [1, 5], "pred_span": 4, "pred_anchor": 1.0, "pred_avgpos": 3.0}
 {"piece_id": "playing_god", "event_idx": 187, "start": 56640.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 188, "start": 56880.0, "dur": 240.0, "pitches": [54, 63], "pred_strings": [4, 3], "pred_frets": [4, 8], "pred_span": 4, "pred_anchor": 4.0, "pred_avgpos": 6.0}
 {"piece_id": "playing_god", "event_idx": 189, "start": 57120.0, "dur": 240.0, "pitches": [59, 78], "pred_strings": [2, 1], "pred_frets": [0, 14], "pred_span": 0, "pred_anchor": 14.0, "pred_avgpos": 14.0}
@@ -194,8 +194,8 @@
 {"piece_id": "playing_god", "event_idx": 193, "start": 58320.0, "dur": 240.0, "pitches": [63], "pred_strings": [2], "pred_frets": [4], "pred_span": 0, "pred_anchor": 4.0, "pred_avgpos": 4.0}
 {"piece_id": "playing_god", "event_idx": 194, "start": 58560.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 195, "start": 58800.0, "dur": 240.0, "pitches": [57], "pred_strings": [3], "pred_frets": [2], "pred_span": 0, "pred_anchor": 2.0, "pred_avgpos": 2.0}
-{"piece_id": "playing_god", "event_idx": 196, "start": 59040.0, "dur": 240.0, "pitches": [51], "pred_strings": [4], "pred_frets": [1], "pred_span": 0, "pred_anchor": 1.0, "pred_avgpos": 1.0}
-{"piece_id": "playing_god", "event_idx": 197, "start": 59280.0, "dur": 240.0, "pitches": [57], "pred_strings": [3], "pred_frets": [2], "pred_span": 0, "pred_anchor": 2.0, "pred_avgpos": 2.0}
+{"piece_id": "playing_god", "event_idx": 196, "start": 59040.0, "dur": 240.0, "pitches": [51], "pred_strings": [5], "pred_frets": [6], "pred_span": 0, "pred_anchor": 6.0, "pred_avgpos": 6.0}
+{"piece_id": "playing_god", "event_idx": 197, "start": 59280.0, "dur": 240.0, "pitches": [57], "pred_strings": [4], "pred_frets": [7], "pred_span": 0, "pred_anchor": 7.0, "pred_avgpos": 7.0}
 {"piece_id": "playing_god", "event_idx": 198, "start": 59520.0, "dur": 480.0, "pitches": [55, 67], "pred_strings": [4, 3], "pred_frets": [5, 12], "pred_span": 7, "pred_anchor": 5.0, "pred_avgpos": 8.5}
 {"piece_id": "playing_god", "event_idx": 199, "start": 60000.0, "dur": 480.0, "pitches": [54, 66], "pred_strings": [4, 3], "pred_frets": [4, 11], "pred_span": 7, "pred_anchor": 4.0, "pred_avgpos": 7.5}
 {"piece_id": "playing_god", "event_idx": 200, "start": 60480.0, "dur": 240.0, "pitches": [51], "pred_strings": [5], "pred_frets": [6], "pred_span": 0, "pred_anchor": 6.0, "pred_avgpos": 6.0}
@@ -212,25 +212,25 @@
 {"piece_id": "playing_god", "event_idx": 211, "start": 63840.0, "dur": 480.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 212, "start": 64320.0, "dur": 240.0, "pitches": [55, 67], "pred_strings": [3, 1], "pred_frets": [0, 3], "pred_span": 0, "pred_anchor": 3.0, "pred_avgpos": 3.0}
 {"piece_id": "playing_god", "event_idx": 213, "start": 64560.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 214, "start": 64800.0, "dur": 240.0, "pitches": [59, 71], "pred_strings": [2, 1], "pred_frets": [0, 7], "pred_span": 0, "pred_anchor": 7.0, "pred_avgpos": 7.0}
+{"piece_id": "playing_god", "event_idx": 214, "start": 64800.0, "dur": 240.0, "pitches": [59, 71], "pred_strings": [3, 1], "pred_frets": [4, 7], "pred_span": 3, "pred_anchor": 4.0, "pred_avgpos": 5.5}
 {"piece_id": "playing_god", "event_idx": 215, "start": 65040.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 216, "start": 65280.0, "dur": 240.0, "pitches": [59, 67, 72], "pred_strings": [3, 2, 1], "pred_frets": [4, 8, 8], "pred_span": 4, "pred_anchor": 4.0, "pred_avgpos": 6.666666666666667}
 {"piece_id": "playing_god", "event_idx": 217, "start": 65520.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 218, "start": 65760.0, "dur": 240.0, "pitches": [48, 60], "pred_strings": [5, 4], "pred_frets": [3, 10], "pred_span": 7, "pred_anchor": 3.0, "pred_avgpos": 6.5}
+{"piece_id": "playing_god", "event_idx": 218, "start": 65760.0, "dur": 240.0, "pitches": [48, 60], "pred_strings": [5, 3], "pred_frets": [3, 5], "pred_span": 2, "pred_anchor": 3.0, "pred_avgpos": 4.0}
 {"piece_id": "playing_god", "event_idx": 219, "start": 66000.0, "dur": 240.0, "pitches": [69], "pred_strings": [1], "pred_frets": [5], "pred_span": 0, "pred_anchor": 5.0, "pred_avgpos": 5.0}
 {"piece_id": "playing_god", "event_idx": 220, "start": 66240.0, "dur": 240.0, "pitches": [71], "pred_strings": [1], "pred_frets": [7], "pred_span": 0, "pred_anchor": 7.0, "pred_avgpos": 7.0}
 {"piece_id": "playing_god", "event_idx": 221, "start": 66480.0, "dur": 120.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 222, "start": 66600.0, "dur": 240.0, "pitches": [48, 60], "pred_strings": [5, 4], "pred_frets": [3, 10], "pred_span": 7, "pred_anchor": 3.0, "pred_avgpos": 6.5}
+{"piece_id": "playing_god", "event_idx": 222, "start": 66600.0, "dur": 240.0, "pitches": [48, 60], "pred_strings": [5, 2], "pred_frets": [3, 1], "pred_span": 2, "pred_anchor": 1.0, "pred_avgpos": 2.0}
 {"piece_id": "playing_god", "event_idx": 223, "start": 66840.0, "dur": 240.0, "pitches": [55, 59], "pred_strings": [3, 2], "pred_frets": [0, 0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 224, "start": 67080.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 225, "start": 67320.0, "dur": 240.0, "pitches": [48, 60], "pred_strings": [5, 4], "pred_frets": [3, 10], "pred_span": 7, "pred_anchor": 3.0, "pred_avgpos": 6.5}
+{"piece_id": "playing_god", "event_idx": 225, "start": 67320.0, "dur": 240.0, "pitches": [48, 60], "pred_strings": [5, 2], "pred_frets": [3, 1], "pred_span": 2, "pred_anchor": 1.0, "pred_avgpos": 2.0}
 {"piece_id": "playing_god", "event_idx": 226, "start": 67560.0, "dur": 240.0, "pitches": [55, 59], "pred_strings": [3, 2], "pred_frets": [0, 0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 227, "start": 67800.0, "dur": 120.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 228, "start": 67920.0, "dur": 240.0, "pitches": [48, 60], "pred_strings": [5, 4], "pred_frets": [3, 10], "pred_span": 7, "pred_anchor": 3.0, "pred_avgpos": 6.5}
+{"piece_id": "playing_god", "event_idx": 228, "start": 67920.0, "dur": 240.0, "pitches": [48, 60], "pred_strings": [5, 3], "pred_frets": [3, 5], "pred_span": 2, "pred_anchor": 3.0, "pred_avgpos": 4.0}
 {"piece_id": "playing_god", "event_idx": 229, "start": 68160.0, "dur": 120.0, "pitches": [67], "pred_strings": [2], "pred_frets": [8], "pred_span": 0, "pred_anchor": 8.0, "pred_avgpos": 8.0}
 {"piece_id": "playing_god", "event_idx": 230, "start": 68280.0, "dur": 120.0, "pitches": [67, 76], "pred_strings": [2, 1], "pred_frets": [8, 12], "pred_span": 4, "pred_anchor": 8.0, "pred_avgpos": 10.0}
 {"piece_id": "playing_god", "event_idx": 231, "start": 68400.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 232, "start": 68640.0, "dur": 240.0, "pitches": [52, 64], "pred_strings": [4, 3], "pred_frets": [2, 9], "pred_span": 7, "pred_anchor": 2.0, "pred_avgpos": 5.5}
+{"piece_id": "playing_god", "event_idx": 232, "start": 68640.0, "dur": 240.0, "pitches": [52, 64], "pred_strings": [4, 1], "pred_frets": [2, 0], "pred_span": 0, "pred_anchor": 2.0, "pred_avgpos": 2.0}
 {"piece_id": "playing_god", "event_idx": 233, "start": 68880.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 234, "start": 69120.0, "dur": 480.0, "pitches": [51, 57, 63], "pred_strings": [4, 3, 2], "pred_frets": [1, 2, 4], "pred_span": 3, "pred_anchor": 1.0, "pred_avgpos": 2.3333333333333335}
 {"piece_id": "playing_god", "event_idx": 235, "start": 69600.0, "dur": 480.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
@@ -243,14 +243,14 @@
 {"piece_id": "playing_god", "event_idx": 242, "start": 71760.0, "dur": 240.0, "pitches": [69], "pred_strings": [2], "pred_frets": [10], "pred_span": 0, "pred_anchor": 10.0, "pred_avgpos": 10.0}
 {"piece_id": "playing_god", "event_idx": 243, "start": 72000.0, "dur": 240.0, "pitches": [57], "pred_strings": [5], "pred_frets": [12], "pred_span": 0, "pred_anchor": 12.0, "pred_avgpos": 12.0}
 {"piece_id": "playing_god", "event_idx": 244, "start": 72240.0, "dur": 240.0, "pitches": [63], "pred_strings": [4], "pred_frets": [13], "pred_span": 0, "pred_anchor": 13.0, "pred_avgpos": 13.0}
-{"piece_id": "playing_god", "event_idx": 245, "start": 72480.0, "dur": 240.0, "pitches": [78], "pred_strings": [1], "pred_frets": [14], "pred_span": 0, "pred_anchor": 14.0, "pred_avgpos": 14.0}
+{"piece_id": "playing_god", "event_idx": 245, "start": 72480.0, "dur": 240.0, "pitches": [78], "pred_strings": [2], "pred_frets": [19], "pred_span": 0, "pred_anchor": 19.0, "pred_avgpos": 19.0}
 {"piece_id": "playing_god", "event_idx": 246, "start": 72720.0, "dur": 240.0, "pitches": [83], "pred_strings": [1], "pred_frets": [19], "pred_span": 0, "pred_anchor": 19.0, "pred_avgpos": 19.0}
 {"piece_id": "playing_god", "event_idx": 247, "start": 72960.0, "dur": 480.0, "pitches": [51, 63], "pred_strings": [6, 5], "pred_frets": [11, 18], "pred_span": 7, "pred_anchor": 11.0, "pred_avgpos": 14.5}
 {"piece_id": "playing_god", "event_idx": 248, "start": 73440.0, "dur": 240.0, "pitches": [69], "pred_strings": [3], "pred_frets": [14], "pred_span": 0, "pred_anchor": 14.0, "pred_avgpos": 14.0}
 {"piece_id": "playing_god", "event_idx": 249, "start": 73680.0, "dur": 240.0, "pitches": [63], "pred_strings": [4], "pred_frets": [13], "pred_span": 0, "pred_anchor": 13.0, "pred_avgpos": 13.0}
 {"piece_id": "playing_god", "event_idx": 250, "start": 73920.0, "dur": 240.0, "pitches": [57], "pred_strings": [6], "pred_frets": [17], "pred_span": 0, "pred_anchor": 17.0, "pred_avgpos": 17.0}
 {"piece_id": "playing_god", "event_idx": 251, "start": 74160.0, "dur": 240.0, "pitches": [83], "pred_strings": [1], "pred_frets": [19], "pred_span": 0, "pred_anchor": 19.0, "pred_avgpos": 19.0}
-{"piece_id": "playing_god", "event_idx": 252, "start": 74400.0, "dur": 240.0, "pitches": [51, 78], "pred_strings": [4, 2], "pred_frets": [1, 19], "pred_span": 18, "pred_anchor": 1.0, "pred_avgpos": 10.0}
+{"piece_id": "playing_god", "event_idx": 252, "start": 74400.0, "dur": 240.0, "pitches": [51, 78], "pred_strings": [4, 1], "pred_frets": [1, 14], "pred_span": 13, "pred_anchor": 1.0, "pred_avgpos": 7.5}
 {"piece_id": "playing_god", "event_idx": 253, "start": 74640.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 254, "start": 74880.0, "dur": 240.0, "pitches": [57, 63], "pred_strings": [3, 2], "pred_frets": [2, 4], "pred_span": 2, "pred_anchor": 2.0, "pred_avgpos": 3.0}
 {"piece_id": "playing_god", "event_idx": 255, "start": 75120.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
@@ -266,7 +266,7 @@
 {"piece_id": "playing_god", "event_idx": 265, "start": 78240.0, "dur": 480.0, "pitches": [64], "pred_strings": [3], "pred_frets": [9], "pred_span": 0, "pred_anchor": 9.0, "pred_avgpos": 9.0}
 {"piece_id": "playing_god", "event_idx": 266, "start": 78720.0, "dur": 480.0, "pitches": [59, 78], "pred_strings": [2, 1], "pred_frets": [0, 14], "pred_span": 0, "pred_anchor": 14.0, "pred_avgpos": 14.0}
 {"piece_id": "playing_god", "event_idx": 267, "start": 79200.0, "dur": 480.0, "pitches": [79], "pred_strings": [1], "pred_frets": [15], "pred_span": 0, "pred_anchor": 15.0, "pred_avgpos": 15.0}
-{"piece_id": "playing_god", "event_idx": 268, "start": 79680.0, "dur": 240.0, "pitches": [52, 69], "pred_strings": [4, 3], "pred_frets": [2, 14], "pred_span": 12, "pred_anchor": 2.0, "pred_avgpos": 8.0}
+{"piece_id": "playing_god", "event_idx": 268, "start": 79680.0, "dur": 240.0, "pitches": [52, 69], "pred_strings": [4, 1], "pred_frets": [2, 5], "pred_span": 3, "pred_anchor": 2.0, "pred_avgpos": 3.5}
 {"piece_id": "playing_god", "event_idx": 269, "start": 79920.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 270, "start": 80160.0, "dur": 240.0, "pitches": [83], "pred_strings": [1], "pred_frets": [19], "pred_span": 0, "pred_anchor": 19.0, "pred_avgpos": 19.0}
 {"piece_id": "playing_god", "event_idx": 271, "start": 80400.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
@@ -287,9 +287,9 @@
 {"piece_id": "playing_god", "event_idx": 286, "start": 85440.0, "dur": 480.0, "pitches": [55, 59], "pred_strings": [3, 2], "pred_frets": [0, 0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 287, "start": 85920.0, "dur": 240.0, "pitches": [54, 57], "pred_strings": [4, 3], "pred_frets": [4, 2], "pred_span": 2, "pred_anchor": 2.0, "pred_avgpos": 3.0}
 {"piece_id": "playing_god", "event_idx": 288, "start": 86160.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 289, "start": 86400.0, "dur": 480.0, "pitches": [57, 69], "pred_strings": [3, 2], "pred_frets": [2, 10], "pred_span": 8, "pred_anchor": 2.0, "pred_avgpos": 6.0}
-{"piece_id": "playing_god", "event_idx": 290, "start": 86880.0, "dur": 240.0, "pitches": [59, 71], "pred_strings": [3, 2], "pred_frets": [4, 12], "pred_span": 8, "pred_anchor": 4.0, "pred_avgpos": 8.0}
-{"piece_id": "playing_god", "event_idx": 291, "start": 87120.0, "dur": 240.0, "pitches": [51, 69], "pred_strings": [4, 3], "pred_frets": [1, 14], "pred_span": 13, "pred_anchor": 1.0, "pred_avgpos": 7.5}
+{"piece_id": "playing_god", "event_idx": 289, "start": 86400.0, "dur": 480.0, "pitches": [57, 69], "pred_strings": [3, 1], "pred_frets": [2, 5], "pred_span": 3, "pred_anchor": 2.0, "pred_avgpos": 3.5}
+{"piece_id": "playing_god", "event_idx": 290, "start": 86880.0, "dur": 240.0, "pitches": [59, 71], "pred_strings": [3, 1], "pred_frets": [4, 7], "pred_span": 3, "pred_anchor": 4.0, "pred_avgpos": 5.5}
+{"piece_id": "playing_god", "event_idx": 291, "start": 87120.0, "dur": 240.0, "pitches": [51, 69], "pred_strings": [4, 1], "pred_frets": [1, 5], "pred_span": 4, "pred_anchor": 1.0, "pred_avgpos": 3.0}
 {"piece_id": "playing_god", "event_idx": 292, "start": 87360.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 293, "start": 87600.0, "dur": 240.0, "pitches": [54, 63], "pred_strings": [4, 3], "pred_frets": [4, 8], "pred_span": 4, "pred_anchor": 4.0, "pred_avgpos": 6.0}
 {"piece_id": "playing_god", "event_idx": 294, "start": 87840.0, "dur": 240.0, "pitches": [59, 78], "pred_strings": [2, 1], "pred_frets": [0, 14], "pred_span": 0, "pred_anchor": 14.0, "pred_avgpos": 14.0}
@@ -299,8 +299,8 @@
 {"piece_id": "playing_god", "event_idx": 298, "start": 89040.0, "dur": 240.0, "pitches": [63], "pred_strings": [2], "pred_frets": [4], "pred_span": 0, "pred_anchor": 4.0, "pred_avgpos": 4.0}
 {"piece_id": "playing_god", "event_idx": 299, "start": 89280.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 300, "start": 89520.0, "dur": 240.0, "pitches": [57], "pred_strings": [3], "pred_frets": [2], "pred_span": 0, "pred_anchor": 2.0, "pred_avgpos": 2.0}
-{"piece_id": "playing_god", "event_idx": 301, "start": 89760.0, "dur": 240.0, "pitches": [51], "pred_strings": [4], "pred_frets": [1], "pred_span": 0, "pred_anchor": 1.0, "pred_avgpos": 1.0}
-{"piece_id": "playing_god", "event_idx": 302, "start": 90000.0, "dur": 240.0, "pitches": [57], "pred_strings": [3], "pred_frets": [2], "pred_span": 0, "pred_anchor": 2.0, "pred_avgpos": 2.0}
+{"piece_id": "playing_god", "event_idx": 301, "start": 89760.0, "dur": 240.0, "pitches": [51], "pred_strings": [5], "pred_frets": [6], "pred_span": 0, "pred_anchor": 6.0, "pred_avgpos": 6.0}
+{"piece_id": "playing_god", "event_idx": 302, "start": 90000.0, "dur": 240.0, "pitches": [57], "pred_strings": [4], "pred_frets": [7], "pred_span": 0, "pred_anchor": 7.0, "pred_avgpos": 7.0}
 {"piece_id": "playing_god", "event_idx": 303, "start": 90240.0, "dur": 480.0, "pitches": [55, 67], "pred_strings": [4, 3], "pred_frets": [5, 12], "pred_span": 7, "pred_anchor": 5.0, "pred_avgpos": 8.5}
 {"piece_id": "playing_god", "event_idx": 304, "start": 90720.0, "dur": 480.0, "pitches": [54, 66], "pred_strings": [4, 3], "pred_frets": [4, 11], "pred_span": 7, "pred_anchor": 4.0, "pred_avgpos": 7.5}
 {"piece_id": "playing_god", "event_idx": 305, "start": 91200.0, "dur": 240.0, "pitches": [51], "pred_strings": [4], "pred_frets": [1], "pred_span": 0, "pred_anchor": 1.0, "pred_avgpos": 1.0}
@@ -315,7 +315,7 @@
 {"piece_id": "playing_god", "event_idx": 314, "start": 94080.0, "dur": 480.0, "pitches": [64], "pred_strings": [2], "pred_frets": [5], "pred_span": 0, "pred_anchor": 5.0, "pred_avgpos": 5.0}
 {"piece_id": "playing_god", "event_idx": 315, "start": 94560.0, "dur": 240.0, "pitches": [57], "pred_strings": [3], "pred_frets": [2], "pred_span": 0, "pred_anchor": 2.0, "pred_avgpos": 2.0}
 {"piece_id": "playing_god", "event_idx": 316, "start": 94800.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 317, "start": 95040.0, "dur": 480.0, "pitches": [59], "pred_strings": [2], "pred_frets": [0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
+{"piece_id": "playing_god", "event_idx": 317, "start": 95040.0, "dur": 480.0, "pitches": [59], "pred_strings": [3], "pred_frets": [4], "pred_span": 0, "pred_anchor": 4.0, "pred_avgpos": 4.0}
 {"piece_id": "playing_god", "event_idx": 318, "start": 95520.0, "dur": 240.0, "pitches": [71], "pred_strings": [1], "pred_frets": [7], "pred_span": 0, "pred_anchor": 7.0, "pred_avgpos": 7.0}
 {"piece_id": "playing_god", "event_idx": 319, "start": 95760.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 320, "start": 96000.0, "dur": 240.0, "pitches": [55], "pred_strings": [3], "pred_frets": [0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
@@ -330,7 +330,7 @@
 {"piece_id": "playing_god", "event_idx": 329, "start": 98640.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 330, "start": 98880.0, "dur": 240.0, "pitches": [59], "pred_strings": [2], "pred_frets": [0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 331, "start": 99120.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 332, "start": 99360.0, "dur": 240.0, "pitches": [59, 71], "pred_strings": [2, 1], "pred_frets": [0, 7], "pred_span": 0, "pred_anchor": 7.0, "pred_avgpos": 7.0}
+{"piece_id": "playing_god", "event_idx": 332, "start": 99360.0, "dur": 240.0, "pitches": [59, 71], "pred_strings": [3, 1], "pred_frets": [4, 7], "pred_span": 3, "pred_anchor": 4.0, "pred_avgpos": 5.5}
 {"piece_id": "playing_god", "event_idx": 333, "start": 99600.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 334, "start": 99840.0, "dur": 480.0, "pitches": [48, 52, 55], "pred_strings": [5, 4, 3], "pred_frets": [3, 2, 0], "pred_span": 1, "pred_anchor": 2.0, "pred_avgpos": 2.5}
 {"piece_id": "playing_god", "event_idx": 335, "start": 100320.0, "dur": 480.0, "pitches": [67], "pred_strings": [1], "pred_frets": [3], "pred_span": 0, "pred_anchor": 3.0, "pred_avgpos": 3.0}
@@ -340,7 +340,7 @@
 {"piece_id": "playing_god", "event_idx": 339, "start": 101760.0, "dur": 480.0, "pitches": [64], "pred_strings": [2], "pred_frets": [5], "pred_span": 0, "pred_anchor": 5.0, "pred_avgpos": 5.0}
 {"piece_id": "playing_god", "event_idx": 340, "start": 102240.0, "dur": 240.0, "pitches": [57], "pred_strings": [3], "pred_frets": [2], "pred_span": 0, "pred_anchor": 2.0, "pred_avgpos": 2.0}
 {"piece_id": "playing_god", "event_idx": 341, "start": 102480.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 342, "start": 102720.0, "dur": 480.0, "pitches": [59], "pred_strings": [2], "pred_frets": [0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
+{"piece_id": "playing_god", "event_idx": 342, "start": 102720.0, "dur": 480.0, "pitches": [59], "pred_strings": [3], "pred_frets": [4], "pred_span": 0, "pred_anchor": 4.0, "pred_avgpos": 4.0}
 {"piece_id": "playing_god", "event_idx": 343, "start": 103200.0, "dur": 480.0, "pitches": [71], "pred_strings": [1], "pred_frets": [7], "pred_span": 0, "pred_anchor": 7.0, "pred_avgpos": 7.0}
 {"piece_id": "playing_god", "event_idx": 344, "start": 103680.0, "dur": 480.0, "pitches": [51, 55, 59], "pred_strings": [5, 4, 3], "pred_frets": [6, 5, 4], "pred_span": 2, "pred_anchor": 4.0, "pred_avgpos": 5.0}
 {"piece_id": "playing_god", "event_idx": 345, "start": 104160.0, "dur": 240.0, "pitches": [67], "pred_strings": [1], "pred_frets": [3], "pred_span": 0, "pred_anchor": 3.0, "pred_avgpos": 3.0}
@@ -352,7 +352,7 @@
 {"piece_id": "playing_god", "event_idx": 351, "start": 106080.0, "dur": 480.0, "pitches": [57], "pred_strings": [3], "pred_frets": [2], "pred_span": 0, "pred_anchor": 2.0, "pred_avgpos": 2.0}
 {"piece_id": "playing_god", "event_idx": 352, "start": 106560.0, "dur": 240.0, "pitches": [59], "pred_strings": [2], "pred_frets": [0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 353, "start": 106800.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 354, "start": 107040.0, "dur": 240.0, "pitches": [59, 71], "pred_strings": [2, 1], "pred_frets": [0, 7], "pred_span": 0, "pred_anchor": 7.0, "pred_avgpos": 7.0}
+{"piece_id": "playing_god", "event_idx": 354, "start": 107040.0, "dur": 240.0, "pitches": [59, 71], "pred_strings": [3, 1], "pred_frets": [4, 7], "pred_span": 3, "pred_anchor": 4.0, "pred_avgpos": 5.5}
 {"piece_id": "playing_god", "event_idx": 355, "start": 107280.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 356, "start": 107520.0, "dur": 480.0, "pitches": [50, 55, 59], "pred_strings": [4, 3, 2], "pred_frets": [0, 0, 0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 357, "start": 108000.0, "dur": 240.0, "pitches": [67], "pred_strings": [1], "pred_frets": [3], "pred_span": 0, "pred_anchor": 3.0, "pred_avgpos": 3.0}
@@ -381,7 +381,7 @@
 {"piece_id": "playing_god", "event_idx": 380, "start": 114000.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 381, "start": 114240.0, "dur": 240.0, "pitches": [59], "pred_strings": [2], "pred_frets": [0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 382, "start": 114480.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 383, "start": 114720.0, "dur": 240.0, "pitches": [59, 71], "pred_strings": [2, 1], "pred_frets": [0, 7], "pred_span": 0, "pred_anchor": 7.0, "pred_avgpos": 7.0}
+{"piece_id": "playing_god", "event_idx": 383, "start": 114720.0, "dur": 240.0, "pitches": [59, 71], "pred_strings": [3, 1], "pred_frets": [4, 7], "pred_span": 3, "pred_anchor": 4.0, "pred_avgpos": 5.5}
 {"piece_id": "playing_god", "event_idx": 384, "start": 114960.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 385, "start": 115200.0, "dur": 480.0, "pitches": [52, 55, 59], "pred_strings": [4, 3, 2], "pred_frets": [2, 0, 0], "pred_span": 0, "pred_anchor": 2.0, "pred_avgpos": 2.0}
 {"piece_id": "playing_god", "event_idx": 386, "start": 115680.0, "dur": 240.0, "pitches": [67], "pred_strings": [1], "pred_frets": [3], "pred_span": 0, "pred_anchor": 3.0, "pred_avgpos": 3.0}
@@ -400,7 +400,7 @@
 {"piece_id": "playing_god", "event_idx": 399, "start": 118800.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 400, "start": 119040.0, "dur": 240.0, "pitches": [51, 55, 59], "pred_strings": [4, 3, 2], "pred_frets": [1, 0, 0], "pred_span": 0, "pred_anchor": 1.0, "pred_avgpos": 1.0}
 {"piece_id": "playing_god", "event_idx": 401, "start": 119280.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "playing_god", "event_idx": 402, "start": 119520.0, "dur": 240.0, "pitches": [54, 67], "pred_strings": [4, 3], "pred_frets": [4, 12], "pred_span": 8, "pred_anchor": 4.0, "pred_avgpos": 8.0}
+{"piece_id": "playing_god", "event_idx": 402, "start": 119520.0, "dur": 240.0, "pitches": [54, 67], "pred_strings": [4, 1], "pred_frets": [4, 3], "pred_span": 1, "pred_anchor": 3.0, "pred_avgpos": 3.5}
 {"piece_id": "playing_god", "event_idx": 403, "start": 119760.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 404, "start": 120000.0, "dur": 240.0, "pitches": [55, 59], "pred_strings": [3, 2], "pred_frets": [0, 0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "playing_god", "event_idx": 405, "start": 120240.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}

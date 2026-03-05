@@ -14,21 +14,21 @@
 {"piece_id": "test", "event_idx": 13, "start": 6240.0, "dur": 480.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "test", "event_idx": 14, "start": 6720.0, "dur": 720.0, "pitches": [59], "pred_strings": [2], "pred_frets": [0], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "test", "event_idx": 15, "start": 7440.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "test", "event_idx": 16, "start": 7680.0, "dur": 480.0, "pitches": [42, 47, 56, 59], "pred_strings": [6, 5, 4, 3], "pred_frets": [2, 2, 6, 4], "pred_span": 4, "pred_anchor": 2.0, "pred_avgpos": 3.5}
+{"piece_id": "test", "event_idx": 16, "start": 7680.0, "dur": 480.0, "pitches": [42, 47, 56, 59], "pred_strings": [6, 5, 3, 2], "pred_frets": [2, 2, 1, 0], "pred_span": 1, "pred_anchor": 1.0, "pred_avgpos": 1.6666666666666667}
 {"piece_id": "test", "event_idx": 17, "start": 8160.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "test", "event_idx": 18, "start": 8400.0, "dur": 960.0, "pitches": [42, 47, 56, 59], "pred_strings": [6, 5, 4, 3], "pred_frets": [2, 2, 6, 4], "pred_span": 4, "pred_anchor": 2.0, "pred_avgpos": 3.5}
+{"piece_id": "test", "event_idx": 18, "start": 8400.0, "dur": 960.0, "pitches": [42, 47, 56, 59], "pred_strings": [6, 5, 3, 2], "pred_frets": [2, 2, 1, 0], "pred_span": 1, "pred_anchor": 1.0, "pred_avgpos": 1.6666666666666667}
 {"piece_id": "test", "event_idx": 19, "start": 9360.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "test", "event_idx": 20, "start": 9600.0, "dur": 480.0, "pitches": [42, 47, 56, 59], "pred_strings": [6, 5, 4, 3], "pred_frets": [2, 2, 6, 4], "pred_span": 4, "pred_anchor": 2.0, "pred_avgpos": 3.5}
+{"piece_id": "test", "event_idx": 20, "start": 9600.0, "dur": 480.0, "pitches": [42, 47, 56, 59], "pred_strings": [6, 5, 3, 2], "pred_frets": [2, 2, 1, 0], "pred_span": 1, "pred_anchor": 1.0, "pred_avgpos": 1.6666666666666667}
 {"piece_id": "test", "event_idx": 21, "start": 10080.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "test", "event_idx": 22, "start": 10320.0, "dur": 960.0, "pitches": [42, 47, 56, 59], "pred_strings": [6, 5, 4, 3], "pred_frets": [2, 2, 6, 4], "pred_span": 4, "pred_anchor": 2.0, "pred_avgpos": 3.5}
+{"piece_id": "test", "event_idx": 22, "start": 10320.0, "dur": 960.0, "pitches": [42, 47, 56, 59], "pred_strings": [6, 5, 3, 2], "pred_frets": [2, 2, 1, 0], "pred_span": 1, "pred_anchor": 1.0, "pred_avgpos": 1.6666666666666667}
 {"piece_id": "test", "event_idx": 23, "start": 11280.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "test", "event_idx": 24, "start": 11520.0, "dur": 480.0, "pitches": [42, 47, 56, 59], "pred_strings": [6, 5, 4, 3], "pred_frets": [2, 2, 6, 4], "pred_span": 4, "pred_anchor": 2.0, "pred_avgpos": 3.5}
+{"piece_id": "test", "event_idx": 24, "start": 11520.0, "dur": 480.0, "pitches": [42, 47, 56, 59], "pred_strings": [6, 5, 3, 2], "pred_frets": [2, 2, 1, 0], "pred_span": 1, "pred_anchor": 1.0, "pred_avgpos": 1.6666666666666667}
 {"piece_id": "test", "event_idx": 25, "start": 12000.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "test", "event_idx": 26, "start": 12240.0, "dur": 960.0, "pitches": [42, 47, 56, 59], "pred_strings": [6, 5, 4, 3], "pred_frets": [2, 2, 6, 4], "pred_span": 4, "pred_anchor": 2.0, "pred_avgpos": 3.5}
+{"piece_id": "test", "event_idx": 26, "start": 12240.0, "dur": 960.0, "pitches": [42, 47, 56, 59], "pred_strings": [6, 5, 3, 2], "pred_frets": [2, 2, 1, 0], "pred_span": 1, "pred_anchor": 1.0, "pred_avgpos": 1.6666666666666667}
 {"piece_id": "test", "event_idx": 27, "start": 13200.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "test", "event_idx": 28, "start": 13440.0, "dur": 480.0, "pitches": [42, 47, 56, 59], "pred_strings": [6, 5, 4, 3], "pred_frets": [2, 2, 6, 4], "pred_span": 4, "pred_anchor": 2.0, "pred_avgpos": 3.5}
+{"piece_id": "test", "event_idx": 28, "start": 13440.0, "dur": 480.0, "pitches": [42, 47, 56, 59], "pred_strings": [6, 5, 3, 2], "pred_frets": [2, 2, 1, 0], "pred_span": 1, "pred_anchor": 1.0, "pred_avgpos": 1.6666666666666667}
 {"piece_id": "test", "event_idx": 29, "start": 13920.0, "dur": 480.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
-{"piece_id": "test", "event_idx": 30, "start": 14400.0, "dur": 480.0, "pitches": [42, 47, 56, 59], "pred_strings": [6, 5, 4, 3], "pred_frets": [2, 2, 6, 4], "pred_span": 4, "pred_anchor": 2.0, "pred_avgpos": 3.5}
+{"piece_id": "test", "event_idx": 30, "start": 14400.0, "dur": 480.0, "pitches": [42, 47, 56, 59], "pred_strings": [6, 5, 3, 2], "pred_frets": [2, 2, 1, 0], "pred_span": 1, "pred_anchor": 1.0, "pred_avgpos": 1.6666666666666667}
 {"piece_id": "test", "event_idx": 31, "start": 14880.0, "dur": 480.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}
 {"piece_id": "test", "event_idx": 32, "start": 15360.0, "dur": 480.0, "pitches": [45, 50, 57, 61], "pred_strings": [5, 4, 3, 2], "pred_frets": [0, 0, 2, 2], "pred_span": 0, "pred_anchor": 2.0, "pred_avgpos": 2.0}
 {"piece_id": "test", "event_idx": 33, "start": 15840.0, "dur": 240.0, "pitches": [], "pred_strings": [], "pred_frets": [], "pred_span": 0, "pred_anchor": 0.0, "pred_avgpos": 0.0}

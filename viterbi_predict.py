@@ -25,6 +25,11 @@ def load_config(path: str) -> Dict[str, Any]:
     cfg["local_cost"].setdefault("high_fret_threshold", 12)
     cfg["local_cost"].setdefault("w_open_bonus", -0.05)
     cfg["local_cost"].setdefault("w_string_range", 0.10)
+    cfg["local_cost"].setdefault("preferred_min_fret", 0)
+    cfg["local_cost"].setdefault("preferred_max_fret", 24)
+    cfg["local_cost"].setdefault("w_preferred_zone", 0.0)  # negative = reward
+    cfg["local_cost"].setdefault("high_string_threshold", 1)  # strings <= threshold are "high"
+    cfg["local_cost"].setdefault("w_high_string", 0.0)  # penalty per note on a high string
 
     cfg.setdefault("string_discontinuity", {})
     cfg["string_discontinuity"].setdefault("w_holes", 1.8)
@@ -46,6 +51,14 @@ def load_config(path: str) -> Dict[str, Any]:
     # optional rest handling
     tc.setdefault("rest_enter_penalty", 0.0)
     tc.setdefault("rest_exit_penalty", 0.0)
+    # directional streak penalty (4-finger limit)
+    tc.setdefault("w_streak", 2.0)
+    tc.setdefault("streak_min_len", 4)
+    tc.setdefault("streak_speed_threshold", 480)  # ticks; 480 = 8th note at 960tpq
+
+    cfg.setdefault("guitar", {})
+    # E standard 6-string: string 1 (high E) to string 6 (low E)
+    cfg["guitar"].setdefault("tuning", [64, 59, 55, 50, 45, 40])
 
     cfg.setdefault("io", {})
     cfg["io"].setdefault("jsonl_dir", "./test_input_folder")
@@ -56,13 +69,15 @@ def load_config(path: str) -> Dict[str, Any]:
 
 
 # ----------------------------
-# Instrument model (E standard)
+# Instrument model
 # ----------------------------
-E_STD_OPEN_MIDI = {1: 64, 2: 59, 3: 55, 4: 50, 5: 45, 6: 40}
+def tuning_dict(cfg: Dict[str, Any]) -> Dict[int, int]:
+    """Returns {string_number: open_midi_pitch} from config tuning list."""
+    return {i + 1: int(p) for i, p in enumerate(cfg["guitar"]["tuning"])}
 
-def pitch_to_positions(pitch: int, max_fret: int = 20) -> List[Tuple[int, int]]:
+def pitch_to_positions(pitch: int, tuning: Dict[int, int], max_fret: int = 20) -> List[Tuple[int, int]]:
     out = []
-    for s, open_pitch in E_STD_OPEN_MIDI.items():
+    for s, open_pitch in tuning.items():
         fret = pitch - open_pitch
         if 0 <= fret <= max_fret:
             out.append((s, fret))
@@ -100,10 +115,10 @@ class Voicing:
 # ----------------------------
 # Candidate generation
 # ----------------------------
-def per_pitch_candidates(pitches: List[int], max_fret: int, per_pitch_k: int) -> List[List[Tuple[int,int]]]:
+def per_pitch_candidates(pitches: List[int], tuning: Dict[int, int], max_fret: int, per_pitch_k: int) -> List[List[Tuple[int,int]]]:
     per = []
     for p in pitches:
-        poss = pitch_to_positions(p, max_fret=max_fret)
+        poss = pitch_to_positions(p, tuning, max_fret=max_fret)
         if not poss:
             per.append([])
             continue
@@ -133,6 +148,7 @@ def generate_voicings_for_event(
     max_fret = int(search["max_fret"])
     per_pitch_k = int(search["per_pitch_k"])
     chord_k = int(search["chord_k"])
+    tuning = tuning_dict(cfg)
 
     # REST event
     if not pitches:
@@ -147,7 +163,7 @@ def generate_voicings_for_event(
         )]
 
     pitches_sorted = sorted([int(p) for p in pitches])
-    per = per_pitch_candidates(pitches_sorted, max_fret=max_fret, per_pitch_k=per_pitch_k)
+    per = per_pitch_candidates(pitches_sorted, tuning, max_fret=max_fret, per_pitch_k=per_pitch_k)
     if any(len(cands) == 0 for cands in per):
         return []
 
@@ -187,11 +203,18 @@ def generate_voicings_for_event(
         high_thr = int(lc_cfg["high_fret_threshold"])
         w_open_bonus = float(lc_cfg["w_open_bonus"])
         w_string_range = float(lc_cfg["w_string_range"])
+        pref_min = int(lc_cfg["preferred_min_fret"])
+        pref_max = int(lc_cfg["preferred_max_fret"])
+        w_pref = float(lc_cfg["w_preferred_zone"])
+        high_str_thr = int(lc_cfg["high_string_threshold"])
+        w_high_str = float(lc_cfg["w_high_string"])
 
         high_pen = sum(max(0, f - high_thr) for f in frets)
         open_bonus = sum(1 for f in frets if f == 0)
+        in_zone = sum(1 for f in frets if f > 0 and pref_min <= f <= pref_max)
+        high_str_pen = sum(1 for s in strings if s <= high_str_thr)
 
-        cost = (w_span * span) + (w_high * high_pen) + (w_open_bonus * open_bonus)
+        cost = (w_span * span) + (w_high * high_pen) + (w_open_bonus * open_bonus) + (w_pref * in_zone) + (w_high_str * high_str_pen)
 
         if strings:
             cost += w_string_range * (max(strings) - min(strings))
@@ -252,6 +275,8 @@ class BeamNode:
     score: float
     voicing: Voicing
     prev_index: Optional[int]
+    streak_dir: int = 0   # -1 = going down, 0 = no streak, +1 = going up
+    streak_len: int = 0   # number of consecutive fast single-note steps in streak_dir
 
 def transition_cost(prev: Voicing, cur: Voicing, cfg: Dict[str, Any]) -> float:
     tc = cfg["transition_cost"]
@@ -291,6 +316,50 @@ def transition_cost(prev: Voicing, cur: Voicing, cfg: Dict[str, Any]) -> float:
     return float(cost)
 
 
+def compute_streak(
+    prev_node: "BeamNode",
+    cur_v: Voicing,
+    cur_dur: float,
+    cfg: Dict[str, Any],
+) -> Tuple[int, int, float]:
+    """
+    Returns (new_streak_dir, new_streak_len, streak_penalty).
+
+    A streak is a run of consecutive fast single-note events where the anchor
+    position moves in the same direction. This models the 4-finger limit:
+    crawling up or down the neck more than 4 steps in a row at speed is
+    physically awkward. Chords, rests, or slow notes reset the streak.
+    """
+    tc = cfg["transition_cost"]
+    speed_threshold = float(tc["streak_speed_threshold"])
+    streak_min_len = int(tc["streak_min_len"])
+    w_streak = float(tc["w_streak"])
+
+    is_fast = cur_dur <= speed_threshold
+    is_single = len(cur_v.pitches) == 1
+
+    # Chord, rest, or slow note: reset streak, no penalty
+    if not is_fast or not is_single:
+        return 0, 0, 0.0
+
+    delta = cur_v.anchor - prev_node.voicing.anchor
+    if delta > 0:
+        cur_dir = 1
+    elif delta < 0:
+        cur_dir = -1
+    else:
+        # No movement: reset streak
+        return 0, 0, 0.0
+
+    if prev_node.streak_dir == cur_dir and prev_node.streak_len > 0:
+        new_len = prev_node.streak_len + 1
+    else:
+        new_len = 1
+
+    penalty = w_streak * max(0, new_len - streak_min_len)
+    return cur_dir, new_len, penalty
+
+
 def viterbi_decode(events: List[Dict[str, Any]], cfg: Dict[str, Any]) -> List[Voicing]:
     search = cfg["search"]
     beam_size = int(search["beam_size"])
@@ -302,7 +371,7 @@ def viterbi_decode(events: List[Dict[str, Any]], cfg: Dict[str, Any]) -> List[Vo
         voicings = generate_voicings_for_event(pitches, cfg)
         candidates.append(voicings)
 
-    beam: List[BeamNode] = [BeamNode(score=v.local_cost, voicing=v, prev_index=None) for v in candidates[0]]
+    beam: List[BeamNode] = [BeamNode(score=v.local_cost, voicing=v, prev_index=None, streak_dir=0, streak_len=0) for v in candidates[0]]
     beam.sort(key=lambda n: n.score)
     beam = beam[:beam_size]
 
@@ -314,7 +383,7 @@ def viterbi_decode(events: List[Dict[str, Any]], cfg: Dict[str, Any]) -> List[Vo
         new_beam: List[BeamNode] = []
 
         if not cur_cands:
-            new_beam = [BeamNode(score=n.score, voicing=n.voicing, prev_index=i) for i, n in enumerate(beam)]
+            new_beam = [BeamNode(score=n.score, voicing=n.voicing, prev_index=i, streak_dir=n.streak_dir, streak_len=n.streak_len) for i, n in enumerate(beam)]
             new_beam.sort(key=lambda n: n.score)
             new_beam = new_beam[:beam_size]
             beam = new_beam
@@ -322,15 +391,22 @@ def viterbi_decode(events: List[Dict[str, Any]], cfg: Dict[str, Any]) -> List[Vo
             backpointers.append([n.prev_index for n in beam])
             continue
 
+        cur_dur = float(events[t].get("dur", 960))
+
         for cur_v in cur_cands:
             best_score = float("inf")
             best_prev = None
+            best_streak_dir = 0
+            best_streak_len = 0
             for i, prev_node in enumerate(beam):
-                sc = prev_node.score + transition_cost(prev_node.voicing, cur_v, cfg) + cur_v.local_cost
+                new_dir, new_len, streak_pen = compute_streak(prev_node, cur_v, cur_dur, cfg)
+                sc = prev_node.score + transition_cost(prev_node.voicing, cur_v, cfg) + cur_v.local_cost + streak_pen
                 if sc < best_score:
                     best_score = sc
                     best_prev = i
-            new_beam.append(BeamNode(score=best_score, voicing=cur_v, prev_index=best_prev))
+                    best_streak_dir = new_dir
+                    best_streak_len = new_len
+            new_beam.append(BeamNode(score=best_score, voicing=cur_v, prev_index=best_prev, streak_dir=best_streak_dir, streak_len=best_streak_len))
 
         new_beam.sort(key=lambda n: n.score)
         new_beam = new_beam[:beam_size]

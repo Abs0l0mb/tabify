@@ -11,6 +11,7 @@ import {
     AccountsController,
     AuthenticationController,
     DummiesController,
+    TabifyController,
     BackendIPCServer
 } from '@src/classes';
 
@@ -151,6 +152,7 @@ export class BackendHttpServer extends HttpServer {
         new AccountsController(this);
         new AuthenticationController(this);
         new DummiesController(this);
+        new TabifyController(this);
         
         this.listen(this.port, '0.0.0.0');
     }

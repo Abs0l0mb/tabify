@@ -38,6 +38,7 @@ export { BackendIPCServer } from './classes/BackendIPCServer';
 export { DummiesController } from './classes/http-controllers/DummiesController';
 export { AccountsController } from './classes/http-controllers/AccountsController';
 export { AuthenticationController } from './classes/http-controllers/AuthenticationController';
+export { TabifyController } from './classes/http-controllers/TabifyController';
 
 export { TasksWebSocketChannel } from './classes/websocket-channels/TasksWebSocketChannel';
 

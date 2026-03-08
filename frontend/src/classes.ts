@@ -135,3 +135,5 @@ export { View } from './classes/pages/progress-report/view/View';
 export { Timeline } from './classes/pages/progress-report/view/timeline/Timeline';
 export { TimelineOptions } from './classes/pages/progress-report/view/timeline/Timeline';
 export { TimelineCategoryCard } from './classes/pages/progress-report/view/timeline/TimelineCategoryCard';
+
+export { TabifyPage } from './classes/pages/tabify/TabifyPage';

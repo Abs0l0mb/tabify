@@ -7,8 +7,7 @@ import {
     Tools
 } from '@src/classes';
 
-import { 
-    LoginPage,
+import {
     MePage,
     TeamsPage,
     TasksPage,
@@ -16,7 +15,8 @@ import {
     CategoriesPage,
     ArchivedPage,
     TeamPage,
-    ProgressReportPage
+    ProgressReportPage,
+    TabifyPage
 } from '@src/classes';
 
 export interface AppData {
@@ -65,9 +65,9 @@ export class Client extends AbstractClient {
     **
     */
     public onNotConnected() : void {
-    
+
         this.router.setRoutes({
-            '/': LoginPage
+            '/': TabifyPage
         });
 
         this.router.route('/');

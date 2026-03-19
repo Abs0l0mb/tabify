@@ -1,0 +1,18 @@
+{
+  "local_cost.w_span": 1.640130838029839,
+  "local_cost.w_high": 0.18485445552552704,
+  "local_cost.w_string_range": 0.9695846277645586,
+  "local_cost.w_preferred_zone": -0.6746015299166563,
+  "local_cost.w_high_string": 4.697494707820946,
+  "string_discontinuity.w_holes": 7.158618803421191,
+  "string_discontinuity.w_gap": 1.1957999576221703,
+  "string_discontinuity.w_blocks": 7.374993880184935,
+  "transition_cost.w_jump": 0.2654775061557585,
+  "transition_cost.jump_power": 1.2939742936287177,
+  "transition_cost.jump_threshold_penalty": 0.45227288910538066,
+  "transition_cost.w_avg_jump": 0.6506606615265287,
+  "transition_cost.w_string_center": 2.332063738136892,
+  "transition_cost.close_jump_bonus": -2.185952904678312,
+  "transition_cost.w_span_change": 0.8287375091519293,
+  "transition_cost.w_streak": 2.8540266135487142
+}

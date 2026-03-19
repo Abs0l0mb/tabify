@@ -17,7 +17,7 @@ export class DevToolSocketLog {
     */
     log(message) {
 
-        Log.log(`${this.getRequestLog()} ${this.devToolSocket.socket.id} ${Log.FgCyan}${Log.Bright}${message}${Log.Reset}`);
+        //Log.log(`${this.getRequestLog()} ${this.devToolSocket.socket.id} ${Log.FgCyan}${Log.Bright}${message}${Log.Reset}`);
     }
 
     /*

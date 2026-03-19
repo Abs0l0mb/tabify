@@ -104,10 +104,13 @@ export class Runtime {
         await new Promise(function(resolve) {
 
             this.devServer = new HttpStaticServer();
-            
+
             this.devToolServer = new DevToolServer(this);
 
             const options = RuntimeData.getOptions();
+
+            if (options.apiPort)
+                this.devServer.setProxy(`http://localhost:${options.apiPort}`);
 
             this.devServer.listen({
                 port: options.devPort, 

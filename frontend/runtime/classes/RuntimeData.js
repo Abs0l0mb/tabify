@@ -31,6 +31,7 @@ export class RuntimeData {
             'twitter:site': Parser.string,
             extraHead: Parser.string,
             devPort: Parser.integer,
+            apiPort: Parser.integer,
             vendorDependencies: Parser.array,
             pages: Parser.array
         });

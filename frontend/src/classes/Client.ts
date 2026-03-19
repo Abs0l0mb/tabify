@@ -8,14 +8,6 @@ import {
 } from '@src/classes';
 
 import {
-    MePage,
-    TeamsPage,
-    TasksPage,
-    DocumentsPage,
-    CategoriesPage,
-    ArchivedPage,
-    TeamPage,
-    ProgressReportPage,
     TabifyPage
 } from '@src/classes';
 
@@ -82,14 +74,6 @@ export class Client extends AbstractClient {
     public async onConnected() : Promise<void> {
 
         this.router.setRoutes({
-            '/tasks': TasksPage,
-            '/settings/teams': TeamsPage,
-            '/me': MePage,
-            '/archived': ArchivedPage,
-            '/documents': DocumentsPage,
-            '/categories': CategoriesPage,
-            '/team': TeamPage,
-            '/progress-report': ProgressReportPage
         });
 
         ApiRequestsManager.lock();

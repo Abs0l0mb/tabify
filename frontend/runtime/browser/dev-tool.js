@@ -32,7 +32,7 @@ class DevTool {
         this.element.append(this.ui);
         document.body.append(this.element);
         
-        this.client = new DevToolClient(this);
+        //this.client = new DevToolClient(this);
 
         this.socketStatus.addEventListener('click', this.onSocketStatusClick.bind(this));
         this.typeCheckingStatus.addEventListener('click', this.onTypeCheckingStatusClick.bind(this));

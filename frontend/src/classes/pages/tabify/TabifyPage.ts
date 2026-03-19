@@ -20,7 +20,9 @@ export class TabifyPage extends TitledPage {
 
     private midiFileInput: FileInput;
     private submitButton: Button;
+    private suggestButton: Button;
     private values: { [key: string]: number } = {};
+    private inputs: { [key: string]: SimpleNumberInput } = {};
 
     constructor() {
 
@@ -42,6 +44,11 @@ export class TabifyPage extends TitledPage {
         fileZone.setStyle('margin-bottom', '16px');
         const fileForm = new Form(fileZone);
         this.midiFileInput = new FileInput({ label: 'Sélectionner un fichier .mid' }, fileForm);
+
+        const suggestRow = new Div('', fileZone);
+        suggestRow.setStyles({ 'padding': '8px 16px' });
+        this.suggestButton = new Button({ label: 'Suggest parameters' }, suggestRow);
+        this.suggestButton.onNative('click', this.onSuggest.bind(this));
 
         // ── General ───────────────────────────────────────────────────
         this.buildGroup(main, 'Général', [
@@ -147,6 +154,42 @@ export class TabifyPage extends TitledPage {
             input.on('value', (v: number) => {
                 this.values[key] = v;
             });
+
+            this.inputs[key] = input;
+        }
+    }
+
+    /*
+    **
+    **
+    */
+    private async onSuggest(): Promise<void> {
+
+        const { base64, name } = this.getMidiFile();
+
+        if (!base64 || !name) {
+            alert('Veuillez sélectionner un fichier MIDI.');
+            return;
+        }
+
+        this.suggestButton.load();
+
+        try {
+            const suggested: { [key: string]: number } = await Api.post('/suggest-params', {
+                midi_base64: base64,
+                midi_name:   name,
+            });
+
+            for (const [key, value] of Object.entries(suggested)) {
+                if (key in this.inputs) {
+                    this.inputs[key].setValue(value, false);
+                    this.values[key] = value;
+                }
+            }
+        } catch (error) {
+            alert(`Erreur : ${error}`);
+        } finally {
+            this.suggestButton.unload();
         }
     }
 

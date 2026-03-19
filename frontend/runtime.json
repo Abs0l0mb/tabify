@@ -8,6 +8,7 @@
     "twitter:site": "",
     "extraHead": "",
     "devPort": 10201,
+    "apiPort": 8000,
     "vendorDependencies": [],
     "pages": [
         { "path": "/", "title": null, "description": "" },

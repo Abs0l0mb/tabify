@@ -8,6 +8,7 @@ import { HttpRequestLogger } from './HttpRequestLogger.js';
 import * as http from 'http';
 import * as fs from 'fs';
 import * as nodePath from 'path';
+import * as nodeUrl from 'url';
 
 export class HttpStaticServer {
 
@@ -20,6 +21,7 @@ export class HttpStaticServer {
 
         this.staticDirectories = {};
         this.pages = [];
+        this.proxyTarget = null;
     }
 
     /*
@@ -28,14 +30,20 @@ export class HttpStaticServer {
     */
     async onRequest(request, response) {
 
-        if (request.method !== 'GET')
-            return;
-            
         request.decomposeUrl();
 
-        new HttpRequestLogger(request, response);
-
         const path = request.builtUrl.pathname;
+
+        // Proxy /api/* to the backend
+        if (this.proxyTarget && path.startsWith('/api')) {
+            this.proxyRequest(request, response, path);
+            return;
+        }
+
+        if (request.method !== 'GET')
+            return;
+
+        new HttpRequestLogger(request, response);
 
         if (this.lookForPage(path, response))
             return;
@@ -45,6 +53,44 @@ export class HttpStaticServer {
             response.writeHead(404);
             response.end('not found', 'utf-8');
         }
+    }
+
+    /*
+    **
+    **
+    */
+    proxyRequest(request, response, path) {
+
+        const target = nodeUrl.parse(this.proxyTarget);
+
+        const options = {
+            hostname: target.hostname,
+            port:     target.port || 80,
+            path:     path + (request.builtUrl.search || ''),
+            method:   request.method,
+            headers:  { ...request.headers, host: target.host }
+        };
+
+        const proxy = http.request(options, (proxyResponse) => {
+            response.writeHead(proxyResponse.statusCode, proxyResponse.headers);
+            proxyResponse.pipe(response, { end: true });
+        });
+
+        proxy.on('error', () => {
+            response.writeHead(502);
+            response.end('backend unavailable');
+        });
+
+        request.pipe(proxy, { end: true });
+    }
+
+    /*
+    **
+    **
+    */
+    setProxy(target) {
+
+        this.proxyTarget = target;
     }
 
     /*

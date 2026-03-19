@@ -72,7 +72,7 @@ export class Api extends Emitter {
      */
     static getBaseURL() : URL {
 
-        return new URL(`${location.protocol}//${location.hostname}${ClientLocation.get().rootPath}/api`);
+        return new URL(`${location.protocol}//${location.host}${ClientLocation.get().rootPath}/api`);
     }
 
     /**

@@ -1,15 +1,28 @@
 """
 server.py — Production FastAPI backend for Tabify
 
-Serves:
-  POST /api/tabify          → MIDI (base64) + viterbi params → GP5 binary
-  POST /api/suggest-params  → MIDI (base64) → best viterbi params as JSON
-  GET  /api/me              → returns not-connected (triggers TabifyPage in the frontend)
-  GET  /*                   → static frontend SPA (index.html fallback)
+Auth:
+  GET  /api/auth/google    → redirect to Google OAuth consent
+  GET  /api/auth/callback  → Google callback → sets session cookie → redirect /
+  POST /api/auth/logout    → clear session cookie
+  GET  /api/me             → return current user (validates cookie)
+
+Protected endpoints (require valid session):
+  POST /api/tabify         → MIDI (base64) + viterbi params → GP5 binary
+  POST /api/suggest-params → MIDI (base64) → best viterbi params as JSON
+
+Static:
+  GET  /*                  → SPA frontend
+
+Required env vars:
+  GOOGLE_CLIENT_ID
+  GOOGLE_CLIENT_SECRET
+  SECRET_KEY               (any long random string for cookie signing)
+  APP_BASE_URL             (e.g. https://yourdomain.com — no trailing slash)
+  ALLOWED_EMAILS           (optional, comma-separated; empty = allow all Google accounts)
 
 Usage:
-  uvicorn server:app --host 0.0.0.0 --port 8000
-  uvicorn server:app --host 0.0.0.0 --port 8000 --workers 2
+  uvicorn server:app --host 0.0.0.0 --port 8000 --reload
 """
 
 import asyncio
@@ -20,9 +33,11 @@ import tempfile
 from concurrent.futures import ThreadPoolExecutor
 from typing import Annotated, Optional
 
-from fastapi import FastAPI, Form
-from fastapi.responses import FileResponse, JSONResponse, Response
+from fastapi import FastAPI, Form, Request, Depends
+from fastapi.responses import FileResponse, JSONResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
+from itsdangerous import URLSafeTimedSerializer, BadSignature, SignatureExpired
+from authlib.integrations.httpx_client import AsyncOAuth2Client
 from pathlib import Path
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -44,7 +59,43 @@ STATIC_DIR   = os.environ.get(
 )
 MAX_MIDI_BYTES = 10 * 1024 * 1024  # 10 MB
 
+# Auth config
+SECRET_KEY      = os.environ.get("SECRET_KEY", "change-me-in-production")
+GOOGLE_CLIENT_ID     = os.environ.get("GOOGLE_CLIENT_ID", "")
+GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", "")
+APP_BASE_URL    = os.environ.get("APP_BASE_URL", "http://localhost:8000").rstrip("/")
+ALLOWED_EMAILS  = {e.strip() for e in os.environ.get("ALLOWED_EMAILS", "").split(",") if e.strip()}
+
+SESSION_COOKIE  = "tabify_session"
+SESSION_MAX_AGE = 60 * 60 * 24 * 7  # 7 days
+_signer         = URLSafeTimedSerializer(SECRET_KEY, salt="tabify-session")
+
 _executor = ThreadPoolExecutor(max_workers=int(os.environ.get("VITERBI_WORKERS", "2")))
+
+# ---------------------------------------------------------------------------
+# Session helpers
+# ---------------------------------------------------------------------------
+
+def make_session_cookie(user: dict) -> str:
+    return _signer.dumps(user)
+
+def read_session_cookie(token: str) -> Optional[dict]:
+    try:
+        return _signer.loads(token, max_age=SESSION_MAX_AGE)
+    except (BadSignature, SignatureExpired):
+        return None
+
+def get_current_user(request: Request) -> Optional[dict]:
+    token = request.cookies.get(SESSION_COOKIE)
+    if not token:
+        return None
+    return read_session_cookie(token)
+
+def require_user(request: Request) -> dict:
+    user = get_current_user(request)
+    if user is None:
+        return None  # caller returns error response
+    return user
 
 # ---------------------------------------------------------------------------
 # App
@@ -52,14 +103,85 @@ _executor = ThreadPoolExecutor(max_workers=int(os.environ.get("VITERBI_WORKERS",
 
 app = FastAPI(title="Tabify", docs_url=None, redoc_url=None)
 
+# ---------------------------------------------------------------------------
+# Google OAuth endpoints
+# ---------------------------------------------------------------------------
+
+GOOGLE_AUTH_URL  = "https://accounts.google.com/o/oauth2/v2/auth"
+GOOGLE_TOKEN_URL = "https://oauth2.googleapis.com/token"
+GOOGLE_USERINFO  = "https://www.googleapis.com/oauth2/v3/userinfo"
+
+
+@app.get("/api/auth/google")
+async def auth_google():
+    """Redirect the browser to Google's OAuth consent screen."""
+    redirect_uri = f"{APP_BASE_URL}/api/auth/callback"
+    params = {
+        "client_id":     GOOGLE_CLIENT_ID,
+        "redirect_uri":  redirect_uri,
+        "response_type": "code",
+        "scope":         "openid email profile",
+        "access_type":   "online",
+    }
+    url = GOOGLE_AUTH_URL + "?" + "&".join(f"{k}={v}" for k, v in params.items())
+    return RedirectResponse(url)
+
+
+@app.get("/api/auth/callback")
+async def auth_callback(code: str, request: Request):
+    """Exchange Google auth code for user info, set session cookie."""
+    redirect_uri = f"{APP_BASE_URL}/api/auth/callback"
+
+    async with AsyncOAuth2Client(
+        client_id=GOOGLE_CLIENT_ID,
+        client_secret=GOOGLE_CLIENT_SECRET,
+        redirect_uri=redirect_uri,
+    ) as client:
+        token = await client.fetch_token(GOOGLE_TOKEN_URL, code=code)
+        resp  = await client.get(GOOGLE_USERINFO)
+
+    info  = resp.json()
+    email = info.get("email", "")
+
+    if ALLOWED_EMAILS and email not in ALLOWED_EMAILS:
+        return RedirectResponse(f"/?error=not-allowed")
+
+    user = {
+        "email":   email,
+        "name":    info.get("name", email),
+        "picture": info.get("picture", ""),
+    }
+
+    cookie = make_session_cookie(user)
+    response = RedirectResponse("/")
+    response.set_cookie(
+        SESSION_COOKIE,
+        cookie,
+        max_age=SESSION_MAX_AGE,
+        httponly=True,
+        samesite="lax",
+        secure=APP_BASE_URL.startswith("https"),
+    )
+    return response
+
+
+@app.post("/api/auth/logout")
+async def auth_logout():
+    response = JSONResponse({"error": False, "content": None})
+    response.delete_cookie(SESSION_COOKIE)
+    return response
+
 
 # ---------------------------------------------------------------------------
 # /api/me — Auth stub: always returns not-connected so the frontend shows TabifyPage
 # ---------------------------------------------------------------------------
 
 @app.get("/api/me")
-async def me():
-    return JSONResponse({"error": True, "content": "not-connected"})
+async def me(request: Request):
+    user = get_current_user(request)
+    if user is None:
+        return JSONResponse({"error": True, "content": "not-connected"})
+    return JSONResponse({"error": False, "content": user})
 
 
 # ---------------------------------------------------------------------------
@@ -89,11 +211,14 @@ _DOTTED_TO_FLAT = {
 
 @app.post("/api/suggest-params")
 async def suggest_params(
+    request:     Request,
     midi_base64: Annotated[str,           Form()],
     midi_name:   Annotated[Optional[str], Form()] = "input.mid",
     n_trials:    Annotated[Optional[int], Form()] = 60,
     beam_size:   Annotated[Optional[int], Form()] = 20,
 ):
+    if get_current_user(request) is None:
+        return JSONResponse({"error": True, "content": "not-connected"})
     if not os.path.exists(PROFILE_PATH):
         return JSONResponse({"error": True, "content": "tune-profile-not-built"})
 
@@ -158,6 +283,7 @@ async def suggest_params(
 
 @app.post("/api/tabify")
 async def tabify(
+    request:      Request,
     midi_base64:  Annotated[str,           Form()],
     midi_name:    Annotated[Optional[str], Form()] = "input.mid",
     # General
@@ -201,6 +327,9 @@ async def tabify(
     streak_min_len:         Annotated[Optional[int],   Form()] = None,
     streak_speed_threshold: Annotated[Optional[int],   Form()] = None,
 ):
+    if get_current_user(request) is None:
+        return JSONResponse({"error": True, "content": "not-connected"})
+
     # ── Decode MIDI ──────────────────────────────────────────────────────
     b64 = midi_base64.split(",", 1)[-1] if "," in midi_base64 else midi_base64
     try:

@@ -1,0 +1,495 @@
+../dev_folder/jsonl_dataset\35752_track_2_Jason.jsonl
+../dev_folder/jsonl_dataset\13365_track_1_Guitar.jsonl
+../dev_folder/jsonl_dataset\14825_track_3_Jake E. Lee.jsonl
+../dev_folder/jsonl_dataset\31398_track_2_Jamie Cook.jsonl
+../dev_folder/jsonl_dataset\21566_track_8_synth lead.jsonl
+../dev_folder/jsonl_dataset\15985_track_13_Guitar Overdriven.jsonl
+../dev_folder/jsonl_dataset\29340_track_9_Woodwinds.jsonl
+../dev_folder/jsonl_dataset\28754_track_6_Track 6.jsonl
+../dev_folder/jsonl_dataset\15205_track_1_Paco Pena Flamenko Gitar.jsonl
+../dev_folder/jsonl_dataset\14000_track_1_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\18703_track_4_Voice.jsonl
+../dev_folder/jsonl_dataset\37101_track_5_Tim Skold.jsonl
+../dev_folder/jsonl_dataset\35408_track_1_Pista 1.jsonl
+../dev_folder/jsonl_dataset\1648_track_2_Pista 2.jsonl
+../dev_folder/jsonl_dataset\19199_track_13_Track 11.jsonl
+../dev_folder/jsonl_dataset\11009_track_4_Mezclado Puerto.jsonl
+../dev_folder/jsonl_dataset\11149_track_3_Rhythm guitar.jsonl
+../dev_folder/jsonl_dataset\20434_track_1_Acoustic Guitar.jsonl
+../dev_folder/jsonl_dataset\32135_track_1_Gonzo.jsonl
+../dev_folder/jsonl_dataset\36530_track_1_gt.1.jsonl
+../dev_folder/jsonl_dataset\17103_track_6_Orgona.jsonl
+../dev_folder/jsonl_dataset\21038_track_1_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\14835_track_2_Track 2.jsonl
+../dev_folder/jsonl_dataset\25143_track_1_Claudio Marciello Gtr 1.jsonl
+../dev_folder/jsonl_dataset\23102_track_6_HARMONY.jsonl
+../dev_folder/jsonl_dataset\10125_track_3_And another guitar ..!.jsonl
+../dev_folder/jsonl_dataset\21769_track_4_Strings 1.jsonl
+../dev_folder/jsonl_dataset\36572_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\15227_track_1_Daniel Gildenlow.jsonl
+../dev_folder/jsonl_dataset\27140_track_8_tremolo.jsonl
+../dev_folder/jsonl_dataset\34379_track_4_Eric Johnson [Solo].jsonl
+../dev_folder/jsonl_dataset\13515_track_4_Track 4.jsonl
+../dev_folder/jsonl_dataset\1109_track_6_Guitarra.jsonl
+../dev_folder/jsonl_dataset\1511_track_7_Koskettimet.jsonl
+../dev_folder/jsonl_dataset\29728_track_4_Guitar 4.jsonl
+../dev_folder/jsonl_dataset\35812_track_1_Trilha 1.jsonl
+../dev_folder/jsonl_dataset\21974_track_3_Jeremiah guitare 2.jsonl
+../dev_folder/jsonl_dataset\23914_track_1_ryan waste.jsonl
+../dev_folder/jsonl_dataset\11358_track_4_harmony.jsonl
+../dev_folder/jsonl_dataset\22456_track_1_Joe Perry (Solo).jsonl
+../dev_folder/jsonl_dataset\27572_track_1_Guitar Lead.jsonl
+../dev_folder/jsonl_dataset\14087_track_7_All The Other Instruments.jsonl
+../dev_folder/jsonl_dataset\268635_track_4_Lead Guitar.jsonl
+../dev_folder/jsonl_dataset\162618_track_1_Untitled.jsonl
+../dev_folder/jsonl_dataset\12838_track_2_Rhythm Guitar.jsonl
+../dev_folder/jsonl_dataset\1264_track_1_Lead Guitar.jsonl
+../dev_folder/jsonl_dataset\30579_track_1_Lead Guitar.jsonl
+../dev_folder/jsonl_dataset\35925_track_2_Untitled.jsonl
+../dev_folder/jsonl_dataset\15938_track_5_Spur 6.jsonl
+../dev_folder/jsonl_dataset\13624_track_4_James Hetfield [lyrics].jsonl
+../dev_folder/jsonl_dataset\20836_track_4_FX.jsonl
+../dev_folder/jsonl_dataset\20806_track_1_Piste 1.jsonl
+../dev_folder/jsonl_dataset\32810_track_7_back vox.jsonl
+../dev_folder/jsonl_dataset\11505_track_2_Mute Guitar.jsonl
+../dev_folder/jsonl_dataset\357422_track_1_Steve Clark.jsonl
+../dev_folder/jsonl_dataset\3084_track_4_Solo.jsonl
+../dev_folder/jsonl_dataset\12714_track_1_Lead guitar.jsonl
+../dev_folder/jsonl_dataset\33094_track_5_Karyu - Guitar 3.jsonl
+../dev_folder/jsonl_dataset\33055_track_2_Guitarra 2.jsonl
+../dev_folder/jsonl_dataset\29374_track_2_Brian.jsonl
+../dev_folder/jsonl_dataset\22107_track_1_.jsonl
+../dev_folder/jsonl_dataset\18260_track_1_Guitar.jsonl
+../dev_folder/jsonl_dataset\21128_track_5_Voice 2 + 3 sometimes (choruses).jsonl
+../dev_folder/jsonl_dataset\19955_track_6_Lead Synth.jsonl
+../dev_folder/jsonl_dataset\21501_track_1_Distortion Guitar.jsonl
+../dev_folder/jsonl_dataset\35388_track_1_Untitled.jsonl
+../dev_folder/jsonl_dataset\34735_track_1_Acoustic R.jsonl
+../dev_folder/jsonl_dataset\36222_track_2_Guitar2 (Eb-tuning).jsonl
+../dev_folder/jsonl_dataset\162474_track_1_Pista 1.jsonl
+../dev_folder/jsonl_dataset\21902_track_2_Slash (12 string acoustic).jsonl
+../dev_folder/jsonl_dataset\18124_track_1_Guitarra.jsonl
+../dev_folder/jsonl_dataset\21662_track_2_Guitar II.jsonl
+../dev_folder/jsonl_dataset\15365_track_7_Fill In Guitar IV.jsonl
+../dev_folder/jsonl_dataset\34838_track_1_Lead Guitar.jsonl
+../dev_folder/jsonl_dataset\29929_track_2_Spur 2.jsonl
+../dev_folder/jsonl_dataset\18975_track_3_Piste 3.jsonl
+../dev_folder/jsonl_dataset\33766_track_4_Guitarra 2.jsonl
+../dev_folder/jsonl_dataset\10951_track_1_Gtr.1.jsonl
+../dev_folder/jsonl_dataset\29516_track_1_Taylor Swift.jsonl
+../dev_folder/jsonl_dataset\37013_track_3_Lead Guitar (Brain May).jsonl
+../dev_folder/jsonl_dataset\15998_track_8_Guitar 4.jsonl
+../dev_folder/jsonl_dataset\30924_track_1_Jason Mendonca.jsonl
+../dev_folder/jsonl_dataset\15676_track_3_Scott Thurston.jsonl
+../dev_folder/jsonl_dataset\17384_track_1_Spoor 1.jsonl
+../dev_folder/jsonl_dataset\17745_track_5_Bell.jsonl
+../dev_folder/jsonl_dataset\25680_track_1_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\17970_track_3_Acoustic guitar.jsonl
+../dev_folder/jsonl_dataset\31682_track_1_Tom Morello.jsonl
+../dev_folder/jsonl_dataset\31667_track_5_John Deacon - Synth 1.jsonl
+../dev_folder/jsonl_dataset\19070_track_5_GUITAR FILL.jsonl
+../dev_folder/jsonl_dataset\32725_track_1_Pista 1.jsonl
+../dev_folder/jsonl_dataset\31585_track_7_Sequence.jsonl
+../dev_folder/jsonl_dataset\19490_track_8_Chrous.jsonl
+../dev_folder/jsonl_dataset\13641_track_1_Karl Logan(Rhytm Guitar).jsonl
+../dev_folder/jsonl_dataset\22662_track_4_Edge (Guitar 4).jsonl
+../dev_folder/jsonl_dataset\268665_track_2_M. Little.jsonl
+../dev_folder/jsonl_dataset\18216_track_2_Jeff Hanneman.jsonl
+../dev_folder/jsonl_dataset\1919_track_2_Guitar.jsonl
+../dev_folder/jsonl_dataset\357727_track_1_Steel Guitar.jsonl
+../dev_folder/jsonl_dataset\1889_track_1_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\22948_track_2_Vocal.jsonl
+../dev_folder/jsonl_dataset\31664_track_3_Track 1.jsonl
+../dev_folder/jsonl_dataset\29501_track_1_Luf (acoustic).jsonl
+../dev_folder/jsonl_dataset\20224_track_4_Choir.jsonl
+../dev_folder/jsonl_dataset\20026_track_1_Piste 1.jsonl
+../dev_folder/jsonl_dataset\21444_track_2_Guitar02.jsonl
+../dev_folder/jsonl_dataset\16575_track_3_Guitar 2.jsonl
+../dev_folder/jsonl_dataset\35631_track_3_Track 3.jsonl
+../dev_folder/jsonl_dataset\300_track_2_Howard Leese.jsonl
+../dev_folder/jsonl_dataset\2852_track_2_12 String.jsonl
+../dev_folder/jsonl_dataset\24656_track_1_Guitar Solo.jsonl
+../dev_folder/jsonl_dataset\20353_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\19743_track_1_Piste 1.jsonl
+../dev_folder/jsonl_dataset\13999_track_7_Guitar 2.jsonl
+../dev_folder/jsonl_dataset\29194_track_1_Ritchie Blackmore.jsonl
+../dev_folder/jsonl_dataset\12434_track_1_Guitar.jsonl
+../dev_folder/jsonl_dataset\33873_track_4_Guitarra lll.jsonl
+../dev_folder/jsonl_dataset\34470_track_1_Spor 1.jsonl
+../dev_folder/jsonl_dataset\25134_track_2_Track 2.jsonl
+../dev_folder/jsonl_dataset\269640_track_1_Ã„Ã®Ã°Ã®Ã¦ÃªÃ  1.jsonl
+../dev_folder/jsonl_dataset\26157_track_22_Pizzicato.jsonl
+../dev_folder/jsonl_dataset\31592_track_2_A2-Steel Gt.2  .jsonl
+../dev_folder/jsonl_dataset\14714_track_4_Synth.jsonl
+../dev_folder/jsonl_dataset\24060_track_1_Piste 1.jsonl
+../dev_folder/jsonl_dataset\1325_track_7_Track 7.jsonl
+../dev_folder/jsonl_dataset\11032_track_2_Guitar II.jsonl
+../dev_folder/jsonl_dataset\18275_track_3_Lead Guitar.jsonl
+../dev_folder/jsonl_dataset\22476_track_2_Randy Rhoads.jsonl
+../dev_folder/jsonl_dataset\12606_track_1_Piste 1.jsonl
+../dev_folder/jsonl_dataset\24193_track_2_guitare( Jake ).jsonl
+../dev_folder/jsonl_dataset\22816_track_2_Tim McIlrath.jsonl
+../dev_folder/jsonl_dataset\11972_track_2_Spår 2.jsonl
+../dev_folder/jsonl_dataset\33415_track_1_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\17965_track_1_Acoustic Guitar I.jsonl
+../dev_folder/jsonl_dataset\26481_track_1_Gtr. 1.jsonl
+../dev_folder/jsonl_dataset\20216_track_1_Jerome.jsonl
+../dev_folder/jsonl_dataset\21436_track_2_Ashcroft.jsonl
+../dev_folder/jsonl_dataset\32041_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\10291_track_2_Guitar1.jsonl
+../dev_folder/jsonl_dataset\32948_track_4_Track 4.jsonl
+../dev_folder/jsonl_dataset\11338_track_3_Strings.jsonl
+../dev_folder/jsonl_dataset\17860_track_2_Guitarra ritmica.jsonl
+../dev_folder/jsonl_dataset\25228_track_3_Guitar 2.jsonl
+../dev_folder/jsonl_dataset\35882_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\15374_track_1_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\19926_track_2_Guitar.jsonl
+../dev_folder/jsonl_dataset\357611_track_5_Guitar  (BB).jsonl
+../dev_folder/jsonl_dataset\269447_track_11_.jsonl
+../dev_folder/jsonl_dataset\12925_track_7_Strings.jsonl
+../dev_folder/jsonl_dataset\33830_track_2_Pista 1.jsonl
+../dev_folder/jsonl_dataset\36207_track_1_Guitare Rythmique.jsonl
+../dev_folder/jsonl_dataset\10246_track_6_Slide Guitar.jsonl
+../dev_folder/jsonl_dataset\22300_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\28306_track_5_Navarro Solo .jsonl
+../dev_folder/jsonl_dataset\16518_track_2_Guitar 2.jsonl
+../dev_folder/jsonl_dataset\12658_track_5_Strings.jsonl
+../dev_folder/jsonl_dataset\2475_track_4_Clean Gt.jsonl
+../dev_folder/jsonl_dataset\20086_track_2_Nick Midson.jsonl
+../dev_folder/jsonl_dataset\37505_track_2_Roland Lead.jsonl
+../dev_folder/jsonl_dataset\34252_track_7_Horn.jsonl
+../dev_folder/jsonl_dataset\21096_track_2_Gt. Eléc. Rítmica.jsonl
+../dev_folder/jsonl_dataset\34858_track_1_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\13808_track_3_Guitarra 2 - Erik.jsonl
+../dev_folder/jsonl_dataset\13271_track_3_Ross The Boss-Rhythm.jsonl
+../dev_folder/jsonl_dataset\28111_track_5_Effect 2.jsonl
+../dev_folder/jsonl_dataset\19478_track_1_Kiki.jsonl
+../dev_folder/jsonl_dataset\29103_track_5_voz.jsonl
+../dev_folder/jsonl_dataset\2800_track_5_Cln Guitar (Eb Tuning).jsonl
+../dev_folder/jsonl_dataset\10074_track_2_Adrian Smith.jsonl
+../dev_folder/jsonl_dataset\29041_track_2_Rythm Guitar.jsonl
+../dev_folder/jsonl_dataset\32310_track_2_Mats Bjorkman.jsonl
+../dev_folder/jsonl_dataset\26130_track_4_Guitar 2.jsonl
+../dev_folder/jsonl_dataset\33379_track_4_Track 4.jsonl
+../dev_folder/jsonl_dataset\21733_track_12_Guitar 12.jsonl
+../dev_folder/jsonl_dataset\1763_track_3_Guitar lead.jsonl
+../dev_folder/jsonl_dataset\16357_track_10_Stopa 9.jsonl
+../dev_folder/jsonl_dataset\29962_track_2_Guitar 2.jsonl
+../dev_folder/jsonl_dataset\269542_track_1_Guitar .jsonl
+../dev_folder/jsonl_dataset\21603_track_4_Lead Guitar.jsonl
+../dev_folder/jsonl_dataset\34540_track_4_Guitar 4.jsonl
+../dev_folder/jsonl_dataset\27460_track_9_Voice.jsonl
+../dev_folder/jsonl_dataset\19464_track_6_Noises.jsonl
+../dev_folder/jsonl_dataset\30914_track_7_Pista 5.jsonl
+../dev_folder/jsonl_dataset\1487_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\11326_track_1_Guitar I.jsonl
+../dev_folder/jsonl_dataset\14424_track_1_Rhydhm.jsonl
+../dev_folder/jsonl_dataset\17828_track_4_Guitar 2 - Chris Caffery.jsonl
+../dev_folder/jsonl_dataset\12412_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\24583_track_7_Piste 6.jsonl
+../dev_folder/jsonl_dataset\24997_track_1_chant.jsonl
+../dev_folder/jsonl_dataset\26749_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\16183_track_4_Cristian (guitarra).jsonl
+../dev_folder/jsonl_dataset\34329_track_7_Track 7.jsonl
+../dev_folder/jsonl_dataset\18770_track_7_Bell.jsonl
+../dev_folder/jsonl_dataset\268745_track_3_Guitar Solo.jsonl
+../dev_folder/jsonl_dataset\11840_track_1_Acoustic (Capo 4th fret).jsonl
+../dev_folder/jsonl_dataset\15495_track_5_Guitar III.jsonl
+../dev_folder/jsonl_dataset\31188_track_4_Pista 4.jsonl
+../dev_folder/jsonl_dataset\35342_track_11_Celesta.jsonl
+../dev_folder/jsonl_dataset\24125_track_6_Lead R.jsonl
+../dev_folder/jsonl_dataset\36373_track_2_Steve Hackett - 12 String Guitar.jsonl
+../dev_folder/jsonl_dataset\24489_track_4_Track 3.jsonl
+../dev_folder/jsonl_dataset\22611_track_6_Spår 6.jsonl
+../dev_folder/jsonl_dataset\17908_track_5_Ñîëî.jsonl
+../dev_folder/jsonl_dataset\320_track_1_James Labrie.jsonl
+../dev_folder/jsonl_dataset\3327_track_2_Track 2.jsonl
+../dev_folder/jsonl_dataset\27273_track_6_Bryan.jsonl
+../dev_folder/jsonl_dataset\24675_track_2_Spur 6.jsonl
+../dev_folder/jsonl_dataset\24371_track_2_Gitara Maleo.jsonl
+../dev_folder/jsonl_dataset\26811_track_5_Lead.jsonl
+../dev_folder/jsonl_dataset\13930_track_4_Guitar  .jsonl
+../dev_folder/jsonl_dataset\18722_track_3_Dave Brownsound - Guitar Octaver.jsonl
+../dev_folder/jsonl_dataset\30892_track_3_guitare ( Alex Kinon ).jsonl
+../dev_folder/jsonl_dataset\19993_track_9_Studio.jsonl
+../dev_folder/jsonl_dataset\10080_track_2_Dist. Guitar 2.jsonl
+../dev_folder/jsonl_dataset\16026_track_1_strings.jsonl
+../dev_folder/jsonl_dataset\28538_track_5_Track 5.jsonl
+../dev_folder/jsonl_dataset\19285_track_3_Track 3.jsonl
+../dev_folder/jsonl_dataset\30919_track_1_Lead Guitar.jsonl
+../dev_folder/jsonl_dataset\357804_track_9_gitarkeren.blogspot.com.jsonl
+../dev_folder/jsonl_dataset\13592_track_4_Keys2.jsonl
+../dev_folder/jsonl_dataset\21304_track_12_Whammy Pedal 3.jsonl
+../dev_folder/jsonl_dataset\24293_track_3_E. Guitar 1 (Center).jsonl
+../dev_folder/jsonl_dataset\1424_track_2_Solo Guitar.jsonl
+../dev_folder/jsonl_dataset\29420_track_4_Track 5.jsonl
+../dev_folder/jsonl_dataset\18956_track_1_Distortion.jsonl
+../dev_folder/jsonl_dataset\10806_track_9_Tim Rice-Oxley - Synth Solo.jsonl
+../dev_folder/jsonl_dataset\21915_track_4_Guitars 3.jsonl
+../dev_folder/jsonl_dataset\36139_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\20731_track_1_Guitar1.jsonl
+../dev_folder/jsonl_dataset\23087_track_1_Dist.jsonl
+../dev_folder/jsonl_dataset\20458_track_1_Rhythm Guitar.jsonl
+../dev_folder/jsonl_dataset\26410_track_3_Track 3.jsonl
+../dev_folder/jsonl_dataset\357860_track_2_Lead Guitar.jsonl
+../dev_folder/jsonl_dataset\268434_track_1_Vladislav Parshin.jsonl
+../dev_folder/jsonl_dataset\26034_track_5_Overdub.jsonl
+../dev_folder/jsonl_dataset\27592_track_1_Clean.jsonl
+../dev_folder/jsonl_dataset\27127_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\11917_track_3_Pista 3.jsonl
+../dev_folder/jsonl_dataset\25446_track_2_Rythm 2.jsonl
+../dev_folder/jsonl_dataset\18856_track_1_Lead Guitar.jsonl
+../dev_folder/jsonl_dataset\1684_track_4_Fills.jsonl
+../dev_folder/jsonl_dataset\37419_track_2_ritmica.jsonl
+../dev_folder/jsonl_dataset\10530_track_6_Piste 6.jsonl
+../dev_folder/jsonl_dataset\33536_track_2_Untitled.jsonl
+../dev_folder/jsonl_dataset\24560_track_2_guitar.jsonl
+../dev_folder/jsonl_dataset\16225_track_1_Majt Moti (guitar).jsonl
+../dev_folder/jsonl_dataset\30954_track_2_Strings.jsonl
+../dev_folder/jsonl_dataset\33478_track_3_Track 3.jsonl
+../dev_folder/jsonl_dataset\23111_track_7_Ensemble Strings.jsonl
+../dev_folder/jsonl_dataset\22745_track_2_Solo Backup.jsonl
+../dev_folder/jsonl_dataset\22425_track_7_Vocal.jsonl
+../dev_folder/jsonl_dataset\15497_track_7_Teclado.jsonl
+../dev_folder/jsonl_dataset\17380_track_4_Guitar 3.jsonl
+../dev_folder/jsonl_dataset\18073_track_6_Brass.jsonl
+../dev_folder/jsonl_dataset\27356_track_2_Rythm.jsonl
+../dev_folder/jsonl_dataset\36380_track_1_Acoustic 1 - Gary Green.jsonl
+../dev_folder/jsonl_dataset\18262_track_1_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\3741_track_3_Trilha 3.jsonl
+../dev_folder/jsonl_dataset\29065_track_2_Guitar 2.jsonl
+../dev_folder/jsonl_dataset\33508_track_4_Jeff DaRosa (Banjo Left).jsonl
+../dev_folder/jsonl_dataset\22629_track_5_Pista 5.jsonl
+../dev_folder/jsonl_dataset\16588_track_8_Synth 3.jsonl
+../dev_folder/jsonl_dataset\26766_track_4_Guitar 4.jsonl
+../dev_folder/jsonl_dataset\35473_track_3_HighSynth.jsonl
+../dev_folder/jsonl_dataset\12155_track_4_Guitar 2.jsonl
+../dev_folder/jsonl_dataset\3361_track_1_gtr.jsonl
+../dev_folder/jsonl_dataset\12842_track_2_Fret Noise.jsonl
+../dev_folder/jsonl_dataset\17698_track_1_Lead Guitar.jsonl
+../dev_folder/jsonl_dataset\12659_track_1_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\18745_track_3_Solo Guitar.jsonl
+../dev_folder/jsonl_dataset\34124_track_3_Atmosfera.jsonl
+../dev_folder/jsonl_dataset\14658_track_3_guitar 3.jsonl
+../dev_folder/jsonl_dataset\268759_track_1_Henjo Richter.jsonl
+../dev_folder/jsonl_dataset\30918_track_2_Pista 2.jsonl
+../dev_folder/jsonl_dataset\1068_track_1_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\2322_track_4_Guitar II.jsonl
+../dev_folder/jsonl_dataset\35206_track_2_Slide Guitar.jsonl
+../dev_folder/jsonl_dataset\32342_track_2_Track 2.jsonl
+../dev_folder/jsonl_dataset\10489_track_1_guitare.jsonl
+../dev_folder/jsonl_dataset\12028_track_1_Electric Guitar.jsonl
+../dev_folder/jsonl_dataset\18663_track_2_Rick Parfitt.jsonl
+../dev_folder/jsonl_dataset\23174_track_3_Electric Guitar 2.jsonl
+../dev_folder/jsonl_dataset\10993_track_1_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\19960_track_1_Acoustic guitar TAB by guytarist@hotmail.jsonl
+../dev_folder/jsonl_dataset\34430_track_3_Dist. guitar.jsonl
+../dev_folder/jsonl_dataset\22478_track_1_Clean Guitar.jsonl
+../dev_folder/jsonl_dataset\27818_track_4_lead.jsonl
+../dev_folder/jsonl_dataset\35919_track_2_Wednesday 13 - Rhthym Guitar.jsonl
+../dev_folder/jsonl_dataset\1286_track_1_Guitar I.jsonl
+../dev_folder/jsonl_dataset\34901_track_5_guitarra.jsonl
+../dev_folder/jsonl_dataset\16390_track_9_Keys 3.jsonl
+../dev_folder/jsonl_dataset\10252_track_3_Intro Guitar 1.jsonl
+../dev_folder/jsonl_dataset\14515_track_3_Electric guitar.jsonl
+../dev_folder/jsonl_dataset\24421_track_4_Effect.jsonl
+../dev_folder/jsonl_dataset\24008_track_4_Guitar 4.jsonl
+../dev_folder/jsonl_dataset\357796_track_5_Benji Madden - Guitar.jsonl
+../dev_folder/jsonl_dataset\2380_track_1_Guitar.jsonl
+../dev_folder/jsonl_dataset\13402_track_3_Guitar 1 (Rhythm).jsonl
+../dev_folder/jsonl_dataset\28034_track_8_guitare 2.jsonl
+../dev_folder/jsonl_dataset\12476_track_1_Ligaments Of Evil.jsonl
+../dev_folder/jsonl_dataset\33720_track_4_Violão 1.jsonl
+../dev_folder/jsonl_dataset\18398_track_2_Andreas Kisser.jsonl
+../dev_folder/jsonl_dataset\25365_track_1_Morse code.jsonl
+../dev_folder/jsonl_dataset\12155_track_1_Guitar.jsonl
+../dev_folder/jsonl_dataset\30197_track_2_Tim Christensen (Guitar).jsonl
+../dev_folder/jsonl_dataset\14085_track_1_Piste 1.jsonl
+../dev_folder/jsonl_dataset\269278_track_1_Kytara 1.jsonl
+../dev_folder/jsonl_dataset\28092_track_1_Marcão.jsonl
+../dev_folder/jsonl_dataset\33569_track_1_Jeff Hanneman.jsonl
+../dev_folder/jsonl_dataset\2520_track_3_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\33379_track_2_Track 2.jsonl
+../dev_folder/jsonl_dataset\29149_track_1_Untitled.jsonl
+../dev_folder/jsonl_dataset\34941_track_7_Äîğîæêà 7.jsonl
+../dev_folder/jsonl_dataset\1897_track_1_V.Kipelov.jsonl
+../dev_folder/jsonl_dataset\1083_track_3_Overdrive.jsonl
+../dev_folder/jsonl_dataset\180_track_1_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\269636_track_4_Guitar - lead.jsonl
+../dev_folder/jsonl_dataset\22284_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\32949_track_8_Clean Guitar.jsonl
+../dev_folder/jsonl_dataset\12988_track_2_g 1.jsonl
+../dev_folder/jsonl_dataset\14110_track_2_Flauta.jsonl
+../dev_folder/jsonl_dataset\21666_track_2_Craig Nicholls Dist..jsonl
+../dev_folder/jsonl_dataset\18511_track_2_Äîğîæêà 7.jsonl
+../dev_folder/jsonl_dataset\23269_track_5_Synth.jsonl
+../dev_folder/jsonl_dataset\30621_track_2_Lead guitar.jsonl
+../dev_folder/jsonl_dataset\19099_track_2_Track 2.jsonl
+../dev_folder/jsonl_dataset\20336_track_6_Christofer Johnsson (Guitar 1).jsonl
+../dev_folder/jsonl_dataset\25546_track_3_Guitar 2 - Chris Head.jsonl
+../dev_folder/jsonl_dataset\10381_track_1_Synth.jsonl
+../dev_folder/jsonl_dataset\21002_track_2_Jazz.jsonl
+../dev_folder/jsonl_dataset\28097_track_4_Guitar2 (for sound).jsonl
+../dev_folder/jsonl_dataset\1800_track_2_Kiko Loureiro.jsonl
+../dev_folder/jsonl_dataset\31483_track_6_Solo Guitar2 - John Frusciante.jsonl
+../dev_folder/jsonl_dataset\19230_track_2_Lead.jsonl
+../dev_folder/jsonl_dataset\3579_track_1_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\21357_track_2_Äîğîæêà 4.jsonl
+../dev_folder/jsonl_dataset\21980_track_5_Guitar 3.jsonl
+../dev_folder/jsonl_dataset\12344_track_1_Guitar Rythm.jsonl
+../dev_folder/jsonl_dataset\27660_track_3_Varg Synth II.jsonl
+../dev_folder/jsonl_dataset\11206_track_1_Guitar 1 (Eb).jsonl
+../dev_folder/jsonl_dataset\3154_track_5_Lead Guitar.jsonl
+../dev_folder/jsonl_dataset\23447_track_8_Guitar 8 - Electric.jsonl
+../dev_folder/jsonl_dataset\12685_track_2_Guitar II.jsonl
+../dev_folder/jsonl_dataset\27475_track_2_Sax.jsonl
+../dev_folder/jsonl_dataset\15433_track_2_gtr 2.jsonl
+../dev_folder/jsonl_dataset\11846_track_5_gutarra.jsonl
+../dev_folder/jsonl_dataset\37436_track_1_Track 2.jsonl
+../dev_folder/jsonl_dataset\32207_track_10_Track 12.jsonl
+../dev_folder/jsonl_dataset\15778_track_5_Guit 2.jsonl
+../dev_folder/jsonl_dataset\34985_track_1_Stopa 1.jsonl
+../dev_folder/jsonl_dataset\12296_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\36341_track_8_Acoustic Guitar.jsonl
+../dev_folder/jsonl_dataset\34867_track_2_Lead Gtr.jsonl
+../dev_folder/jsonl_dataset\19057_track_2_voc..jsonl
+../dev_folder/jsonl_dataset\37356_track_1_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\27185_track_4_Strings 2.jsonl
+../dev_folder/jsonl_dataset\24325_track_3_Orchestra.jsonl
+../dev_folder/jsonl_dataset\18591_track_1_Lead Guitar.jsonl
+../dev_folder/jsonl_dataset\25249_track_2_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\14944_track_1_Guitarra.jsonl
+../dev_folder/jsonl_dataset\268642_track_5_K. Canada (Solo).jsonl
+../dev_folder/jsonl_dataset\12445_track_2_Guitar 2.jsonl
+../dev_folder/jsonl_dataset\309_track_1_Electric Guitar, Lead.jsonl
+../dev_folder/jsonl_dataset\2594_track_4_Synth 2.jsonl
+../dev_folder/jsonl_dataset\14928_track_4_David Gilmour - Rhythm Guitar.jsonl
+../dev_folder/jsonl_dataset\33949_track_5_Acoustic Guitar (Jarpen).jsonl
+../dev_folder/jsonl_dataset\21369_track_9_Track 9.jsonl
+../dev_folder/jsonl_dataset\14637_track_2_Orchestre.jsonl
+../dev_folder/jsonl_dataset\27412_track_5_Extr Guitar.jsonl
+../dev_folder/jsonl_dataset\13005_track_1_Guitare (Joey Jordisson).jsonl
+../dev_folder/jsonl_dataset\3338_track_3_Gtr 3.jsonl
+../dev_folder/jsonl_dataset\36921_track_1_[Lead] - Billie Joe Armstrong.jsonl
+../dev_folder/jsonl_dataset\3093_track_1_Guitar.jsonl
+../dev_folder/jsonl_dataset\1389_track_3_Rhythm Guitar 1.jsonl
+../dev_folder/jsonl_dataset\18478_track_2_Lead.jsonl
+../dev_folder/jsonl_dataset\23051_track_2_Synth. Chorus.jsonl
+../dev_folder/jsonl_dataset\34118_track_4_Guitarra.jsonl
+../dev_folder/jsonl_dataset\12497_track_4_Track 4.jsonl
+../dev_folder/jsonl_dataset\29535_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\3651_track_3_Gtr.4.jsonl
+../dev_folder/jsonl_dataset\35575_track_9_Track 9.jsonl
+../dev_folder/jsonl_dataset\10198_track_4_Mick Jagger.jsonl
+../dev_folder/jsonl_dataset\17012_track_1_Guitarra 1.jsonl
+../dev_folder/jsonl_dataset\10238_track_8_Keys 3.jsonl
+../dev_folder/jsonl_dataset\2341_track_5_Synthé.jsonl
+../dev_folder/jsonl_dataset\357510_track_9_Track 9.jsonl
+../dev_folder/jsonl_dataset\18146_track_5_Track 6.jsonl
+../dev_folder/jsonl_dataset\1983_track_2_Kita.jsonl
+../dev_folder/jsonl_dataset\14334_track_2_Track 2.jsonl
+../dev_folder/jsonl_dataset\28117_track_6_aoi solo.jsonl
+../dev_folder/jsonl_dataset\21124_track_7_Chords.jsonl
+../dev_folder/jsonl_dataset\23780_track_5_Gated Cymbal.jsonl
+../dev_folder/jsonl_dataset\16193_track_8_Piste 8.jsonl
+../dev_folder/jsonl_dataset\30258_track_2_Pista 1.jsonl
+../dev_folder/jsonl_dataset\15936_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\18763_track_1_Kiki.jsonl
+../dev_folder/jsonl_dataset\22798_track_3_Track 3.jsonl
+../dev_folder/jsonl_dataset\27784_track_1_Guitarra.jsonl
+../dev_folder/jsonl_dataset\29442_track_1_Vocal.jsonl
+../dev_folder/jsonl_dataset\12319_track_3_Guitarra 2.jsonl
+../dev_folder/jsonl_dataset\32399_track_1_Julia Red.jsonl
+../dev_folder/jsonl_dataset\26973_track_5_Strings.jsonl
+../dev_folder/jsonl_dataset\21661_track_3_Keys RH.jsonl
+../dev_folder/jsonl_dataset\26539_track_5_Track 5.jsonl
+../dev_folder/jsonl_dataset\32759_track_2_Robert .jsonl
+../dev_folder/jsonl_dataset\12152_track_2_Jeff Young.jsonl
+../dev_folder/jsonl_dataset\13149_track_4_Vocal.jsonl
+../dev_folder/jsonl_dataset\2256_track_3_Guitar I.jsonl
+../dev_folder/jsonl_dataset\21142_track_3_Fills.jsonl
+../dev_folder/jsonl_dataset\268598_track_3_Guitar 2.jsonl
+../dev_folder/jsonl_dataset\23988_track_3_Track 3.jsonl
+../dev_folder/jsonl_dataset\23744_track_9_CORO.jsonl
+../dev_folder/jsonl_dataset\17347_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\35111_track_2_Pista 2.jsonl
+../dev_folder/jsonl_dataset\16335_track_2_Guitar 2.jsonl
+../dev_folder/jsonl_dataset\10547_track_1_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\17523_track_2_Guitar 2 [Horna Arr. for Guitar].jsonl
+../dev_folder/jsonl_dataset\2546_track_2_Track 2.jsonl
+../dev_folder/jsonl_dataset\29209_track_6_Stephen Carpenter.jsonl
+../dev_folder/jsonl_dataset\27554_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\25629_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\18515_track_3_Guitar II.jsonl
+../dev_folder/jsonl_dataset\34719_track_4_Sintetizador II.jsonl
+../dev_folder/jsonl_dataset\20148_track_1_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\20550_track_1_Jack White 1.jsonl
+../dev_folder/jsonl_dataset\10168_track_1_Lead vocal - Elton John.jsonl
+../dev_folder/jsonl_dataset\269435_track_1_Lead 1.jsonl
+../dev_folder/jsonl_dataset\16759_track_4_Gtr 3 (Clean).jsonl
+../dev_folder/jsonl_dataset\30972_track_2_Pista 2.jsonl
+../dev_folder/jsonl_dataset\28846_track_1_voice.jsonl
+../dev_folder/jsonl_dataset\2065_track_9_Andre Matos (Keys III).jsonl
+../dev_folder/jsonl_dataset\36315_track_2_Uruha.jsonl
+../dev_folder/jsonl_dataset\13153_track_2_Kirk's Clean.jsonl
+../dev_folder/jsonl_dataset\29782_track_1_Skwisgaar Skwigelf.jsonl
+../dev_folder/jsonl_dataset\24725_track_2_øöåòä 2.jsonl
+../dev_folder/jsonl_dataset\2498_track_4_Spor 5.jsonl
+../dev_folder/jsonl_dataset\11400_track_7_guitare fin.jsonl
+../dev_folder/jsonl_dataset\32017_track_2_Rhythm Guitar.jsonl
+../dev_folder/jsonl_dataset\27053_track_3_Guitar 1.jsonl
+../dev_folder/jsonl_dataset\17775_track_2_Guitar 2.jsonl
+../dev_folder/jsonl_dataset\2664_track_2_°-. arpej .-°.jsonl
+../dev_folder/jsonl_dataset\22001_track_3_Rythm Guitar.jsonl
+../dev_folder/jsonl_dataset\269432_track_7_Track 7.jsonl
+../dev_folder/jsonl_dataset\16801_track_4_Add guitar.jsonl
+../dev_folder/jsonl_dataset\30362_track_1_Solos.jsonl
+../dev_folder/jsonl_dataset\1540_track_1_Pista 1.jsonl
+../dev_folder/jsonl_dataset\15110_track_2_Solo Guitar.jsonl
+../dev_folder/jsonl_dataset\1213_track_2_Gratte 2.jsonl
+../dev_folder/jsonl_dataset\17808_track_1_Lead Guitar.jsonl
+../dev_folder/jsonl_dataset\29307_track_1_Íà÷àëåí àêîğä.jsonl
+../dev_folder/jsonl_dataset\28228_track_3_Alexander Kuoppala.jsonl
+../dev_folder/jsonl_dataset\35994_track_3_Disto.jsonl
+../dev_folder/jsonl_dataset\16349_track_2_Piste 2.jsonl
+../dev_folder/jsonl_dataset\17881_track_2_Shannon.jsonl
+../dev_folder/jsonl_dataset\33924_track_1_Track 7.jsonl
+../dev_folder/jsonl_dataset\27791_track_5_Guitarra 3 - Alejandro Marcovich.jsonl
+../dev_folder/jsonl_dataset\31143_track_1_Right.jsonl
+../dev_folder/jsonl_dataset\21866_track_1_Peter.jsonl
+../dev_folder/jsonl_dataset\31489_track_5_Acoustic guitar.jsonl
+../dev_folder/jsonl_dataset\12327_track_3_Mick Mars Lead Gtr.2(overdub).jsonl
+../dev_folder/jsonl_dataset\16922_track_5_George - kbrd.jsonl
+../dev_folder/jsonl_dataset\13333_track_4_Guitarra Solo.jsonl
+../dev_folder/jsonl_dataset\31769_track_4_027 Jazz Guitar                         .jsonl
+../dev_folder/jsonl_dataset\16578_track_3_Guitar 3.jsonl
+../dev_folder/jsonl_dataset\268471_track_1_Lead.jsonl
+../dev_folder/jsonl_dataset\268629_track_4_Track 4.jsonl
+../dev_folder/jsonl_dataset\24665_track_4_Untitled.jsonl
+../dev_folder/jsonl_dataset\30898_track_1_Acoustic Guitar.jsonl
+../dev_folder/jsonl_dataset\13814_track_4_Background Guitar.jsonl
+../dev_folder/jsonl_dataset\14068_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\24729_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\21493_track_1_Lead.jsonl
+../dev_folder/jsonl_dataset\11774_track_1_Birelli Lagrene.jsonl
+../dev_folder/jsonl_dataset\19301_track_5_Julian Casablancas - Voice.jsonl
+../dev_folder/jsonl_dataset\16142_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\18369_track_1_Track 1.jsonl
+../dev_folder/jsonl_dataset\18158_track_5_Solo Guitar.jsonl
+../dev_folder/jsonl_dataset\30880_track_2_Rhythm 2.jsonl
+../dev_folder/jsonl_dataset\2224_track_1_guit.jsonl
+../dev_folder/jsonl_dataset\1279_track_3_Gitara 2.jsonl
+../dev_folder/jsonl_dataset\33588_track_2_Guitare 2.jsonl
+../dev_folder/jsonl_dataset\11102_track_6_Guitar Solo.jsonl
+../dev_folder/jsonl_dataset\22455_track_12_Choir.jsonl
+../dev_folder/jsonl_dataset\33353_track_6_Fiddle    .jsonl
+../dev_folder/jsonl_dataset\26532_track_3_Track 3.jsonl
+../dev_folder/jsonl_dataset\11084_track_2_Selim.jsonl
+../dev_folder/jsonl_dataset\31419_track_4_Solo 2.jsonl
+../dev_folder/jsonl_dataset\11658_track_2_Pista 1.jsonl
+../dev_folder/jsonl_dataset\21781_track_1_Axel.jsonl
+../dev_folder/jsonl_dataset\31205_track_4_Clean Guitar.jsonl
+../dev_folder/jsonl_dataset\20790_track_3_Guitar 3.jsonl
+../dev_folder/jsonl_dataset\18796_track_2_Rhy. Guitar II.jsonl
+../dev_folder/jsonl_dataset\28294_track_6_E.Guitar            .jsonl
+../dev_folder/jsonl_dataset\13662_track_3_Acoustic Guitar 2 .jsonl

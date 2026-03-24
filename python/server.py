@@ -10,6 +10,7 @@ Auth:
 Protected endpoints (require valid session):
   POST /api/tabify         → MIDI (base64) + viterbi params → GP5 binary
   POST /api/suggest-params → MIDI (base64) → best viterbi params as JSON
+  POST /api/mp3/stems      → MP3 (base64) → {stem: MIDI base64, …}
 
 Static:
   GET  /*                  → SPA frontend
@@ -57,7 +58,8 @@ STATIC_DIR   = os.environ.get(
     "STATIC_DIR",
     str(Path(__file__).parent.parent / "frontend" / "runtime" / "dist" / "build")
 )
-MAX_MIDI_BYTES = 10 * 1024 * 1024  # 10 MB
+MAX_MIDI_BYTES = 10 * 1024 * 1024   # 10 MB
+MAX_MP3_BYTES  = 50 * 1024 * 1024   # 50 MB
 
 # Auth config
 SECRET_KEY      = os.environ.get("SECRET_KEY", "change-me-in-production")
@@ -275,6 +277,84 @@ async def suggest_params(
         return JSONResponse({"error": True, "content": str(e)})
 
     return JSONResponse({"error": False, "content": flat_params})
+
+
+# ---------------------------------------------------------------------------
+# /api/mp3/stems — Separate MP3 → transcribe each stem → return MIDIs
+# ---------------------------------------------------------------------------
+
+@app.post("/api/mp3/stems")
+async def mp3_stems(
+    request:         Request,
+    mp3_base64:      Annotated[str,            Form()],
+    mp3_name:        Annotated[Optional[str],  Form()] = "input.mp3",
+    # Which stems to transcribe (comma-separated; drums are always skipped)
+    stems:           Annotated[Optional[str],  Form()] = "guitar,bass",
+    # Demucs model: "htdemucs_6s" (6 stems, guitar separated) or "htdemucs" (4 stems)
+    model:           Annotated[Optional[str],  Form()] = "htdemucs_6s",
+    # Basic Pitch thresholds
+    onset_threshold: Annotated[Optional[float], Form()] = 0.5,
+    frame_threshold: Annotated[Optional[float], Form()] = 0.3,
+    min_note_length: Annotated[Optional[float], Form()] = 127.70,
+    min_frequency:   Annotated[Optional[float], Form()] = None,
+    max_frequency:   Annotated[Optional[float], Form()] = None,
+):
+    """
+    Separate an audio file (MP3, WAV, …) into stems and transcribe each to MIDI.
+
+    Returns JSON:
+      { "error": false, "content": { "guitar": "<base64 MIDI>", "bass": "<base64 MIDI>" } }
+
+    The base64 MIDIs can be passed directly to /api/tabify as midi_base64.
+    """
+    if get_current_user(request) is None:
+        return JSONResponse({"error": True, "content": "not-connected"})
+
+    b64 = mp3_base64.split(",", 1)[-1] if "," in mp3_base64 else mp3_base64
+    try:
+        mp3_bytes = base64.b64decode(b64)
+    except Exception:
+        return JSONResponse({"error": True, "content": "invalid-audio-file"})
+
+    if len(mp3_bytes) > MAX_MP3_BYTES:
+        return JSONResponse({"error": True, "content": "audio-file-too-large"})
+
+    requested_stems = {s.strip() for s in (stems or "guitar,bass").split(",") if s.strip()}
+
+    def separate_and_transcribe() -> dict:
+        from mp3_to_midi import mp3_to_midis
+        import base64 as _b64
+
+        with tempfile.TemporaryDirectory() as tmp:
+            audio_path = os.path.join(tmp, mp3_name or "input.mp3")
+            with open(audio_path, "wb") as f:
+                f.write(mp3_bytes)
+
+            midi_paths = mp3_to_midis(
+                audio_path=audio_path,
+                output_dir=tmp,
+                stems=requested_stems,
+                model=model or "htdemucs_6s",
+                onset_threshold=onset_threshold if onset_threshold is not None else 0.5,
+                frame_threshold=frame_threshold if frame_threshold is not None else 0.3,
+                minimum_note_length=min_note_length if min_note_length is not None else 127.70,
+                minimum_frequency=min_frequency,
+                maximum_frequency=max_frequency,
+            )
+
+            result = {}
+            for stem_name, midi_path in midi_paths.items():
+                with open(midi_path, "rb") as f:
+                    result[stem_name] = _b64.b64encode(f.read()).decode("ascii")
+            return result
+
+    try:
+        loop = asyncio.get_event_loop()
+        stem_midis = await loop.run_in_executor(_executor, separate_and_transcribe)
+    except Exception as e:
+        return JSONResponse({"error": True, "content": str(e)})
+
+    return JSONResponse({"error": False, "content": stem_midis})
 
 
 # ---------------------------------------------------------------------------

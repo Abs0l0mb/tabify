@@ -9,6 +9,7 @@ labels/
 node_modules/
 scraping_scripts/
 dev_folder/
+python/__pycache__
 dataset.json
 node_modules
 dist

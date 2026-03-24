@@ -33,6 +33,19 @@ def measure_len_ticks(numerator: int, denominator: int, quarter_ticks: int = 960
     return int(round(numerator * quarter_ticks * (4.0 / denominator)))
 
 
+# All tick values PyGuitarPro's Duration.fromTime can represent (at quarterTime=960):
+# plain + dotted for each of: 64th=60, 32nd=120, 16th=240, 8th=480, quarter=960,
+# half=1920, whole=3840.
+_VALID_GP5_DURATIONS = sorted(
+    v for base in (60, 120, 240, 480, 960, 1920, 3840)
+    for v in (base, int(base * 1.5))
+)
+
+def snap_duration(ticks: int) -> int:
+    """Round ticks to the nearest value representable as a GP5 Duration."""
+    return min(_VALID_GP5_DURATIONS, key=lambda v: abs(v - ticks))
+
+
 E_STD_TUNING = [64, 59, 55, 50, 45, 40]  # string 1 (high E) to string 6 (low E)
 
 def configure_guitar_track(song: models.Song, tuning: List[int]) -> models.Track:
@@ -159,7 +172,7 @@ def build_gp5_from_pred_rows(
         if dur is None:
             raise ValueError("Each row must contain 'dur'.")
 
-        dur_ticks = int(round(float(dur)))
+        dur_ticks = snap_duration(int(round(float(dur))))
         if dur_ticks <= 0:
             continue
 

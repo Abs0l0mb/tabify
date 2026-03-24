@@ -8,3 +8,6 @@ optuna>=4.0.0
 authlib>=1.3.0
 httpx>=0.27.0
 itsdangerous>=2.1.0
+# Audio source separation + transcription
+demucs>=4.0.0
+basic-pitch>=0.3.0

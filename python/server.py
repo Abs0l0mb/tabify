@@ -26,6 +26,7 @@ Usage:
   uvicorn server:app --host 0.0.0.0 --port 8000 --reload
 """
 
+import argparse
 import asyncio
 import base64
 import os
@@ -67,6 +68,7 @@ GOOGLE_CLIENT_ID     = os.environ.get("GOOGLE_CLIENT_ID", "")
 GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", "")
 APP_BASE_URL    = os.environ.get("APP_BASE_URL", "http://localhost:8000").rstrip("/")
 ALLOWED_EMAILS  = {e.strip() for e in os.environ.get("ALLOWED_EMAILS", "").split(",") if e.strip()}
+DEV_MODE        = os.environ.get("DEV_MODE", "").lower() in ("1", "true", "yes")
 
 SESSION_COOKIE  = "tabify_session"
 SESSION_MAX_AGE = 60 * 60 * 24 * 7  # 7 days
@@ -88,6 +90,8 @@ def read_session_cookie(token: str) -> Optional[dict]:
         return None
 
 def get_current_user(request: Request) -> Optional[dict]:
+    if DEV_MODE:
+        return {"email": "dev@localhost", "name": "Dev User", "picture": ""}
     token = request.cookies.get(SESSION_COOKIE)
     if not token:
         return None
@@ -206,8 +210,12 @@ _DOTTED_TO_FLAT = {
     "transition_cost.w_avg_jump":           "w_avg_jump",
     "transition_cost.w_string_center":      "w_string_center",
     "transition_cost.close_jump_bonus":     "close_jump_bonus",
-    "transition_cost.w_span_change":        "w_span_change",
-    "transition_cost.w_streak":             "w_streak",
+    "transition_cost.w_span_change":                    "w_span_change",
+    "transition_cost.w_streak":                         "w_streak",
+    "transition_cost.w_same_string_bonus":              "w_same_string_bonus",
+    "transition_cost.same_string_pitch_threshold":      "same_string_pitch_threshold",
+    "transition_cost.w_string_jump":                    "w_string_jump",
+    "transition_cost.string_jump_threshold":            "string_jump_threshold",
 }
 
 
@@ -406,6 +414,10 @@ async def tabify(
     w_streak:               Annotated[Optional[float], Form()] = None,
     streak_min_len:         Annotated[Optional[int],   Form()] = None,
     streak_speed_threshold: Annotated[Optional[int],   Form()] = None,
+    same_string_pitch_threshold: Annotated[Optional[int],   Form()] = None,
+    w_same_string_bonus:         Annotated[Optional[float], Form()] = None,
+    string_jump_threshold:       Annotated[Optional[int],   Form()] = None,
+    w_string_jump:               Annotated[Optional[float], Form()] = None,
 ):
     if get_current_user(request) is None:
         return JSONResponse({"error": True, "content": "not-connected"})
@@ -460,8 +472,12 @@ async def tabify(
     set_param("transition_cost", "rest_enter_penalty",     rest_enter_penalty)
     set_param("transition_cost", "rest_exit_penalty",      rest_exit_penalty)
     set_param("transition_cost", "w_streak",               w_streak)
-    set_param("transition_cost", "streak_min_len",         streak_min_len,         int)
-    set_param("transition_cost", "streak_speed_threshold", streak_speed_threshold, int)
+    set_param("transition_cost", "streak_min_len",              streak_min_len,              int)
+    set_param("transition_cost", "streak_speed_threshold",      streak_speed_threshold,      int)
+    set_param("transition_cost", "same_string_pitch_threshold", same_string_pitch_threshold, int)
+    set_param("transition_cost", "w_same_string_bonus",         w_same_string_bonus)
+    set_param("transition_cost", "string_jump_threshold",       string_jump_threshold, int)
+    set_param("transition_cost", "w_string_jump",               w_string_jump)
 
     # ── Run Viterbi in thread pool (CPU-bound) ────────────────────────────
     step_  = step  or 60
@@ -536,3 +552,19 @@ if os.path.isdir(STATIC_DIR):
     @app.get("/{full_path:path}", include_in_schema=False)
     async def spa(full_path: str):
         return FileResponse(os.path.join(STATIC_DIR, "index.html"))
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    ap = argparse.ArgumentParser(description="Tabify backend server")
+    ap.add_argument("--dev",  action="store_true", help="Dev mode: bypass auth, enable reload")
+    ap.add_argument("--host", default="0.0.0.0")
+    ap.add_argument("--port", type=int, default=8000)
+    args = ap.parse_args()
+
+    if args.dev:
+        os.environ["DEV_MODE"] = "true"
+        DEV_MODE = True
+
+    uvicorn.run("server:app", host=args.host, port=args.port, reload=args.dev)

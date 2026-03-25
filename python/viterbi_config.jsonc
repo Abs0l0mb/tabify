@@ -131,5 +131,40 @@
     // Durée max (en ticks GP) pour qu'un event compte comme "rapide" et incrémente le streak.
     // 480 = noire/2 = croche à 960tpq. En dessous de ce seuil => fast. Au-dessus => reset du streak.
     "streak_speed_threshold": 480
+  },
+
+  "legato": {
+    // Active la détection des hammer-ons / pull-offs. Désactivé par défaut.
+    // Uniquement appliqué aux notes rapides sur la même corde que la note précédente.
+    "allow_legato": false,
+
+    // Distance max en frettes pour qu'un changement de position soit considéré HO/PO.
+    // Au-delà, la note est jouée en picking (saut trop grand pour un HO/PO propre).
+    "max_fret_distance": 5,
+
+    // Durée max (en ticks GP) pour qu'une note soit candidate au legato.
+    // 480 = croche à 960tpq. Les notes longues sont pincées.
+    "speed_threshold": 480
+  },
+
+  "tapping": {
+    // Active le tapping (technique main droite sur le manche). Désactivé par défaut.
+    // Uniquement autorisé sur les notes seules (single notes), jamais sur les accords.
+    "allow_tapping": false,
+
+    // Frette minimale pour qu'une note soit candidate au tapping.
+    // En dessous de ce seuil, on frette normalement (inutile de taper une frette basse).
+    "tap_min_fret": 7,
+
+    // Coût payé à chaque event où le tapping est utilisé.
+    // Plus grand => l'algo évite le tapping sauf si ça évite un énorme saut de main gauche.
+    "w_tap_activation": 2.0,
+
+    // Coût supplémentaire quand on quitte le tapping (main droite retourne au médiator).
+    "w_tap_deactivation": 0.5,
+
+    // Coût du déplacement de la main de tapping entre deux events tappés.
+    // Analogue à w_jump mais pour la main droite.
+    "w_tap_jump": 1.0
   }
 }

@@ -48,6 +48,13 @@ def load_config(path: str) -> Dict[str, Any]:
     tc.setdefault("w_string_center", 0.5)
     tc.setdefault("close_jump_threshold", 2.0)
     tc.setdefault("close_jump_bonus", -1.2)
+    # same-string affinity: bonus when consecutive close-pitch single notes share a string
+    # (prerequisite for legato). Set w_same_string_bonus to a negative value to activate.
+    tc.setdefault("same_string_pitch_threshold", 5)   # semitones; 5 = perfect 4th
+    tc.setdefault("w_same_string_bonus", -1.0)        # negative = reward for same string
+    # string jump: penalise non-adjacent string skips between consecutive single notes
+    tc.setdefault("w_string_jump", 1.5)               # penalty per extra string jumped
+    tc.setdefault("string_jump_threshold", 1)         # free jumps up to this many strings
     # optional rest handling
     tc.setdefault("rest_enter_penalty", 0.0)
     tc.setdefault("rest_exit_penalty", 0.0)
@@ -55,6 +62,20 @@ def load_config(path: str) -> Dict[str, Any]:
     tc.setdefault("w_streak", 2.0)
     tc.setdefault("streak_min_len", 4)
     tc.setdefault("streak_speed_threshold", 480)  # ticks; 480 = 8th note at 960tpq
+
+    cfg.setdefault("legato", {})
+    leg = cfg["legato"]
+    leg.setdefault("allow_legato", False)
+    leg.setdefault("max_fret_distance", 5)   # HO/PO only within this fret span
+    leg.setdefault("speed_threshold", 480)   # ticks; notes longer than this are picked
+
+    cfg.setdefault("tapping", {})
+    tap = cfg["tapping"]
+    tap.setdefault("allow_tapping", False)
+    tap.setdefault("tap_min_fret", 7)          # notes below this fret are never tapped
+    tap.setdefault("w_tap_activation", 2.0)    # cost paid every time a tap event is used
+    tap.setdefault("w_tap_deactivation", 0.5)  # extra cost when leaving tap state
+    tap.setdefault("w_tap_jump", 1.0)          # cost for tapping hand moving between events
 
     cfg.setdefault("guitar", {})
     # E standard 6-string: string 1 (high E) to string 6 (low E)
@@ -109,8 +130,9 @@ class Voicing:
     frets: Tuple[int, ...]
     local_cost: float
     span: int
-    anchor: float
+    anchor: float        # fretting anchor normally; tap fret when is_tapping=True
     avgpos: float
+    is_tapping: bool = False
 
 # ----------------------------
 # Candidate generation
@@ -264,6 +286,31 @@ def generate_voicings_for_event(
             used_strings.remove(s)
 
     backtrack(0)
+
+    # ── Tap candidates (single notes only) ──────────────────────────────────
+    tap_cfg = cfg.get("tapping", {})
+    if tap_cfg.get("allow_tapping") and len(pitches_sorted) == 1:
+        tap_min_fret  = int(tap_cfg.get("tap_min_fret", 7))
+        w_tap_act     = float(tap_cfg.get("w_tap_activation", 2.0))
+        pitch         = pitches_sorted[0]
+        for s, open_pitch in tuning.items():
+            fret = pitch - open_pitch
+            if tap_min_fret <= fret <= max_fret:
+                lc = w_tap_act  # high-fret penalty deliberately excluded for tapped notes
+                best.append(Voicing(
+                    pitches=(pitch,),
+                    strings=(s,),
+                    frets=(fret,),
+                    local_cost=lc,
+                    span=0,
+                    anchor=float(fret),
+                    avgpos=float(fret),
+                    is_tapping=True,
+                ))
+        best.sort(key=lambda x: x.local_cost)
+        if len(best) > chord_k:
+            best = best[:chord_k]
+
     return sorted(best, key=lambda x: x.local_cost)
 
 
@@ -275,43 +322,92 @@ class BeamNode:
     score: float
     voicing: Voicing
     prev_index: Optional[int]
-    streak_dir: int = 0   # -1 = going down, 0 = no streak, +1 = going up
-    streak_len: int = 0   # number of consecutive fast single-note steps in streak_dir
+    streak_dir: int = 0            # -1 = going down, 0 = no streak, +1 = going up
+    streak_len: int = 0            # number of consecutive fast single-note steps in streak_dir
+    fretting_anchor: float = 0.0   # last known fretting hand position (persists across tap events)
 
-def transition_cost(prev: Voicing, cur: Voicing, cfg: Dict[str, Any]) -> float:
-    tc = cfg["transition_cost"]
 
-    jump = abs(cur.anchor - prev.anchor)
-    avg_jump = abs(cur.avgpos - prev.avgpos)
-    span_change = abs(cur.span - prev.span)
-
-    cost = 0.0
-
-    # optional: treat entering/leaving rest
-    if len(prev.pitches) == 0 and len(cur.pitches) > 0:
-        cost += float(tc["rest_enter_penalty"])
-    if len(prev.pitches) > 0 and len(cur.pitches) == 0:
-        cost += float(tc["rest_exit_penalty"])
-
-    w_jump = float(tc["w_jump"])
-    jump_pow = float(tc["jump_power"])
-    cost += w_jump * (jump ** jump_pow)
-
+def _fretting_jump_cost(jump: float, tc: Dict[str, Any]) -> float:
+    """Standard jump cost applied to the fretting hand anchor movement."""
+    cost  = float(tc["w_jump"]) * (jump ** float(tc["jump_power"]))
     if jump > float(tc["jump_threshold"]):
         cost += float(tc["jump_threshold_penalty"])
-
-    w_avg = float(tc["w_avg_jump"])
-    avg_pow = float(tc["avg_jump_power"])
-    cost += w_avg * (avg_jump ** avg_pow)
-
-    cost += float(tc["w_span_change"]) * span_change
-
-    prev_center = (sum(prev.strings) / len(prev.strings)) if prev.strings else 0.0
-    cur_center = (sum(cur.strings) / len(cur.strings)) if cur.strings else 0.0
-    cost += float(tc["w_string_center"]) * abs(prev_center - cur_center)
-
     if jump <= float(tc["close_jump_threshold"]):
         cost += float(tc["close_jump_bonus"])  # negative => bonus
+    return cost
+
+
+def transition_cost(prev_node: "BeamNode", cur_v: Voicing, cfg: Dict[str, Any]) -> float:
+    prev_v   = prev_node.voicing
+    tc       = cfg["transition_cost"]
+    tap_cfg  = cfg.get("tapping", {})
+    cost     = 0.0
+
+    # Rest enter / exit
+    if not prev_v.pitches and cur_v.pitches:
+        cost += float(tc["rest_enter_penalty"])
+    if prev_v.pitches and not cur_v.pitches:
+        cost += float(tc["rest_exit_penalty"])
+
+    prev_tap = prev_v.is_tapping
+    cur_tap  = cur_v.is_tapping
+
+    if not prev_tap and not cur_tap:
+        # ── Normal → Normal ──────────────────────────────────────────────────
+        jump        = abs(cur_v.anchor - prev_v.anchor)
+        avg_jump    = abs(cur_v.avgpos - prev_v.avgpos)
+        span_change = abs(cur_v.span   - prev_v.span)
+
+        cost += _fretting_jump_cost(jump, tc)
+        cost += float(tc["w_avg_jump"])    * (avg_jump ** float(tc["avg_jump_power"]))
+        cost += float(tc["w_span_change"]) * span_change
+
+        prev_center = sum(prev_v.strings) / len(prev_v.strings) if prev_v.strings else 0.0
+        cur_center  = sum(cur_v.strings)  / len(cur_v.strings)  if cur_v.strings  else 0.0
+        cost += float(tc["w_string_center"]) * abs(prev_center - cur_center)
+
+        # ── Same-string affinity ──────────────────────────────────────────────
+        # For consecutive single notes within same_string_pitch_threshold semitones,
+        # reward sharing a string (enables legato) and penalise crossing to another.
+        w_ssb = float(tc["w_same_string_bonus"])
+        if w_ssb != 0.0 and len(prev_v.pitches) == 1 and len(cur_v.pitches) == 1:
+            pitch_dist = abs(int(cur_v.pitches[0]) - int(prev_v.pitches[0]))
+            if pitch_dist <= int(tc["same_string_pitch_threshold"]):
+                if cur_v.strings and prev_v.strings and cur_v.strings[0] == prev_v.strings[0]:
+                    cost += w_ssb          # negative → bonus for same string
+                else:
+                    cost -= w_ssb          # positive → penalty for different string
+
+        # ── String jump penalty ───────────────────────────────────────────────
+        # Penalise skipping non-adjacent strings between consecutive single notes.
+        # Separate from w_string_center which operates on chord averages.
+        w_sj  = float(tc["w_string_jump"])
+        if w_sj != 0.0 and len(prev_v.pitches) == 1 and len(cur_v.pitches) == 1:
+            if prev_v.strings and cur_v.strings:
+                string_dist = abs(int(cur_v.strings[0]) - int(prev_v.strings[0]))
+                threshold   = int(tc["string_jump_threshold"])
+                excess      = max(0, string_dist - threshold)
+                cost       += w_sj * excess
+
+    elif not prev_tap and cur_tap:
+        # ── Normal → Tap ─────────────────────────────────────────────────────
+        # Fretting hand stays put. Tapping hand travels from fretting position to tap fret.
+        tap_jump = abs(cur_v.anchor - prev_v.anchor)
+        cost += float(tap_cfg.get("w_tap_jump", 1.0)) * tap_jump
+
+    elif prev_tap and cur_tap:
+        # ── Tap → Tap ────────────────────────────────────────────────────────
+        # Fretting hand stays put. Tapping hand moves between tap frets.
+        tap_jump = abs(cur_v.anchor - prev_v.anchor)
+        cost += float(tap_cfg.get("w_tap_jump", 1.0)) * tap_jump
+
+    else:
+        # ── Tap → Normal ─────────────────────────────────────────────────────
+        # Fretting hand moves from where it was last (fretting_anchor), not from tap fret.
+        fretting_jump = abs(cur_v.anchor - prev_node.fretting_anchor)
+        cost += _fretting_jump_cost(fretting_jump, tc)
+        cost += float(tc["w_avg_jump"]) * (fretting_jump ** float(tc["avg_jump_power"]))
+        cost += float(tap_cfg.get("w_tap_deactivation", 0.5))
 
     return float(cost)
 
@@ -338,8 +434,8 @@ def compute_streak(
     is_fast = cur_dur <= speed_threshold
     is_single = len(cur_v.pitches) == 1
 
-    # Chord, rest, or slow note: reset streak, no penalty
-    if not is_fast or not is_single:
+    # Chord, rest, slow note, or tap event: reset streak, no penalty
+    if not is_fast or not is_single or cur_v.is_tapping:
         return 0, 0, 0.0
 
     delta = cur_v.anchor - prev_node.voicing.anchor
@@ -371,7 +467,7 @@ def viterbi_decode(events: List[Dict[str, Any]], cfg: Dict[str, Any]) -> List[Vo
         voicings = generate_voicings_for_event(pitches, cfg)
         candidates.append(voicings)
 
-    beam: List[BeamNode] = [BeamNode(score=v.local_cost, voicing=v, prev_index=None, streak_dir=0, streak_len=0) for v in candidates[0]]
+    beam: List[BeamNode] = [BeamNode(score=v.local_cost, voicing=v, prev_index=None, streak_dir=0, streak_len=0, fretting_anchor=v.anchor) for v in candidates[0]]
     beam.sort(key=lambda n: n.score)
     beam = beam[:beam_size]
 
@@ -383,7 +479,7 @@ def viterbi_decode(events: List[Dict[str, Any]], cfg: Dict[str, Any]) -> List[Vo
         new_beam: List[BeamNode] = []
 
         if not cur_cands:
-            new_beam = [BeamNode(score=n.score, voicing=n.voicing, prev_index=i, streak_dir=n.streak_dir, streak_len=n.streak_len) for i, n in enumerate(beam)]
+            new_beam = [BeamNode(score=n.score, voicing=n.voicing, prev_index=i, streak_dir=n.streak_dir, streak_len=n.streak_len, fretting_anchor=n.fretting_anchor) for i, n in enumerate(beam)]
             new_beam.sort(key=lambda n: n.score)
             new_beam = new_beam[:beam_size]
             beam = new_beam
@@ -400,13 +496,19 @@ def viterbi_decode(events: List[Dict[str, Any]], cfg: Dict[str, Any]) -> List[Vo
             best_streak_len = 0
             for i, prev_node in enumerate(beam):
                 new_dir, new_len, streak_pen = compute_streak(prev_node, cur_v, cur_dur, cfg)
-                sc = prev_node.score + transition_cost(prev_node.voicing, cur_v, cfg) + cur_v.local_cost + streak_pen
+                sc = prev_node.score + transition_cost(prev_node, cur_v, cfg) + cur_v.local_cost + streak_pen
                 if sc < best_score:
                     best_score = sc
                     best_prev = i
                     best_streak_dir = new_dir
                     best_streak_len = new_len
-            new_beam.append(BeamNode(score=best_score, voicing=cur_v, prev_index=best_prev, streak_dir=best_streak_dir, streak_len=best_streak_len))
+            # Track fretting anchor: carry forward during tap, update on normal notes
+            best_prev_node = beam[best_prev] if best_prev is not None else None
+            if cur_v.is_tapping and best_prev_node is not None:
+                new_fretting_anchor = best_prev_node.fretting_anchor
+            else:
+                new_fretting_anchor = cur_v.anchor
+            new_beam.append(BeamNode(score=best_score, voicing=cur_v, prev_index=best_prev, streak_dir=best_streak_dir, streak_len=best_streak_len, fretting_anchor=new_fretting_anchor))
 
         new_beam.sort(key=lambda n: n.score)
         new_beam = new_beam[:beam_size]
@@ -484,6 +586,68 @@ def evaluate_piece(events: List[Dict[str, Any]], preds: List[Voicing]) -> Dict[s
 
 
 # ----------------------------
+# Legato detection (post-processing)
+# ----------------------------
+def assign_legato(
+    events: List[Dict[str, Any]],
+    preds: List[Voicing],
+    cfg: Dict[str, Any],
+) -> List[List[Optional[str]]]:
+    """
+    For each event, return a list of per-note legato markers ("HO", "PO", or None),
+    parallel to pred.strings / pred.frets.
+
+    Rules:
+    - Same string as the previous note on that string
+    - Fret distance: 1 <= dist <= max_fret_distance
+    - Note duration <= speed_threshold (fast notes only)
+    - Only new pitches (not ties / continuations)
+    - Tapped notes never get legato
+    """
+    leg_cfg = cfg.get("legato", {})
+    if not leg_cfg.get("allow_legato", False):
+        return [[None] * len(p.strings) for p in preds]
+
+    max_dist  = int(leg_cfg.get("max_fret_distance", 5))
+    speed_thr = float(leg_cfg.get("speed_threshold", 480))
+
+    result: List[List[Optional[str]]] = []
+    last_fret_on_string: Dict[int, int] = {}   # string → last fret
+    prev_pitches: set = set()
+
+    for ev, pred in zip(events, preds):
+        dur     = float(ev.get("dur", 960))
+        is_fast = dur <= speed_thr
+        cur_pitches = set(int(p) for p in (ev.get("pitches") or []))
+
+        # Rest or tap: clear string memory, no legato possible
+        if not pred.pitches or pred.is_tapping:
+            last_fret_on_string.clear()
+            result.append([None] * len(pred.strings))
+            prev_pitches = cur_pitches
+            continue
+
+        note_legatos: List[Optional[str]] = []
+        for pitch, s, f in zip(pred.pitches, pred.strings, pred.frets):
+            legato = None
+            is_new = int(pitch) not in prev_pitches   # ties are not legato
+            if is_fast and is_new and s in last_fret_on_string:
+                prev_fret = last_fret_on_string[s]
+                dist = abs(f - prev_fret)
+                if 1 <= dist <= max_dist:
+                    legato = "HO" if f > prev_fret else "PO"
+            note_legatos.append(legato)
+
+        for s, f in zip(pred.strings, pred.frets):
+            last_fret_on_string[s] = f
+
+        result.append(note_legatos)
+        prev_pitches = cur_pitches
+
+    return result
+
+
+# ----------------------------
 # IO helpers
 # ----------------------------
 def load_events_from_jsonl(path: str) -> List[Dict[str, Any]]:
@@ -496,10 +660,16 @@ def load_events_from_jsonl(path: str) -> List[Dict[str, Any]]:
     events.sort(key=lambda e: float(e.get("start", 0.0)))
     return events
 
-def save_predicted_jsonl(events: List[Dict[str, Any]], preds: List[Voicing], out_path: str) -> None:
+def save_predicted_jsonl(
+    events: List[Dict[str, Any]],
+    preds: List[Voicing],
+    out_path: str,
+    cfg: Optional[Dict[str, Any]] = None,
+) -> None:
+    legatos = assign_legato(events, preds, cfg) if cfg is not None else [[None] * len(p.strings) for p in preds]
     os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
-        for ev, pr in zip(events, preds):
+        for ev, pr, leg in zip(events, preds, legatos):
             row = {
                 "piece_id": ev.get("piece_id"),
                 "event_idx": ev.get("event_idx"),
@@ -511,6 +681,8 @@ def save_predicted_jsonl(events: List[Dict[str, Any]], preds: List[Voicing], out
                 "pred_span": pr.span,
                 "pred_anchor": pr.anchor,
                 "pred_avgpos": pr.avgpos,
+                "pred_is_tapping": pr.is_tapping,
+                "pred_legato": leg,
             }
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
@@ -539,7 +711,7 @@ def run_folder(cfg: Dict[str, Any]) -> None:
         metrics_all.append(m)
 
         out_path = os.path.join(out_pred_dir, os.path.basename(fp))
-        save_predicted_jsonl(events, preds, out_path)
+        save_predicted_jsonl(events, preds, out_path, cfg=cfg)
 
         print(f"[OK] {os.path.basename(fp)}  note_acc={m['note_acc']:.3f}  chord_exact={m['chord_exact_acc']:.3f}  jump_max={m['pred_jump_max']:.1f}  span_p95={m['pred_span_p95']:.1f}")
 

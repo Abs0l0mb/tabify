@@ -155,13 +155,23 @@ def build_gp5_from_pred_rows(
             # GP5 spec: 2 = tied
             note.type = 2
 
-    def add_note_to_beat_tieaware(beat: models.Beat, string: int, fret: int, is_tie: bool) -> None:
+    def add_note_to_beat_tieaware(
+        beat: models.Beat,
+        string: int,
+        fret: int,
+        is_tie: bool,
+        legato: Optional[str] = None,
+    ) -> None:
         n = models.Note(beat=beat)
         n.string = int(string)
         n.value = int(fret)
         n.velocity = 90
         if is_tie:
             set_note_type_tie(n)
+        if legato == "HO":
+            n.effect.hammer = True
+        elif legato == "PO":
+            n.effect.pullOff = True
         beat.notes.append(n)
 
     # state across segments (active pitches)
@@ -178,7 +188,8 @@ def build_gp5_from_pred_rows(
 
         cur_active = set(int(p) for p in row.get("pitches", []) or [])
         pred_strings = row.get("pred_strings", []) or []
-        pred_frets = row.get("pred_frets", []) or []
+        pred_frets   = row.get("pred_frets",   []) or []
+        pred_legato  = row.get("pred_legato",  []) or []
 
         if len(pred_strings) != len(pred_frets):
             raise ValueError(f"pred_strings/pred_frets mismatch at event_idx={row.get('event_idx')}")
@@ -215,33 +226,38 @@ def build_gp5_from_pred_rows(
         else:
             beat.status = models.BeatStatus.normal
 
-            # Build mapping pitch -> (string,fret) from predictions
+            # Build mapping pitch -> (string, fret, legato) from predictions
             pitch_list = list(row.get("pitches", []) or [])
-            pitch_map = {int(p): (int(s), int(f)) for p, s, f in zip(pitch_list, pred_strings, pred_frets)}
+            # pad pred_legato with None if shorter than pitch_list
+            legato_list = list(pred_legato) + [None] * max(0, len(pitch_list) - len(pred_legato))
+            pitch_map = {
+                int(p): (int(s), int(f), leg)
+                for p, s, f, leg in zip(pitch_list, pred_strings, pred_frets, legato_list)
+            }
 
             starting = cur_active - prev_active
             continuing = cur_active & prev_active
 
-            # Add continuing as ties (same pitch continuing)
+            # Add continuing as ties (legato not applied to ties)
             used_strings = set()
             for p in sorted(continuing):
                 if p not in pitch_map:
                     continue
-                s, f = pitch_map[p]
+                s, f, _ = pitch_map[p]
                 if s in used_strings:
                     continue
                 used_strings.add(s)
                 add_note_to_beat_tieaware(beat, s, f, is_tie=True)
 
-            # Add starting as normal notes
+            # Add starting as normal notes (with legato if present)
             for p in sorted(starting):
                 if p not in pitch_map:
                     continue
-                s, f = pitch_map[p]
+                s, f, leg = pitch_map[p]
                 if s in used_strings:
                     continue
                 used_strings.add(s)
-                add_note_to_beat_tieaware(beat, s, f, is_tie=False)
+                add_note_to_beat_tieaware(beat, s, f, is_tie=False, legato=leg)
 
         voice0.beats.append(beat)
         remaining -= dur_ticks

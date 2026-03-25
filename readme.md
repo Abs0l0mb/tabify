@@ -10,6 +10,12 @@ Définir score jouabilité (même simple)
 
 Ensuite seulement : modèle ML/NN + reranking jouabilité
 
+## Convert gp5 to midi
+
+```bash
+python gp_to_midi.py --input ../sf.gp5 --output ../sf.mid
+```
+
 ## Launch web server
 
 ### Dev
@@ -21,7 +27,8 @@ Frontend :
 
 Backend :
 ```bash
-python -m uvicorn server:app --host 0.0.0.0 --port 8000
+cd python
+python server.py --dev
 ```
 
 ### Prod
@@ -72,3 +79,24 @@ python tune_viterbi.py --phase profile \
   --n_profile_files 2000 \
   --profile_out tune_profile.json
 ```
+
+---
+
+## TODO — Paywall (after auth)
+
+Model: **freemium** — N free conversions/month, then paid subscription via Stripe.
+
+### Implementation order
+1. Finish auth (Google OAuth) first
+2. Add **Supabase** (managed Postgres) — create project at supabase.com, copy connection string into `DATABASE_URL` env var. Minimum schema: `users(email, plan, conversions_used, stripe_customer_id)`
+3. Stripe integration
+
+### Backend to build
+- `POST /api/checkout` — create Stripe Checkout session → return redirect URL
+- `POST /api/stripe/webhook` — handle payment success / cancellation / renewal
+- Paywall middleware on `/api/tabify` and `/api/suggest-params` (check plan + conversions_used)
+
+### Frontend to build
+- Usage counter display (e.g. "3/5 conversions used this month")
+- Upgrade prompt when limit is hit
+- "Upgrade" button → calls `/api/checkout` → redirects to Stripe

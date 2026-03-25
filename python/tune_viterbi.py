@@ -228,22 +228,30 @@ def score_against_profile(stats: Dict[str, float], profile: Dict[str, Any]) -> f
 
 # (low, high) for each tunable parameter
 PARAM_BOUNDS: Dict[str, Tuple[float, float]] = {
-    "local_cost.w_span":                    (0.0, 3.0),
-    "local_cost.w_high":                    (0.0, 1.0),
-    "local_cost.w_string_range":            (0.0, 1.0),
-    "local_cost.w_preferred_zone":          (-3.0, 0.0),
-    "local_cost.w_high_string":             (0.0, 5.0),
-    "string_discontinuity.w_holes":         (0.0, 8.0),
-    "string_discontinuity.w_gap":           (0.0, 2.0),
-    "string_discontinuity.w_blocks":        (0.0, 8.0),
-    "transition_cost.w_jump":               (0.0, 3.0),
-    "transition_cost.jump_power":           (1.0, 2.5),
-    "transition_cost.jump_threshold_penalty": (0.0, 10.0),
-    "transition_cost.w_avg_jump":           (0.0, 2.0),
-    "transition_cost.w_string_center":      (0.0, 6.0),
-    "transition_cost.close_jump_bonus":     (-3.0, 0.0),
-    "transition_cost.w_span_change":        (0.0, 1.0),
-    "transition_cost.w_streak":             (0.0, 8.0),
+    "local_cost.w_span":                      (0.0,  10.0),
+    "local_cost.w_high":                      (0.0,  10.0),
+    "local_cost.w_string_range":              (0.0,  10.0),
+    "local_cost.w_preferred_zone":            (-10.0, 0.0),
+    "local_cost.w_high_string":               (0.0,  10.0),
+    "string_discontinuity.w_holes":           (0.0,  10.0),
+    "string_discontinuity.w_gap":             (0.0,  10.0),
+    "string_discontinuity.w_blocks":          (0.0,  10.0),
+    "transition_cost.w_jump":                 (0.0,  10.0),
+    "transition_cost.jump_power":             (1.0,  2.5),
+    "transition_cost.jump_threshold_penalty": (0.0,  10.0),
+    "transition_cost.w_avg_jump":             (0.0,  10.0),
+    "transition_cost.w_string_center":        (0.0,  10.0),
+    "transition_cost.close_jump_bonus":       (-10.0, 0.0),
+    "transition_cost.w_span_change":          (0.0,  10.0),
+    "transition_cost.w_streak":               (0.0,  10.0),
+    "transition_cost.w_same_string_bonus":    (-10.0, 0.0),
+    "transition_cost.w_string_jump":          (0.0,  10.0),
+}
+
+# Integer parameters — use suggest_int instead of suggest_float
+INT_PARAMS = {
+    "transition_cost.same_string_pitch_threshold": (2, 8),
+    "transition_cost.string_jump_threshold":       (0, 3),
 }
 
 
@@ -277,6 +285,10 @@ def tune_file(
             k: trial.suggest_float(k, lo, hi)
             for k, (lo, hi) in PARAM_BOUNDS.items()
         }
+        overrides.update({
+            k: trial.suggest_int(k, lo, hi)
+            for k, (lo, hi) in INT_PARAMS.items()
+        })
         cfg_i = apply_overrides(base_fast, overrides)
         try:
             preds = vp.viterbi_decode(events, cfg_i)
